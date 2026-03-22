@@ -1,21 +1,21 @@
-# React + TypeScript + Vite + shadcn/ui
+# CompCode
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+CompCode is a LeetCode companion app for browsing problems, running code,
+reviewing submissions, and capturing notes.
 
-## Adding components
+## Development
 
-To add components to your app, run the following command:
+Install dependencies and start the app locally:
 
 ```bash
-npx shadcn@latest add button
+pnpm install
+pnpm dev
 ```
 
-This will place the ui components in the `src/components` directory.
+## Build
 
-## Using components
+Create a production build:
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button"
+```bash
+pnpm build
 ```

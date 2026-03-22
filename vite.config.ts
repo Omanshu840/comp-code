@@ -111,7 +111,7 @@ function createLeetCodeProxyPlugin(): Plugin {
 }
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? "./" : "/",
+  base: process.env.NODE_ENV === "production" ? "/comp-code/" : "/",
   plugins: [react(), tailwindcss(), createLeetCodeProxyPlugin()],
   resolve: {
     alias: {
