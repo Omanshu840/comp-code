@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a number âNâ, find out the sum of the first N natural numbers .",
+    "examples": [
+        {
+            "input": "N=5",
+            "output": "15",
+            "explanation": "1+2+3+4+5=15"
+        },
+        {
+            "input": "N=6",
+            "output": "21",
+            "explanation": "1+2+3+4+5+6=15"
+        }
+    ]
+}

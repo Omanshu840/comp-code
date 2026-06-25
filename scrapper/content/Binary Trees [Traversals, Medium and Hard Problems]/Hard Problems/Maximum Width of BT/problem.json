@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, return its maximum width.\nThe maximum width of a Binary Tree is the maximum diameter among all its levels. The width or diameter of a level is the number of nodes between the leftmost and rightmost nodes.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 3 5 6 -1 9",
+            "output": "Maximum Width: 4",
+            "explanation": "Level 3 is the widest level of the Binary Tree and whose end-to-end width is 4 comprising of nodes: {5, 6, null, 9}."
+        },
+        {
+            "input": "Binary Tree: 1 2 3 5",
+            "output": "Maximum Width: 2",
+            "explanation": "Level 2 is the widest level of the Binary Tree and whose end-to-end width is comprised of nodes: {2, 3}."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an n x n binary matrix grid, it is allowed to change at most one 0 to 1. A group of connected 1s forms an island, where two 1s are connected if they share one of their sides.\n\nReturn the size of the largest island in the grid after applying this operation.",
+    "examples": [
+        {
+            "input": "grid = [[1,0], [0,1]]",
+            "output": "3",
+            "explanation": "We change one of the 0s to 1, connecting the two existing 1s, which results in an island with a maximum area of 3.\n\n\nExample 2:"
+        },
+        {
+            "input": "grid = [[1, 1], [1, 1]]",
+            "output": "4",
+            "explanation": "The largest island already exists with size 4, as all cells are already connected."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a Last-In-First-Out (LIFO) stack using a singly linked list. The implemented stack should support the following operations: push, pop, top, and isEmpty.\n\nImplement the LinkedListStack class:\nvoid push(int x): Pushes element x onto the stack.\nint pop(): Removes and returns the top element of the stack.\nint top(): Returns the top element of the stack without removing it.\nboolean isEmpty(): Returns true if the stack is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"LinkedListStack\", \"push\", \"push\", \"pop\", \"top\", \"isEmpty\"]  \n[[], [3], [7], [], [], []]",
+            "output": "[null, null, null, 7, 3, false]",
+            "explanation": "LinkedListStack stack = new LinkedListStack();  \n- stack.push(3);  \n- stack.push(7);  \n- stack.pop(); // returns 7  \n- stack.top(); // returns 3  \n- stack.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"LinkedListStack\", \"isEmpty\"]  \n[[]]",
+            "output": "[null, true]",
+            "explanation": "LinkedListStack stack = new LinkedListStack();  \n- stack.isEmpty(); // returns true"
+        }
+    ]
+}

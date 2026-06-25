@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "examples": [
+        {
+            "input": "n = 3",
+            "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "n = 1",
+            "output": "[\"()\"]",
+            "explanation": ""
+        }
+    ]
+}

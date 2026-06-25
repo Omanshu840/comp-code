@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of numbers, print all subsets of it using bitwise operators.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 3]",
+            "output": "[[ ], [1], [2], [3], [1, 2], [2, 3], [3, 1], [1, 2, 3]]",
+            "explanation": "A power set of an array is an array of all possible subarrays, including an empty array. It contains all combinations of elements from the original array. By iterating through all possible combinations of the elements in the input array we are able to get the power set of the array."
+        },
+        {
+            "input": "nums = [5, 7, 8]",
+            "output": "[[ ], [5], [7], [8], [5, 7], [7, 8], [8, 5], [5, 7, 8]]",
+            "explanation": "A power set of an array is an array of all possible subarrays, including an empty array. It contains all combinations of elements from the original array. By iterating through all possible combinations of the elements in the input array we are able to get the power set of the array."
+        }
+    ]
+}

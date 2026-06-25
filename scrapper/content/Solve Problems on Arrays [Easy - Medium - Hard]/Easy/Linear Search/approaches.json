@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "Given an array, traverse through the entire array.\nFor each element, check if the element is present in the array.\n\nIf the element is found, print the index of the element.\nIf the element is not found, print -1.",
+        "images": [
+            "https://static.takeuforward.org/content/1.png-JS-u02BE",
+            "https://static.takeuforward.org/content/2.png-lS4FVt4a",
+            "https://static.takeuforward.org/content/3.png-zSLjinCH"
+        ],
+        "complexities": {
+            "time": "O(N) , where N is the number of elements in the array. This is because we traverse the entire array to find the element.",
+            "space": "O(1) , as we are using a constant"
+        },
+        "code": {
+            "cpp": "#include<stdio.h>\n\n// Function to search for a number in the array\nint search(int arr[], int n, int num)\n{\n    int i;\n\n    // Loop through the array to find the number\n    for(i = 0; i < n; i++)\n    {\n        // If the current element matches the number, return its index\n        if(arr[i] == num)\n            return i;\n    }\n\n    // If the number is not found, return -1\n    return -1;\n}\n\nint main()\n{\n    // Declare and initialize the array\n    int arr[] = {1, 2, 3, 4, 5};\n\n    // Number to search for\n    int num = 4;\n\n    // Calculate the number of elements in the array\n    int n = sizeof(arr) / sizeof(arr[0]);\n\n    // Call the search function and store the result\n    int val = search(arr, n, num);\n\n    // Print the index of the found number or -1 if not found\n    printf(\"%d\", val);\n\n    return 0;\n}"
+        }
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given an array Arr with N distinct coins and a target. We have an\n    infinite supply of each coin denomination. We need to find the number of ways we sum up the coin values to give us\n    the target.",
+    "examples": [
+        {
+            "input": "coins = [2, 4,10], amount = 10",
+            "output": "4",
+            "explanation": "The four combinations are:\n10 = 10\n10 = 4 + 4 + 2\n10 = 4 + 2 + 2 + 2\n10 = 2 + 2 + 2 + 2 + 2\n\nExample 2:"
+        },
+        {
+            "input": "coins = [5], amount = 5",
+            "output": "1",
+            "explanation": "There is one combination: 5 = 5."
+        }
+    ]
+}

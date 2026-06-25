@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of size N. Find the highest and lowest frequency element.",
+    "examples": [
+        {
+            "input": "array[] = {10,5,10,15,10,5};",
+            "output": "10 15",
+            "explanation": "The frequency of 10 is 3, i.e. the highest and the frequency of 15 is 1 i.e. the lowest.\n\n\nExample 2:"
+        },
+        {
+            "input": "array[] = {2,2,3,4,4,2};",
+            "output": "2 3",
+            "explanation": "The frequency of 2 is 3, i.e. the highest and the frequency of 3 is 1 i.e. the lowest."
+        }
+    ]
+}

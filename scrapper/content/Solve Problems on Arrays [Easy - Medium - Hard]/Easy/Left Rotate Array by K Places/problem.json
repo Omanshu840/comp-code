@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers, rotating array of elements by k elements either left or right.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 2, right",
+            "output": "[6, 7, 1, 2, 3, 4, 5]",
+            "explanation": "rotate 1 step to the right: [7, 1, 2, 3, 4, 5, 6]\nrotate 2 steps to the right: [6, 7, 1, 2, 3, 4, 5]"
+        },
+        {
+            "input": "nums = [1, 2, 3, 4, 5, 6], k=2, left",
+            "output": "[3, 4, 5, 6, 1, 2]",
+            "explanation": "rotate 1 step to the left: [2, 3, 4, 5, 6, 1]\nrotate 2 steps to the left: [3, 4, 5, 6, 1, 2]"
+        }
+    ]
+}

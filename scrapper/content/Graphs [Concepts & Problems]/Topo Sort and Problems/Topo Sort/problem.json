@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Directed Acyclic Graph (DAG) with V vertices labeled from 0 to V-1.The graph is represented using an adjacency list where adj[i] lists all nodes connected to node. Find any Topological Sorting of that Graph.\n\n\n\nIn topological sorting, node u will always appear before node v if there is a directed edge from node u towards node v(u -> v).\n\n\n\nThe Output will be True if your topological sort is correct otherwise it will be False.",
+    "examples": [
+        {
+            "input": "V = 6, adj = [[], [], [3], [1], [0, 1], [0, 2]]",
+            "output": "[5, 4, 2, 3, 1, 0]",
+            "explanation": "A graph may have multiple topological sortings. The result is one of them. The necessary conditions for the ordering are:  \nAccording to edge 5 -> 0, node 5 must appear before node 0 in the ordering.  \nAccording to edge 4 -> 0, node 4 must appear before node 0 in the ordering.  \nAccording to edge 5 -> 2, node 5 must appear before node 2 in the ordering.  \nAccording to edge 2 -> 3, node 2 must appear before node 3 in the ordering.  \nAccording to edge 3 -> 1, node 3 must appear before node 1 in the ordering.  \nAccording to edge 4 -> 1, node 4 must appear before node 1 in the ordering.  \nThe above result satisfies all the necessary conditions. [4, 5, 2, 3, 1, 0] is also one such topological sorting that satisfies all the conditions."
+        },
+        {
+            "input": "V = 4, adj = [[], [0], [0], [0]]",
+            "output": "[3, 2, 1, 0]",
+            "explanation": "The necessary conditions for the ordering are:  \nFor edge 1 -> 0, node 1 must appear before node 0.  \nFor edge 2 -> 0, node 2 must appear before node 0.  \nFor edge 3 -> 0, node 3 must appear before node 0."
+        }
+    ]
+}

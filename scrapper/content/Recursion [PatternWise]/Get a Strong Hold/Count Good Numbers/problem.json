@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A digit string is considered good if the digits at even indices (0-based) are even digits (0, 2, 4, 6, 8) and the digits at odd indices are prime digits (2, 3, 5, 7).\n\nGiven an integer n, return the total number of good digit strings of length n. As the result may be large, return it modulo 109 + 7.\n\nA digit string is a string consisting only of the digits '0' through '9'. It may contain leading zeros.",
+    "examples": [
+        {
+            "input": "n = 1",
+            "output": "5",
+            "explanation": "Only one index (0) â must be even.\nValid strings: \"0\", \"2\", \"4\", \"6\", \"8\"\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 2",
+            "output": "20",
+            "explanation": "Index 0: 5 options (even digits)\nIndex 1: 4 options (prime digits)\nTotal: 5 * 4 = 20"
+        }
+    ]
+}

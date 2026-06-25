@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a First-In-First-Out (FIFO) queue using two stacks. The implemented queue should support the following operations: push, pop, peek, and isEmpty.\n\nImplement the StackQueue class:\n\nvoid push(int x): Adds element x to the end of the queue.\n\nint pop(): Removes and returns the front element of the queue.\n\nint peek(): Returns the front element of the queue without removing it.\n\nboolean isEmpty(): Returns true if the queue is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"StackQueue\", \"push\", \"push\", \"pop\", \"peek\", \"isEmpty\"]  \n[[], [4], [8], [], [], []]",
+            "output": "[null, null, null, 4, 8, false]",
+            "explanation": "StackQueue queue = new StackQueue();  \n- queue.push(4);  \n- queue.push(8);  \n- queue.pop(); // returns 4  \n- queue.peek(); // returns 8  \n- queue.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"StackQueue\", \"isEmpty\"]  \n[[]]",
+            "output": "[null, true]",
+            "explanation": "StackQueue queue = new StackQueue();  \n- queue.isEmpty(); // returns true"
+        }
+    ]
+}

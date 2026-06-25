@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers A and an integer B. Find the total number of subarrays having bitwise XOR of all elements equal to k.",
+    "examples": [
+        {
+            "input": "A = [4, 2, 2, 6, 4] , k = 6",
+            "output": "4",
+            "explanation": "The subarrays having XOR of their elements as 6 are  [4, 2], [4, 2, 2, 6, 4], [2, 2, 6], [6]"
+        },
+        {
+            "input": "A = [5, 6, 7, 8, 9], k = 5",
+            "output": "2",
+            "explanation": "The subarrays having XOR of their elements as 5 are [5] and [5, 6, 7, 8, 9]"
+        }
+    ]
+}

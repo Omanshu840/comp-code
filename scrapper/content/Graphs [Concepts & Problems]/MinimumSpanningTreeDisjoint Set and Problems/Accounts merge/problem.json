@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Merge accounts that share common emails and return each userâs name followed by their sorted, unique emails.",
+    "examples": [
+        {
+            "input": "N = 4\naccounts [ ] =\n[[\"John\",\"johnsmith@mail.com\",\"john_newyork@mail.com\"],\n[\"John\",\"johnsmith@mail.com\",\"john00@mail.com\"],\n\"Mary\",\"mary@mail.com\"]\n[\"John\",\"johnnybravo@mail.com\"]]",
+            "output": "[[\"John\",\"john00@mail.com\",\"john_newyork@mail.com\", \"johnsmith@mail.com\"],\n[\"Mary\",\"mary@mail.com\"],\n[\"John\",\"johnnybravo@mail.com\"]]",
+            "explanation": "The first and the second John are the same person as they have a common email. But the third Mary and fourth John are not the same as they do not have any common email.  The result can be in any order but the emails must be in sorted order.\n\nExample 2:"
+        },
+        {
+            "input": "N = 6\naccounts [ ] =\n[[\"John\",\"j1@com\",\"j2@com\",\"j3@com\"],\n[\"John\",\"j4@com\"],\n[\"Raj\",âr1@comâ, âr2@comâ],\n[\"John\",\"j1@com\",\"j5@com\"],\n[\"Raj\",âr2@comâ, âr3@comâ],\n[\"Mary\",\"m1@com\"]]",
+            "output": "[[\"John\",\"j1@com\",\"j2@com\",\"j3@com\",\"j5@com\"],\n[\"John\",\"j4@com\"],\n[\"Raj\",âr1@comâ, âr2@comâ,  âr3@comâ],\n[\"Mary\",\"m1@com\"]]",
+            "explanation": "The first and the fourth John are the same person here as they have a common email. And the third and the fifth Raj are also the same person. So, the same accounts are merged."
+        }
+    ]
+}

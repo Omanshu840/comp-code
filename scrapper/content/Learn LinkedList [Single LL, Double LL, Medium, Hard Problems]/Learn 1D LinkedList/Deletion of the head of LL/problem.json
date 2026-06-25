@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Linked List, delete the tail of the list and print the updated list.",
+    "examples": [
+        {
+            "input": "0->1->2",
+            "output": "0->1",
+            "explanation": "Last node of the Linked List is 2."
+        },
+        {
+            "input": "12->5->8->7",
+            "output": "12->5->8",
+            "explanation": "Last node of the Linked List is 7."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, return the Vertical Order Traversal of it starting from the Leftmost level to the Rightmost level. If there are multiple nodes passing through a vertical line, then they should be printed as they appear in level order traversal of the tree.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 3 4 10 9 11 -1 5 -1 -1 -1 -1 -1 -1 -1 6",
+            "output": "Vertical Order Traversal: [[4],[2, 5], [1, 10, 9, 6],[3],[11]]",
+            "explanation": "Vertical Levels from left to right:Level -2: [4],Level -1: [2],Level 0: [1, 10, 9, 6] (Overlapping nodes are added in their level order sequence),Level 1: [3],Level 2: [11],"
+        },
+        {
+            "input": "Binary Tree: 2 7 5 2 6 -1 9 -1 -1 5 11 4 -1",
+            "output": "[[2],[7, 5],[2, 6], [5, 11, 4],[9]]",
+            "explanation": "Vertical Levels from left to right:Level -2: [2],Level -1: [7, 5],Level 0: [2, 6],Level 1: [5, 11, 4] (Overlapping nodes are added in their level order sequence),Level 2: [9]."
+        }
+    ]
+}

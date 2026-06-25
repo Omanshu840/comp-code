@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement the function myAtoi(s) which converts the given string s to a 32-bit signed integer (similar to the C/C++ atoi function).\n\nSteps to Implement:\n1. First, ignore any leading whitespace characters ' ' until the first non-whitespace character is found.\n2. Check the next character to determine the sign. If itâs a '-', the number should be negative. If itâs a '+', the number should be positive. If neither is found, assume the number is positive.\n3. Read the digits and convert them into a number. Stop reading once a non-digit character is encountered or the end of the string is reached. Leading zeros should be ignored during conversion.\n4. The result should be clamped within the 32-bit signed integer range: [-2147483648, 2147483647]. If the computed number is outside this range, return -2147483648 if the number is less than -2147483648, or return 2147483647 if the number is greater than 2147483647.\n5. Finally, return the computed number after applying all the above steps.",
+    "examples": [
+        {
+            "input": "s = \" -12345\"",
+            "output": "-12345",
+            "explanation": "Ignore leading whitespaces.  \nThe sign '-' is encountered, indicating the number is negative.  \nDigits 12345 are read and converted to -12345.\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"4193 with words\"",
+            "output": "4193",
+            "explanation": "Read the digits 4193 and stop when encountering the first non-digit character (w)."
+        }
+    ]
+}

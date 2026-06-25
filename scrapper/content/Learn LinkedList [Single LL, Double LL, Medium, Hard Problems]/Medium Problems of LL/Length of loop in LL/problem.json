@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a linked list, determine the length of a loop present in the linked list. If there's no loop present, return 0.",
+    "examples": [
+        {
+            "input": "",
+            "output": "3",
+            "explanation": "A cycle exists in the linked list starting at node 3 -> 4 -> 5 and then back to 3. There are 3 nodes present in this cycle."
+        },
+        {
+            "input": "",
+            "output": "0",
+            "explanation": "The linked list is linear and does not have a loop hence return 0."
+        }
+    ]
+}

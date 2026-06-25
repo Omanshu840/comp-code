@@ -1,0 +1,4 @@
+{
+    "problem_statement": "You are given a strictly increasing array âvecâ and a positive integer 'k'. Find the 'kth' positive integer missing from 'vec'.",
+    "examples": []
+}

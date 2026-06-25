@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array, we have to find the largest element in the array.",
+    "examples": [
+        {
+            "input": "arr[] = {2, 5, 1, 3, 0}",
+            "output": "5",
+            "explanation": "5 is the largest element in the array.\n\n\nExample 2:"
+        },
+        {
+            "input": "arr[] = {8, 10, 5, 7, 9}",
+            "output": "10",
+            "explanation": "10 is the largest element in the array."
+        }
+    ]
+}

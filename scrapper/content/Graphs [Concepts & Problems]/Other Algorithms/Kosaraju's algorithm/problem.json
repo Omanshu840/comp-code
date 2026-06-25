@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges,\n    Find the number of strongly connected components in the graph..",
+    "examples": []
+}

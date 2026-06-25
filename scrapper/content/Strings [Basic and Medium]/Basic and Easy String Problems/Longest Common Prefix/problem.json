@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "examples": [
+        {
+            "input": "str = [\"flower\", \"flow\", \"flight\"]",
+            "output": "\"fl\"",
+            "explanation": "All strings in the array begin with the common prefix \"fl\".\n\n\nExample 2"
+        },
+        {
+            "input": "str = [\"apple\", \"banana\", \"grape\", \"mango\"]",
+            "output": "\"\"",
+            "explanation": "None of the strings share a common starting sequence, so the result is an empty string."
+        }
+    ]
+}

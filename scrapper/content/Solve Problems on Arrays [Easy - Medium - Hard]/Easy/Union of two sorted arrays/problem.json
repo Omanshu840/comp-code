@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two sorted arrays, arr1, and arr2 of size n and m. Find the union of two sorted arrays.",
+    "examples": [
+        {
+            "input": "n = 5,m = 5 arr1[] = {1,2,3,4,5}  arr2[] = {2,3,4,4,5}",
+            "output": "{1,2,3,4,5}",
+            "explanation": "Common Elements in arr1 and arr2  are:  2,3,4,5\nDistnict Elements in arr1 are : 1\nDistnict Elemennts in arr2 are : No distinct elements.\nUnion of arr1 and arr2 is {1,2,3,4,5}"
+        },
+        {
+            "input": "n = 10,m = 7,arr1[] = {1,2,3,4,5,6,7,8,9,10}arr2[] = {2,3,4,4,5,11,12}",
+            "output": "{1,2,3,4,5,6,7,8,9,10,11,12}",
+            "explanation": "Common Elements in arr1 and arr2  are:  2,3,4,5\nDistnict Elements in arr1 are : 1,6,7,8,9,10\nDistnict Elemennts in arr2 are : 11,12\nUnion of arr1 and arr2 is {1,2,3,4,5,6,7,8,9,10,11,12}"
+        }
+    ]
+}

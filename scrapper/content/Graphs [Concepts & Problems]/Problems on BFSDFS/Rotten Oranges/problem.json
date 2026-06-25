@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an n x m grid, where each cell has the following values : \n\n\n\n2 - represents a rotten orange ,\n1 - represents a Fresh orange ,\n0 - represents an Empty Cell . \nEvery minute, if a fresh orange is adjacent to a rotten orange in 4-direction ( upward, downwards, right, and left ) it becomes rotten. \n\n\nReturn the minimum number of minutes required such that none of the cells has a Fresh Orange. If it's not possible, return -1..",
+    "examples": [
+        {
+            "input": "grid = [ [2, 1, 1] , [0, 1, 1] , [1, 0, 1] ]",
+            "output": "-1",
+            "explanation": "Orange at (3,0) cannot be rotten."
+        },
+        {
+            "input": "grid = [ [2,1,1] , [1,1,0] , [0,1,1] ]",
+            "output": "4",
+            "explanation": ""
+        }
+    ]
+}

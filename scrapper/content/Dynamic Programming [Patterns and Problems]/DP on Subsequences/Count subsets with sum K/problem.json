@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array arr of n integers and an integer K, count the number of subsets of the given array that have a sum equal to K.",
+    "examples": [
+        {
+            "input": "arr = [1, 2, 2, 3], K = 3",
+            "output": "3",
+            "explanation": "The subarrays [1,2], [1,2] and [3] have a sum of 3."
+        },
+        {
+            "input": "arr = [1, 2, 3, 4, 5], K = 5",
+            "output": "3",
+            "explanation": "The subsets are [5], [2, 3], and [1, 4]."
+        }
+    ]
+}

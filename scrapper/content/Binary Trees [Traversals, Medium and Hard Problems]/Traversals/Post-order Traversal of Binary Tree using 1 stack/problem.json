@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the root of a Binary Tree, write a recursive function that returns an array containing the postorder traversal of the tree.",
+    "examples": [
+        {
+            "input": "Binary Tree: 4 2 5 3 -1 7 6 -1 9 -1 -1 8 -1 1",
+            "output": "[1, 9, 3, 2, 7, 8, 6, 5, 4]",
+            "explanation": "We traverse the binary tree in the order of Left, Right then Root recursively resulting in the following traversal:"
+        },
+        {
+            "input": "Binary Tree: 1 2 3 4 5 6 7 -1 -1 8 -1 -1 -1 9 10",
+            "output": "[1 2 4 5 8 3 6 7 9 10]",
+            "explanation": "We traverse the binary tree in the order of Left, Right then Root recursively resulting in the following traversal:"
+        }
+    ]
+}

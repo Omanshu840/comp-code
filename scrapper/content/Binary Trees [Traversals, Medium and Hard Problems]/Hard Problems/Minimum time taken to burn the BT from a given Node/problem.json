@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a target node data and a root of binary tree. If the target is set on fire, determine the shortest amount of time needed to burn the entire binary tree.\nIt is known that in 1 second all nodes connected to a given node get burned. That is its left child, right child, and parent.",
+    "examples": [
+        {
+            "input": "root = [1, 2, 3, 4, null, 5, 6, null, 7]. target = 1",
+            "output": "3",
+            "explanation": "The node with value 1 is set on fire.\nIn 1st second it burns node 2 and node 3.\nIn 2nd second it burns nodes 4, 5, 6.\nIn 3rd second it burns node 7."
+        },
+        {
+            "input": "root = [1, 2, 3, null, 5, null, 4], target = 4",
+            "output": "4",
+            "explanation": "node with value 4 is set on fire.\nIn 1st second it burns node 3.\nIn 2nd second it burns node 1.\nIn 3rd second it burns node 2.\nIn 4th second it burns node 5."
+        }
+    ]
+}

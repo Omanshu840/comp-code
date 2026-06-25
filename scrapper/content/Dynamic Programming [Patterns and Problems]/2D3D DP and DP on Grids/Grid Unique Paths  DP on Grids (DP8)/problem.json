@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two integers m and n, representing the number of rows and columns of a 2d array named matrix. Return the number of unique ways to go from the top-left cell (matrix[0][0]) to the bottom-right cell (matrix[m-1][n-1]).\n\nMovement is allowed only in two directions from a cell: right and bottom.",
+    "examples": [
+        {
+            "input": "m = 3, n = 2",
+            "output": "3",
+            "explanation": "There are 3 unique ways to go from the top-left to the bottom-right cell:\n1) right â down â down  \n2) down â right â down  \n3) down â down â right  \n\n\nExample 2:"
+        },
+        {
+            "input": "m = 2, n = 4",
+            "output": "4",
+            "explanation": "There are 4 unique ways to go from the top-left to the bottom-right cell:\n1) down â right â right â right  \n2) right â down â right â right  \n3) right â right â down â right  \n4) right â right â right â down"
+        }
+    ]
+}

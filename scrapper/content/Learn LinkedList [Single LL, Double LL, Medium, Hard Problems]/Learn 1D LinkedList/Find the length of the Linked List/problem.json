@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a linked list, print the length of the linked list.",
+    "examples": [
+        {
+            "input": "0->1->2",
+            "output": "3",
+            "explanation": "The list has a total of 3 nodes, thus the length of the list is 3."
+        },
+        {
+            "input": "12->5->8->7",
+            "output": "4",
+            "explanation": "The list has a total of 4 nodes, thus the length of the list is 4."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string consisting of digits from 2 to 9 (inclusive). Return all possible letter combinations that the number can represent.",
+    "examples": [
+        {
+            "input": "digits = \"34\"",
+            "output": "[ \"dg\", \"dh\", \"di\", \"eg\", \"eh\", \"ei\", \"fg\", \"fh\", \"fi\" ]",
+            "explanation": "The 3 is mapped with \"def\" and 4 is mapped with \"ghi\".  \nSo all possible combinations by replacing the digits with characters are shown in the output.\n\n\nExample 2:"
+        },
+        {
+            "input": "digits = \"3\"",
+            "output": "[ \"d\", \"e\", \"f\" ]",
+            "explanation": "The 3 is mapped with \"def\"."
+        }
+    ]
+}

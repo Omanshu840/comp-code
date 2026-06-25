@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the root of a Binary Tree, return the preorder, inorder and postorder traversal sequence of the given tree by making just one traversal.",
+    "examples": [
+        {
+            "input": "Binary Tree: 4 2 5 3 -1 7 6 -1 9 -1 -1 8 -1 1",
+            "output": "Preorder: [4, 2, 3, 9, 1, 5, 7, 6, 8]",
+            "explanation": "We traverse the binary tree in the order of Root, Left then Right recursively resulting in the following traversal:"
+        },
+        {
+            "input": "Binary Tree: 1 2 3 4 5 6 7 -1 -1 8 -1 -1 -1 9 10",
+            "output": "Preorder: [1, 2, 4, 5, 8, 3, 6, 7, 9, 10]",
+            "explanation": "We traverse the binary tree in the order of Root, Left then Right recursively resulting in the following traversal:"
+        }
+    ]
+}

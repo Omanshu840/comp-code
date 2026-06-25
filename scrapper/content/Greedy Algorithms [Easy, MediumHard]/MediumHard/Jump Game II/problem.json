@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a 0-indexed array nums of length n representing your maximum jump capability from each index.\nYou start at index 0. Each element nums[i] represents the maximum number of steps you can jump forward from index i.\nYour goal is to reach the last index of the array (nums[n - 1]) using the minimum number of jumps\n\nReturn the minimum number of jumps required to reach the last index.\nYou can assume that it is always possible to reach the last index.\n\n\n\n\n\n\n                    Examples\n                \n\n\n\n\n\n\n\nInput: nums = [2, 3, 1, 1, 4]\n\nOutput: 2\nExplanation: Jump from index 0 â 1 â 4.\n    \nInput: nums = [2, 3, 0, 1, 4]\n\nOutput: 2\nExplanation: Jump from index 0 â 1 â 4.",
+    "examples": [
+        {
+            "input": "nums = [2, 3, 1, 1, 4]",
+            "output": "2",
+            "explanation": "Jump from index 0 â 1 â 4."
+        },
+        {
+            "input": "nums = [2, 3, 0, 1, 4]",
+            "output": "2",
+            "explanation": "Jump from index 0 â 1 â 4."
+        }
+    ]
+}

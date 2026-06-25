@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a singly linked list. Group all the nodes with odd indices followed by all the nodes with even indices and return the reordered list.\n\n\n\nConsider the 1st node to have index 1 and so on. The relative order of the elements inside the odd and even group must remain the same as the given input.",
+    "examples": [
+        {
+            "input": "1â2â3â4â5â6âNull",
+            "output": "2â4â6â1â3â5âNull",
+            "explanation": "Odd Nodes in LinkedList are 1,3,5 and Even Nodes in LinkedList are 2,4,6\nIn Modified LinkedList all even Nodes comes before all Odd Nodes. So Modified LinkedList looks like 2â4â6â1â3â5âNull. Order of even and odd Nodes is \nmaintained in modified LinkedList."
+        },
+        {
+            "input": "1â3â5âNull",
+            "output": "1â3â5âNull",
+            "explanation": "As there are no Even Nodes in LinkedList, The Modified LinkedList is same as Original LinkedList."
+        }
+    ]
+}

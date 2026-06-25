@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an infix expression, Your task is to convert the given infix expression to a postfix expression.",
+    "examples": [
+        {
+            "input": "a + b * (c^d - e) ^ (f + g * h) - i",
+            "output": "abcd^e-fgh*+^*+i-",
+            "explanation": "The infix expression \"a + b * (c^d - e) ^ (f + g * h) - i\" is converted to postfix form as \"abcd^e-fgh*+^*+i-\" by applying the rules of infix to postfix conversion.\n\n\nExample 2:"
+        },
+        {
+            "input": "(p + q) * (m - n)",
+            "output": "pq+mn-*",
+            "explanation": "The infix expression \"(p + q) * (m - n)\" is converted to postfix form as \"pq+mn-*\"."
+        }
+    ]
+}

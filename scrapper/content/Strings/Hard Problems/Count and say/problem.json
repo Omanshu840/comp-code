@@ -1,0 +1,15 @@
+{
+    "problem_statement": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula: \n    countAndSay(1) = \"1\"\ncountAndSay(n) is the run-length encoding of countAndSay(n - 1).",
+    "examples": [
+        {
+            "input": "4",
+            "output": "\"1211\"",
+            "explanation": "countAndSay(1) = \"1\"\ncountAndSay(2) = RLE of \"1\" = \"11\"\ncountAndSay(3) = RLE of \"11\" = \"21\"\ncountAndSay(4) = RLE of \"21\" = \"1211\""
+        },
+        {
+            "input": "1",
+            "output": "\"1\"",
+            "explanation": "This is the base case."
+        }
+    ]
+}

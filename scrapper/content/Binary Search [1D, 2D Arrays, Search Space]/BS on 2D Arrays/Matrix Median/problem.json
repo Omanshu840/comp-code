@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a row-wise sorted matrix of size M*N, where M is no. of rows and N is no.\n    of columns, find the median in the given matrix.\n    Note: M*N is odd.",
+    "examples": [
+        {
+            "input": "M = 3, N = 3, matrix[][] =\n\n1 4 9 \n2 5 6\n3 8 7",
+            "output": "5",
+            "explanation": "If we find the linear sorted array, the array becomes 1 2 3 4 5 6 7 8 9. Therefore, median = 5"
+        },
+        {
+            "input": "M = 3, N = 3, matrix[][] =\n\n1 3 8 \n2 3 4\n1 2 5",
+            "output": "3",
+            "explanation": "If we find the linear sorted array, the array becomes 1 1 2 2 3 3 4 5 7 8. Therefore, median = 3."
+        }
+    ]
+}

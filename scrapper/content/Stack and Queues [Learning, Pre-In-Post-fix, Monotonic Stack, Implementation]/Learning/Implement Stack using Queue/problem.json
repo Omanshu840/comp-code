@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a Last-In-First-Out (LIFO) stack using a single queue. The implemented stack should support the following operations: push, pop, top, and isEmpty.\n\nImplement the QueueStack class:\npush(int x): Pushes element x onto the stack.\npop(): Removes and returns the top element of the stack.\ntop(): Returns the top element of the stack without removing it.\nisEmpty(): Returns true if the stack is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"QueueStack\", \"push\", \"push\", \"pop\", \"top\", \"isEmpty\"]  \n[[], [4], [8], [], [], []]",
+            "output": "[null, null, null, 8, 4, false]",
+            "explanation": "QueueStack stack = new QueueStack();  \n- stack.push(4);  \n- stack.push(8);  \n- stack.pop(); // returns 8  \n- stack.top(); // returns 4  \n- stack.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"QueueStack\", \"isEmpty\"]  \n[[]]",
+            "output": "[null, true]",
+            "explanation": "QueueStack stack = new QueueStack();  \n- stack.isEmpty(); // returns true"
+        }
+    ]
+}

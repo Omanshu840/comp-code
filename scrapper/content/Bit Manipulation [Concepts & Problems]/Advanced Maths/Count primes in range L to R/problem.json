@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given an 2D array queries of dimension n*2.\n\nThe queries[i] represents a range from queries[i][0] to queries[i][1] (include the end points).\n\nReturn the count of prime numbers present in between each range in queries array.",
+    "examples": [
+        {
+            "input": "queries = [ [2, 5], [4, 7] ]",
+            "output": "[3, 2]",
+            "explanation": "The range 2 to 5 contains three prime numbers: 2, 3, 5.  \nThe range 4 to 7 contains two prime numbers: 5, 7.\n\n\nExample 2:"
+        },
+        {
+            "input": "queries = [ [1, 7], [3, 7] ]",
+            "output": "[4, 3]",
+            "explanation": "The range 1 to 7 contains four prime numbers: 2, 3, 5, 7.  \nThe range 3 to 7 contains three prime numbers: 3, 5, 7."
+        }
+    ]
+}

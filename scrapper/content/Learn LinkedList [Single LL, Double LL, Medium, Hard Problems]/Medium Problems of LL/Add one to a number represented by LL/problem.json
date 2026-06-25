@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a singly linked list representing a positive integer number. Each node of the linked list represents a digit of the number, with the 1st node containing the leftmost digit of the number and so on. The task is to add one to the value represented by the linked list and return the head of a linked list containing the final value.",
+    "examples": [
+        {
+            "input": "4->5->6",
+            "output": "4->5->7",
+            "explanation": "456 + 1 = 457"
+        },
+        {
+            "input": "9->9->9",
+            "output": "1->0->0->0",
+            "explanation": "999 + 1 = 1000"
+        }
+    ]
+}

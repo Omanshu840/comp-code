@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array nums and an integer k. An array is called nice if and only if it contains k odd numbers. Find the number of nice subarrays in the given array nums.\nA subarray is continuous part of the array.",
+    "examples": [
+        {
+            "input": "nums = [1, 1, 2, 1, 1] , k = 3",
+            "output": "2",
+            "explanation": "The subarrays with three odd numbers are [1, 1, 2, 1] [1, 2, 1, 1]"
+        },
+        {
+            "input": "nums = [4, 8, 2] , k = 1",
+            "output": "0",
+            "explanation": "The array does not contain any odd number."
+        }
+    ]
+}

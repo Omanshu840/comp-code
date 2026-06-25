@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two integer arrays nums1 and nums2 and an integer k, return the maximum k valid sum combinations from all possible sum combinations using the elements of nums1 and nums2.\n\n\n\nA valid sum combination is made by adding one element from nums1 and one element from nums2. Return the answer in non-increasing order.",
+    "examples": [
+        {
+            "input": "nums1 = [7, 3], nums2 = [1, 6], k = 2",
+            "output": "[13, 9]",
+            "explanation": "The 2 maximum combinations are made by: nums1[0] + nums2[1] = 13 nums1[1] + nums2[1] = 9"
+        },
+        {
+            "input": "nums1 = [3, 4, 5], nums2 = [2, 6, 3], k = 2",
+            "output": "[11, 10]",
+            "explanation": "The 2 maximum combinations are made by: nums1[2] + nums2[1] = 11 nums1[1] + nums2[1] = 10"
+        }
+    ]
+}

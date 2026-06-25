@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array nums of positive integers, the task is to find the largest subset such that every pair (a, b) of elements in the subset satisfies a % b == 0 or b % a == 0.\n\nReturn the subset in any order. If there are multiple solutions, return any one of them.\n\nNote: As there can be multiple correct answers, the compiler returns 1 if the answer is valid, else 0.",
+    "examples": [
+        {
+            "input": "nums = [3, 5, 10, 20]",
+            "output": "[5, 10, 20]",
+            "explanation": "The subset [5, 10, 20] satisfies the divisibility condition:  \n- 10 % 5 == 0  \n- 20 % 10 == 0  \n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [16, 8, 2, 4, 32]",
+            "output": "[2, 4, 8, 16, 32]",
+            "explanation": "The entire array forms a divisible subset since:\n- 32 % 16 == 0  \n- 16 % 8 == 0  \n- 8 % 4 == 0  \n- 4 % 2 == 0"
+        }
+    ]
+}

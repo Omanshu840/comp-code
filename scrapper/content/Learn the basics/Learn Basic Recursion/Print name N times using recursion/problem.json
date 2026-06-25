@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "N = 3",
+            "output": "Ashish Ashish Ashish",
+            "explanation": "Name is printed 3 times."
+        },
+        {
+            "input": "N = 1",
+            "output": "Ashish",
+            "explanation": "Name is printed once."
+        }
+    ]
+}

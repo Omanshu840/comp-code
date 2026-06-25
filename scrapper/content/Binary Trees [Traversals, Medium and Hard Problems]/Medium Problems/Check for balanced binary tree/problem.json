@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, return true if it is a Balanced Binary Tree else return\n    false. A Binary Tree is balanced if, for all nodes in the tree, the difference between left and right subtree height\n    is not more than 1..",
+    "examples": [
+        {
+            "input": "[3, 9, 20, null, null, 15, 7]",
+            "output": "Yes",
+            "explanation": "Example 2:"
+        },
+        {
+            "input": "[1, 2, null, null, 3]",
+            "output": "No",
+            "explanation": ""
+        }
+    ]
+}

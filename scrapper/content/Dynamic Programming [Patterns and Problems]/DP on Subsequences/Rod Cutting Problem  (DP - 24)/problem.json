@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a rod of length N inches and an array price[] where price[i] denotes the value of a piece of rod of length i inches (1-based indexing). Determine the maximum value obtainable by cutting up the rod and selling the pieces. Make any number of cuts, or none at all, and sell the resulting pieces.",
+    "examples": [
+        {
+            "input": "price = [1, 6, 8, 9, 10, 19, 7, 20], N = 8",
+            "output": "25",
+            "explanation": "Cut the rod into lengths of 2 and 6 for a total price of 6 + 19= 25."
+        },
+        {
+            "input": "price = [1, 5, 8, 9], N = 4",
+            "output": "10",
+            "explanation": "Cut the rod into lengths of 2 and 2 for a total price of 5 + 5 = 10."
+        }
+    ]
+}

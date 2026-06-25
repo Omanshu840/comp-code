@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a linked list containing âNâ head nodes where every node in the linked list contains two pointers:\nâNextâ points to the next node in the list\nâChildâ pointer to a linked list where the current node is the head\nEach of these child linked lists is in sorted order and connected by a 'child' pointer. Your task is to flatten this linked list such that all nodes appear in a single layer or level in a 'sorted order'.",
+    "examples": [
+        {
+            "input": "",
+            "output": "1 2 3 4 5 6 7 8 9 10 11 12",
+            "explanation": "The linked list is flattened in sorted order, resulting in a single layer with all nodes appearing in ascending order. \n\n\nExample 2:"
+        },
+        {
+            "input": "",
+            "output": "1 2 3 4 5 6 7 8 9 10 11 12",
+            "explanation": "The linked list is flattened in sorted order, resulting in a single layer with all nodes appearing in ascending order."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer array nums of size n. Return all elements which appear more than n/3 times in the array. The output can be returned in any order.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 1, 1, 3, 2]",
+            "output": "[1]",
+            "explanation": "Here, n / 3 = 6 / 3 = 2.  \nTherefore, the elements appearing 3 or more times are: [1].\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [1, 2, 1, 1, 3, 2, 2]",
+            "output": "[1, 2]",
+            "explanation": "Here, n / 3 = 7 / 3 = 2.  \nTherefore, the elements appearing 3 or more times are: [1, 2]."
+        }
+    ]
+}

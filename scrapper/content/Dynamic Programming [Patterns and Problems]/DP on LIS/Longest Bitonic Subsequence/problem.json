@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array arr of n integers, the task is to find the length of the longest bitonic sequence. A sequence is considered bitonic if it first increases, then decreases. The sequence does not have to be contiguous.",
+    "examples": [
+        {
+            "input": "arr = [5, 1, 4, 2, 3, 6, 8, 7]",
+            "output": "6",
+            "explanation": "The longest bitonic sequence is [1, 2, 3, 6, 8, 7] with a length of 6.  \nThe sequence increases from 1 to 8 and then decreases at 7.\n\n\nExample 2:"
+        },
+        {
+            "input": "arr = [10, 20, 30, 40, 50, 40, 30, 20]",
+            "output": "8",
+            "explanation": "The entire array is bitonic, increasing up to 50 and then decreasing. The length of the bitonic sequence is 8."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an expression, A, with operands and operators (OR, AND, XOR), in how many\n    ways can you evaluate the expression to be true, by grouping it in different ways?.",
+    "examples": [
+        {
+            "input": "expression = âT|T&Fâ",
+            "output": "1",
+            "explanation": "The only way to get the result as true is:\n(T) | (T&F) = T|F = T \n\nExample 2:"
+        },
+        {
+            "input": "expression = âF|T^Fâ",
+            "output": "2",
+            "explanation": "There are 2 possible ways to get the result as true:\n\t\ti. (F|T) ^ F = T ^ F = T\n\t\tii. F | (T^F) = F | T = T"
+        }
+    ]
+}

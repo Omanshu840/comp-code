@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two strings, one is a text string and the other is a pattern string. Find and print the indices of all the occurrences of the pattern string within the text string. Use 0-based indexing for the indices, and ensure that the indices are in ascending order. If the pattern does not occur in the text, return an empty list.\n    Implement this solution using the Knuth-Morris-Pratt (KMP) algorithm for efficient pattern matching.",
+    "examples": [
+        {
+            "input": "text = \"abracadabra\", pattern = \"abra\"",
+            "output": "[0, 7]",
+            "explanation": "The pattern \"abra\" appears at the 0st and 7th positions in the text \"abracadabra\"."
+        },
+        {
+            "input": "text = \"abcabcabc\", pattern = \"abc\"",
+            "output": "[0, 3, 6]",
+            "explanation": "The pattern \"abc\" appears at the 0st, 3th, and 6th positions in the text \"abcabcabc\"."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a First-In-First-Out (FIFO) queue using a singly linked list. The implemented queue should support the following operations: push, pop, peek, and isEmpty.\n\nImplement the LinkedListQueue class:\n\nvoid push(int x): Adds element x to the end of the queue.\n\nint pop(): Removes and returns the front element of the queue.\n\nint peek(): Returns the front element of the queue without removing it.\n\nboolean isEmpty(): Returns true if the queue is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"LinkedListQueue\", \"push\", \"push\", \"peek\", \"pop\", \"isEmpty\"]  \n[[], [3], [7], [], [], []]",
+            "output": "[null, null, null, 3, 3, false]",
+            "explanation": "LinkedListQueue queue = new LinkedListQueue();  \n- queue.push(3);  \n- queue.push(7);  \n- queue.peek(); // returns 3  \n- queue.pop(); // returns 3  \n- queue.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"LinkedListQueue\", \"push\", \"pop\", \"isEmpty\"]  \n[[], [2], [], []]",
+            "output": "[null, null, 2, true]",
+            "explanation": "LinkedListQueue queue = new LinkedListQueue();  \n- queue.push(2);  \n- queue.pop(); // returns 2  \n- queue.isEmpty(); // returns true"
+        }
+    ]
+}

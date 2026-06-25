@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Search Tree and a âkeyâ value which represents the data data of a node in this tree. Return the inorder predecessor and successor of the given node in the BST.\n\nThe predecessor of a node in BST is that node that will be visited just before the given node in the inorder traversal of the tree. Return nullptr if the given node is the one that is visited first in the inorder traversal.\nThe successor of a node in BST is that node that will be visited immediately after the given node in the inorder traversal of the tree. Return nullptr if the given node is visited last in the inorder traversal.",
+    "examples": [
+        {
+            "input": "Binary Search Tree: 5 3 7 2 4 6 9 1 -1 -1 -1 -1 -1 8 10, Key = 8",
+            "output": "Inorder Predecessor: 7, Inorder Successor: 9",
+            "explanation": "Example 2:"
+        },
+        {
+            "input": "Binary Search Tree: 5 2 7 1 4 6 9 -1 -1 3 -1 -1 -1 8 10, Key = 3",
+            "output": "Inorder Predecessor: 2, Inorder Successor: 4",
+            "explanation": ""
+        }
+    ]
+}

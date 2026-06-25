@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "str = \"abc\"",
+            "output": "[a, ab, abc, ac, b, bc, c]",
+            "explanation": "Given string has 7 subsequences."
+        },
+        {
+            "input": "str = \"aa\"",
+            "output": "[a, a, aa]",
+            "explanation": "Given string has 3 subsequences."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a number X,  print its factorial.",
+    "examples": [
+        {
+            "input": "X = 5",
+            "output": "120",
+            "explanation": "5! = 5*4*3*2*1\n\n\nExample 2:"
+        },
+        {
+            "input": "X = 3",
+            "output": "6",
+            "explanation": "3!=3*2*1"
+        }
+    ]
+}

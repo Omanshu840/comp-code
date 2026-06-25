@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a sorted array of N integers, write a program to find the index of the last occurrence of the target key. If the target is not found then return -1.\nNote: Consider 0 based indexing",
+    "examples": [
+        {
+            "input": "N = 7, target = 13, array[] = {3, 4, 13, 13, 13, 20, 40}",
+            "output": "4",
+            "explanation": "The target value 13 appears for the first time at index number 2 in the array.  \n\n\nExample 2:"
+        },
+        {
+            "input": "N = 7, target = 60, array[] = {3, 4, 13, 13, 13, 20, 40}",
+            "output": "-1",
+            "explanation": "Target value 60 is not present in the array, so the output is -1."
+        }
+    ]
+}

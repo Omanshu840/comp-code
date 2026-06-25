@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given two arrays that represent the arrival and departure times of trains that stop at the platform. We need to find the minimum number of platforms needed at the railway station so that no train has to wait.",
+    "examples": [
+        {
+            "input": "N=6, \narr[] = {9:00, 9:45, 9:55, 11:00, 15:00, 18:00}\ndep[] = {9:20, 12:00, 11:30, 11:50, 19:00, 20:00}",
+            "output": "3",
+            "explanation": "There are at-most three trains at a time. The train at 11:00 arrived but the trains which had arrived at 9:45 and 9:55 have still not departed. So, we need at least three platforms here."
+        },
+        {
+            "input": "N=2, \narr[]={10:20,12:00}\ndep[]={10:50,12:30}",
+            "output": "1",
+            "explanation": "Before the arrival of the new train, the earlier train already departed. So, we don't require multiple platforms."
+        }
+    ]
+}

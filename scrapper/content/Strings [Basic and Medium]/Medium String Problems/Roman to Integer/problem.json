@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Roman numerals are represented by seven different symbols: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000\n    For example: 2 is written as II, 12 is written as XII, 27 is written as XXVII.\n    Roman numerals are usually written largest to smallest from left to right. But in six special cases, subtraction is used instead of addition:\nI before V or X â 4 and 9, \nX before L or C â 40 and 90, \nC before D or M â 400 and 900\n    Given a Roman numeral, convert it to an integer.",
+    "examples": [
+        {
+            "input": "s = \"LVIII\"",
+            "output": "58",
+            "explanation": "L = 50, V= 5, III = 3.\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"MCMXCIV\"",
+            "output": "1994",
+            "explanation": "M = 1000, CM = 900, XC = 90 and IV = 4."
+        }
+    ]
+}

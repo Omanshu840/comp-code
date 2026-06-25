@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A thief needs to rob money in a street. The houses in the street are arranged in\n    a circular manner. Therefore the first and the last house are adjacent to each other. The security system in the\n    street is such that if adjacent houses are robbed, the police will get notified.",
+    "examples": [
+        {
+            "input": "money = [2, 1, 4, 9]",
+            "output": "10",
+            "explanation": "[2, 1, 4, 9] The underlined houses would give the maximum loot.\nNote that we cannot loot the 1st and 4th houses together.\n\nExample 2:"
+        },
+        {
+            "input": "money = [1, 5, 2, 1, 6]",
+            "output": "11",
+            "explanation": "[1, 5, 2, 1, 6] The underlined houses would give the maximum loot."
+        }
+    ]
+}

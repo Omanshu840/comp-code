@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Find all articulation points (cut vertices) in an undirected graph whose removal increases the number of connected components.",
+    "examples": []
+}

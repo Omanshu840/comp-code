@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "In a weighted graph, the goal of Dijkstraâs algorithm is to find the shortest path from a source node to all other nodes. The idea is to always expand the closest node not yet processed.\nUsing a priority queue (min-heap) ensures that we can efficiently pick the node with the smallest current distance, instead of scanning all nodes each time.\n\nThe algorithm starts with the source node at distance 0. At each step, the priority queue pops the node with the smallest distance. For every neighbor of that node, if the new distance through this node is shorter than the current stored distance, we update it and push the neighbor into the priority queue. This process continues until all nodes are processed.\n Initialize a distance array with infinity for all nodes except the source (0). Use a priority queue (min-heap) to store pairs of (distance, node). Push the source with distance 0 into the queue. While the queue is not empty, pop the node with the smallest distance. If the popped distance is greater than the stored distance, skip it (already processed). For each neighbor of the current node, calculate the new distance. If the new distance is smaller than the stored one, update it and push the neighbor into the queue. After processing, the distance array will hold the shortest path distances from the source to all nodes.",
+        "images": [
+            "https://static.takeuforward.org/content/x3.png-I2g06CXX",
+            "https://static.takeuforward.org/content/x4.png-L-5MnzTt",
+            "https://static.takeuforward.org/content/x5.png-wtJ-cqLt",
+            "https://static.takeuforward.org/content/x6.png-tlrD_HU5",
+            "https://static.takeuforward.org/content/x7.png-Swf-8gm6"
+        ],
+        "complexities": {},
+        "code": {}
+    }
+]

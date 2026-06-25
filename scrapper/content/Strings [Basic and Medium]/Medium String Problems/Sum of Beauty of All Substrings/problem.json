@@ -1,0 +1,15 @@
+{
+    "problem_statement": "The beauty of a string is defined as the difference between the frequency of the most frequent character and the least frequent character (excluding characters that do not appear) in that string.\n\nGiven a string s, return the sum of beauty values of all possible substrings of s.",
+    "examples": [
+        {
+            "input": "s = \"xyx\"",
+            "output": "1",
+            "explanation": "The substrings with non-zero beauty are:\n\"xyx\" â frequencies: x:2, y:1 â beauty = 2 - 1 = 1\n\"xy\" â x:1, y:1 â beauty = 0\n\"yx\" â y:1, x:1 â beauty = 0\n\"x\" or \"y\" â beauty = 0\nTotal sum = 1 (from \"xyx\") = 1\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"aabcbaa\"",
+            "output": "17",
+            "explanation": "Various substrings such as \"aabc\", \"bcba\", etc., have non-zero beauty values. Summing all gives 17."
+        }
+    ]
+}

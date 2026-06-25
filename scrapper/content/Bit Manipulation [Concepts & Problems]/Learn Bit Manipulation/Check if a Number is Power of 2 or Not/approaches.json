@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "Power of two numbers have exactly one bit set in their binary form.\nSubtracting one flips all bits after the set bit, creating no overlap with the original number.\nA bitwise AND between the number and one less than itself will be zero only for powers of two.\nThis property allows for a fast check without looping or dividing.",
+        "images": [],
+        "complexities": {
+            "time": "O(1) , because bitwise operations take constant time.",
+            "space": "O(1) , no extra space used."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Function to check if a number is a power of two\n    bool isPowerOfTwo(int n) {\n        return n > 0 && (n & (n - 1)) == 0;  // Check if n is greater than 0 and has only one bit set\n    }\n};\n\nint main() {\n    Solution sol;\n    int num = 8;\n\n    if (sol.isPowerOfTwo(num)) {\n        cout << num << \" is a power of two.\" << endl;\n    } else {\n        cout << num << \" is not a power of two.\" << endl;\n    }\n\n    return 0;\n}",
+            "java": "class Solution {\n    // Function to check if a number is a power of two\n    public boolean isPowerOfTwo(int n) {\n        return n > 0 && (n & (n - 1)) == 0;  // Check if n is greater than 0 and has only one bit set\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int num = 8;\n\n        if (sol.isPowerOfTwo(num)) {\n            System.out.println(num + \" is a power of two.\");\n        } else {\n            System.out.println(num + \" is not a power of two.\");\n        }\n    }\n}",
+            "python": "class Solution:\n    # Function to check if a number is a power of two\n    def isPowerOfTwo(self, n):\n        return n > 0 and (n & (n - 1)) == 0  # Check if n is greater than 0 and has only one bit set\n\nif __name__ == \"__main__\":\n    sol = Solution()\n    num = 8\n\n    if sol.isPowerOfTwo(num):\n        print(f\"{num} is a power of two.\")\n    else:\n        print(f\"{num} is not a power of two.\")",
+            "javascript": "class Solution {\n    // Function to check if a number is a power of two\n    isPowerOfTwo(n) {\n        return n > 0 && (n & (n - 1)) === 0;  // Check if n is greater than 0 and has only one bit set\n    }\n}\n\n\nconst sol = new Solution();\nconst num = 8;\n\nif (sol.isPowerOfTwo(num)) {\n    console.log(`${num} is a power of two.`);\n} else {\n    console.log(`${num} is not a power of two.`);\n}"
+        }
+    }
+]

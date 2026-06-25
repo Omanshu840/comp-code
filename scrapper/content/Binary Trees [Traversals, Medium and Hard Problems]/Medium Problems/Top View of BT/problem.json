@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, return its Top View. The Top View of a Binary Tree is the set of nodes visible when we see the tree from the top.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 3 4 10 9 11 -1 5 -1 -1 -1 -1 -1 -1 -1 6",
+            "output": "Top View: [4, 2, 1, 3, 11]",
+            "explanation": ""
+        },
+        {
+            "input": "Binary Tree: 2 7 5 2 6 -1 9 -1 -1 5 11 4 -1",
+            "output": "Top View: [2, 7, 2, 5, 9]",
+            "explanation": ""
+        }
+    ]
+}

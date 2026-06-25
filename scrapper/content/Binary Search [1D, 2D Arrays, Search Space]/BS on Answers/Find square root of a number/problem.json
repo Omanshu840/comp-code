@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a positive integer n. Your task is to find and return its square root. If ânâ is not a perfect square, then return the floor value of sqrt(n).",
+    "examples": [
+        {
+            "input": "N = 36",
+            "output": "6",
+            "explanation": "Square root of 36 is 6."
+        },
+        {
+            "input": "N = 28",
+            "output": "5",
+            "explanation": "Square root of 28 is approximately 5.292. So, the floor value will be 5."
+        }
+    ]
+}

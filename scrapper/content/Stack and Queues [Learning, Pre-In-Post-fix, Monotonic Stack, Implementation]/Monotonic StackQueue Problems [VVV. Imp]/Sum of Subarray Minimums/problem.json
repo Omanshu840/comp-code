@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers arr of size n, calculate the sum of the minimum value in each (contiguous) subarray of arr. Since the result may be large, return the answer modulo 10â¹ +7.",
+    "examples": [
+        {
+            "input": "arr = [3, 1, 2, 5]",
+            "output": "18",
+            "explanation": "The minimum of subarrays: [3], [1], [2], [5], [3, 1], [1, 2], [2, 5], [3, 1, 2], [1, 2, 5], [3, 1, 2, 5] are 3, 1, 2, 5, 1, 1, 2, 1, 1, 1 respectively and their sum is 18.\n\n\nExample 2:"
+        },
+        {
+            "input": "arr = [2, 3, 1]",
+            "output": "10",
+            "explanation": "The minimum of subarrays: [2], [3], [1], [2,3], [3,1], [2,3,1] are 2, 3, 1, 2, 1, 1 respectively and their sum is 10."
+        }
+    ]
+}

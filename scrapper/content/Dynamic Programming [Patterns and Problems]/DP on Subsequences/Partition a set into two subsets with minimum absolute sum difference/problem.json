@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 3, 4]",
+            "output": "0",
+            "explanation": "Two subsets can be [1,4] and [2,3]."
+        },
+        {
+            "input": "nums = [8, 6, 5]",
+            "output": "3",
+            "explanation": "Two subsets can be [8] and [6, 5]."
+        }
+    ]
+}

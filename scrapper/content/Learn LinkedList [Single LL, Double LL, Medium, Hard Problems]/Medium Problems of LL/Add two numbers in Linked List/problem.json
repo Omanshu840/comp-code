@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Add two numbers represented as Linked Lists.",
+    "examples": [
+        {
+            "input": "num1 = 243, num2 = 564",
+            "output": "sum = 807; L = [7,0,8]",
+            "explanation": "Since the digits are stored in reverse order, reverse the numbers first to get the or original number and then add them as â 342 + 465 = 807. \n\nExample 2:"
+        },
+        {
+            "input": "l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]",
+            "output": "Result: [8,9,9,9,0,0,0,1]",
+            "explanation": "Since the digits are stored in reverse order, reverse the numbers first to get the original number and then add them as â 9999999 + 9999 = 8999001. Refer to the image below."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A thief wants to rob a store. He is carrying a bag of capacity W. The store has ânâ items of infinite supply. Its weight is given by the âwtâ array and its value by the âvalâ array. He can either include an item in its knapsack or exclude it but canât partially have it as a fraction. We need to find the maximum value of items that the thief can steal. He can take a single item any number of times he wants and put it in his knapsack .",
+    "examples": [
+        {
+            "input": "n = 3, W = 8, wt = [2, 4, 6], val = [5, 11, 13]",
+            "output": "22",
+            "explanation": "We can take item with weight 2 (value 5) four times to fill capacity 8,total value = 5 Ã 4 = 20.\nBut a better choice: take item with weight 2 (value 5) twice and item with weight 4 (value 11) once â total weight = 2 + 2 + 4 = 8, total value = 5 + 5 + 11 = 21.\nEven better: take two items with weight 4 (value 11 each), total value = 22, which is maximum."
+        },
+        {
+            "input": "n = 2, W = 3, wt = [2, 1], val = [4, 2]",
+            "output": "6",
+            "explanation": "We can take item with weight 1 (value 2) three times , total value = 6.\nTaking weight 2 (value 4) plus weight 1 (value 2) also gives 6. No combination yields more than 6."
+        }
+    ]
+}

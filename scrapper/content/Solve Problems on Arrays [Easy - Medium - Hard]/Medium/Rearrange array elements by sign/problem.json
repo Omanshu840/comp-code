@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Thereâs an array âAâ of size âNâ with an equal number of positive and negative elements. Without altering the relative order of positive and negative elements, you must return an array of alternately positive and negative values.",
+    "examples": [
+        {
+            "input": "arr[] = {1,2,-4,-5}, N = 4",
+            "output": "1 -4 2 -5",
+            "explanation": "Positive elements = 1,2\nNegative elements = -4,-5\nTo maintain relative ordering, 1 must occur before 2, and -4 must occur before -5.\n\n\n\nExample 2:"
+        },
+        {
+            "input": "arr[] = {1,2,-3,-1,-2,-3}, N = 6",
+            "output": "1 -3 2 -1 3 -2",
+            "explanation": "Positive elements = 1,2,3\nNegative elements = -3,-1,-2\nTo maintain relative ordering, 1 must occur before 2, and 2 must occur before 3.\nAlso, -3 should come before -1, and -1 should come before -2."
+        }
+    ]
+}

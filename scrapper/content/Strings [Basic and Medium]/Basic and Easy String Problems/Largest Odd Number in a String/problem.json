@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string s, representing a large integer, the task is to return the largest-valued odd integer (as a string) that is a substring of the given string s.\n    \n    The number returned should not have leading zero's. But the given input string may have leading zero.",
+    "examples": [
+        {
+            "input": "s = \"5347\"",
+            "output": "\"5347\"",
+            "explanation": "The odd numbers formed by the given string are â 5, 3, 53, 347, 5347. The largest odd number without leading zeroes is 5347.\n\n\nExample 2"
+        },
+        {
+            "input": "s = \"0214638\"",
+            "output": "\"21463\"",
+            "explanation": "The odd numbers formed by the string are â 1, 3, 21, 63, 463, 1463, 21463. We can't use numbers starting with 0, so the largest valid odd number is 21463."
+        }
+    ]
+}

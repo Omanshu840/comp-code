@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array that contains both negative and positive integers, find the maximum product subarray.",
+    "examples": [
+        {
+            "input": "Nums = [1,2,3,4,5,0]",
+            "output": "120",
+            "explanation": "In the given array, 1Ã2Ã3Ã4Ã5 gives maximum product value."
+        },
+        {
+            "input": "Nums = [1,2,-3,0,-4,-5]",
+            "output": "20",
+            "explanation": "In the given array, (-4)Ã(-5) gives maximum product value."
+        }
+    ]
+}

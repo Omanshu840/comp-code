@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, implement Morris Inorder Traversal and return the array containing its inorder sequence.\nMorris Inorder Traversal is a tree traversal algorithm aiming to achieve a space complexity of O(1) without recursion or an external data structure. The algorithm should efficiently visit each node in the binary tree in inorder sequence, printing or processing the node values as it traverses, without using a stack or recursion.",
+    "examples": [
+        {
+            "input": "Binary Tree: 4 2 5 3 -1 7 6 -1 9 -1 -1 8 -1 1",
+            "output": "[3, 1, 9, 2, 4, 7, 5, 8, 6]",
+            "explanation": "We traverse the binary tree in the order of Left, Root then Right."
+        },
+        {
+            "input": "Binary Tree: 1 2 3 4 5 6 7 -1 -1 8 -1 -1 -1 9 10",
+            "output": "[4,2,8,5,1,6,3,9,7,10]",
+            "explanation": "We traverse the binary tree in the order of Left, Root then Right."
+        }
+    ]
+}

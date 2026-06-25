@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer n, return all binary strings of length n that do not contain consecutive 1s. Return the result in lexicographically increasing order.\n\nA binary string is a string consisting only of characters '0' and '1'.",
+    "examples": [
+        {
+            "input": "n = 3",
+            "output": "[\"000\", \"001\", \"010\", \"100\", \"101\"]",
+            "explanation": "All binary strings of length 3 that do not contain consecutive 1s.\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 2",
+            "output": "[\"00\", \"01\", \"10\"]",
+            "explanation": "All binary strings of length 2 that do not contain consecutive 1s."
+        }
+    ]
+}

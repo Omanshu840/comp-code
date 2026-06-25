@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an undirected Graph consisting of V vertices numbered from 0 to V-1 and E edges. The ith edge is represented by [ai,bi], denoting a edge between vertex ai and bi. We say two vertices u and v belong to a same component if there is a path from u to v or v to u. Find the number of connected components in the graph.",
+    "examples": [
+        {
+            "input": "V=4, edges=[[0,1],[1,2]]",
+            "output": "2",
+            "explanation": "Vertices {0,1,2} forms the first component and vertex 3 forms the second component."
+        },
+        {
+            "input": "V = 7, edges = [[0, 1], [1, 2], [2, 3], [4, 5]]",
+            "output": "3",
+            "explanation": "The edges [0, 1], [1, 2], [2, 3] form a connected component with vertices {0, 1, 2, 3}\nThe edge [4, 5] forms another connected component with vertices {4, 5}.\nTherefore, the graph has 3 connected components: {0, 1, 2, 3}, {4, 5}, and the isolated vertices {6}."
+        }
+    ]
+}

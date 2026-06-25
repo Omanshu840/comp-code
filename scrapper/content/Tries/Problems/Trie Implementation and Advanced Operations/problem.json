@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement \"TRIEâ data structure from scratch with the following functions.\n\nTrie(): Initialize the object of this âTRIEâ data structure.\ninsert(âWORDâ): Insert the string âWORDâ into this âTRIEâ data structure.\ncountWordsEqualTo(âWORDâ): Return how many times this âWORDâ is present in this âTRIEâ.\ncountWordsStartingWith(âPREFIXâ): Return how many words are there in this âTRIEâ that have the string âPREFIXâ as a prefix.\nerase(âWORDâ): Delete one occurrence of the string âWORDâ from the âTRIEâ.",
+    "examples": [
+        {
+            "input": "[\"Trie\", \"insert\", \"countWordsEqualTo\", \"insert\", \"countWordsStartingWith\", \"erase\", \"countWordsStartingWith\"]  \n[ [], [\"apple\"], [\"apple\"], [\"app\"], [\"app\"], [\"apple\"], [\"app\"] ]",
+            "output": "[null, null, 1, null, 2, null, 1]",
+            "explanation": "- Trie trie = new Trie()  \n- trie.insert(\"apple\")  \n- trie.countWordsEqualTo(\"apple\")  // returns 1  \n- trie.insert(\"app\")  \n- trie.countWordsStartingWith(\"app\") // returns 2  \n- trie.erase(\"apple\")  \n- trie.countWordsStartingWith(\"app\")   // returns 1  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"Trie\", \"insert\", \"countWordsEqualTo\", \"insert\", \"erase\", \"countWordsStartingWith\"]  \n[ [], [\"mango\"], [\"apple\"], [\"app\"], [\"app\"], [\"mango\"] ]",
+            "output": "[null, null, 0, null, null, 1]",
+            "explanation": "- Trie trie = new Trie()  \n- trie.insert(\"mango\")  \n- trie.countWordsEqualTo(\"apple\")  // returns 0  \n- trie.insert(\"app\")  \n- trie.erase(\"app\")  \n- trie.countWordsStartingWith(\"mango\") // returns 1"
+        }
+    ]
+}

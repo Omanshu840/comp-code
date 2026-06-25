@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an n * m matrix grid where each element can either be 0 or 1. You need to find the shortest distance between a given source cell to a destination cell. The path can only be created out of a cell if its value is 1. \n\nIf the path is not possible between the source cell and the destination cell, then return -1.\n\nNote: You can move into an adjacent cell if that adjacent cell is filled with element 1. Two cells are adjacent if they share a side. In other words, you can move in one of four directions, Up, Down, Left, and Right.",
+    "examples": [
+        {
+            "input": "grid[][] = {{1, 1, 1, 1},  \n                {1, 1, 0, 1},  \n                {1, 1, 1, 1},  \n                {1, 1, 0, 0},  \n                {1, 0, 0, 1}}  \nsource = {0, 1}, destination = {2, 2}",
+            "output": "3",
+            "explanation": "The shortest path from source to destination goes through cells (0,1) â (1,1) â (2,1) â (2,2), total 3 steps.\n\n\nExample 2:"
+        },
+        {
+            "input": "grid[][] = {{1, 1, 1, 1, 1},  \n                {1, 1, 1, 1, 1},  \n                {1, 1, 1, 1, 0},  \n                {1, 0, 1, 0, 1}}  \nsource = {0, 0}, destination = {3, 4}",
+            "output": "-1",
+            "explanation": "There is no valid path from the source to the destination, so the output is -1."
+        }
+    ]
+}

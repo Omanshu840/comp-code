@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array where each element represents the maximum number of steps you can jump forward from that element, return true if we can reach the last index starting from the first index. Otherwise, return false.",
+    "examples": [
+        {
+            "input": "nums = [2, 3, 1, 0, 4]",
+            "output": "True",
+            "explanation": "We start at index 0, with value 2 this means we can jump to index 1 or 2.\nFrom index 1, with value 3, we can jump to index 2, 3, or 4. However, if we jump to index 2 with value 1, we can only jump to index 3.\nSo we jump to index 1 then index 4 reaching the end of the array.\nHence, we return true.\n\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [3, 2, 1, 0, 4]",
+            "output": "False",
+            "explanation": "We start at index 0, with value 3 which means we can jump to index 1, 2, or 3.\nFrom index 1, with value 2 we can only jump to index 2 or 3.\nFrom index 2, with value 1 we can only jump to index 3.\nFrom index 3, with value 0 we cannot jump any further.\nHence, from all possibilities we are unable to jump to the last index so we return false."
+        }
+    ]
+}

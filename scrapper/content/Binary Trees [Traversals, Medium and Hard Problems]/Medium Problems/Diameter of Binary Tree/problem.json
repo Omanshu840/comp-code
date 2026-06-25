@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the root of the Binary Tree, return the length of its diameter.\nThe Diameter of a Binary Tree is the longest distance between any two nodes of that tree. This path may or may not pass through the root.",
+    "examples": [
+        {
+            "input": "",
+            "output": "4",
+            "explanation": "The distance between the leftmost node 4 and the rightmost node 3 is 4, since this is the longest horizontal distance of the binary tree, hence its diameter.\n\n\n\n\n\n\nExample 2:"
+        },
+        {
+            "input": "",
+            "output": "7",
+            "explanation": "The distance between the leftmost node 4 and the rightmost node 3 is 4, since this is the longest horizontal distance of the binary tree, hence its diameter."
+        }
+    ]
+}

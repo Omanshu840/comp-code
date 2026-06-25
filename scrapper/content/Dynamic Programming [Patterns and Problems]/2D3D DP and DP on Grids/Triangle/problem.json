@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a 2D integer array named triangle with n rows. Its first row has 1 element and each succeeding row has one more element in it than the row above it. Return the minimum falling path sum from the first row to the last. Movement is allowed only to the bottom or bottom-right cell from the current cell.",
+    "examples": [
+        {
+            "input": "triangle = [[1], [1, 2], [1, 2, 4]]",
+            "output": "3",
+            "explanation": "One possible route can be: \nStart at 1st row -> bottom -> bottom."
+        },
+        {
+            "input": "triangle = [[1], [4, 7], [4,10, 50], [-50, 5, 6, -100]]",
+            "output": "-42",
+            "explanation": "One possible route can be:\nStart at 1st row -> bottom-right -> bottom-right -> bottom-right"
+        }
+    ]
+}

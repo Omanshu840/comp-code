@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 <= i <= j < n.",
+    "examples": [
+        {
+            "input": "nums = [3, 9, 10, 5, 1]",
+            "output": "15",
+            "explanation": "The maximum XOR value is 10 XOR 5 = 15."
+        },
+        {
+            "input": "nums = [26, 49, 30, 15, 69]",
+            "output": "116",
+            "explanation": "The maximum XOR value is 69 XOR 49 = 116."
+        }
+    ]
+}

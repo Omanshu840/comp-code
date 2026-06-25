@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an undirected graph, return a vector of all nodes by traversing the graph using depth-first search (DFS).",
+    "examples": [
+        {
+            "input": "V = 5, adj = [[2,3], [1,4,5], [1], [2,5], [4,5]]",
+            "output": "1 2 4 5 3",
+            "explanation": "We traverse the entire graph using DFS technique."
+        },
+        {
+            "input": "V = 4, adj = [[2,3], [1,4], [1], [2]]",
+            "output": "1 2 4 3",
+            "explanation": "We traverse the entire graph using DFS technique."
+        }
+    ]
+}

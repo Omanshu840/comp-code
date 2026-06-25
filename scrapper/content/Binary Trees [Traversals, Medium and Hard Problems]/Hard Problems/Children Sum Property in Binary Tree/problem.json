@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, convert the value of its nodes to follow the Children Sum Property.\nThe Children Sum Property in a binary tree states that for every node, the sum of its children's values (if they exist) should be equal to the node's value. If a child is missing, it is considered as having a value of 0.",
+    "examples": [
+        {
+            "input": "Binary Tree: 2 35 10 2 3 5 2",
+            "output": "Binary Tree: 45 35 10 30 5 8 2",
+            "explanation": "We cannot decrement the value of the node but only increment. There are many different ways to do this but we have to ensure that we are only increasing the values of the nodes in such a way that its value is equal to the sum of its left and right children.\n\n\nExample 2:"
+        },
+        {
+            "input": "Binary Tree: 50 7 2 3 5 1 30",
+            "output": "Binary Tree: 50 55 5 86 1 31 30",
+            "explanation": "We modify the tree in such a way that the value of each node becomes the value of its left and right children. If a node is a left or right child and its parent is of a greater value, since we cannot decrease the value of the parent, we increase the value of the children nodes so that the Binary Tree follows the children sum property."
+        }
+    ]
+}

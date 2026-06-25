@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Create a simplified version of a social media platform similar to Twitter. Users should be able to post tweets, follow or unfollow other users, and view the 10 most recent tweets in their news feed.\nImplement the Twitter class as follows: Twitter(): Initializes the Twitter object. void postTweet(int userId, int tweetId): Composes a new tweet with ID tweetId by the user userId. All tweetIds will be unique. List<Integer> getNewsFeed(int userId): Retrieves the 10 most recent tweet IDs in the user's news feed. The news feed should only show posts from users the user follows or from the user themself, with tweets arranged from most recent to least recent. void follow(int followerId, int followeeId): The user with ID followerId started following the user with ID followeeId. Input will be given such that followerId is not already following followeeId at the time of function call. void unfollow(int followerId, int followeeId): The user with ID followerId unfollowed the user with ID followeeId. Input will be given such that followerId is following followeeId at the time of function call.",
+    "examples": [
+        {
+            "input": "[postTweet(1, 2), postTweet(2, 6), getNewsFeed(1), follow(1, 2), getNewsFeed(1), unfollow(1, 2), postTweet(1,7), getNewsFeed(1)]",
+            "output": "[null, null, [2], null, [6, 2], null, [7, 2]]",
+            "explanation": "postTweet(1, 2): User with userId 1 posts tweet with tweetId 2.\npostTweet(2, 6): User with userId 2 posts tweet with tweetId 6.\ngetNewsFeed(1): Outputs feed of userId 1 = [2].\nfollow(1, 2): User with userId 1 follows user with userId 2.\ngetNewsFeed(1): Outputs feed of userId 1 = [6, 2], it contains the news of userId 2 as well.\nunfollow(1, 2): User with userId 1 unfollows user with userId 2.\npostTweet(1,7): User with userId 1 posts tweet with tweetId 7.\ngetNewsFeed(1): Outputs feed of userId 1 = [7, 2]."
+        },
+        {
+            "input": "[follow(2, 1), follow(1, 2), postTweet(1, 6), getNewsFeed(1), getNewsFeed(2), unfollow(2, 1), getNewsFeed(2)]",
+            "output": "[null, null, null, [6], [6], null, []]",
+            "explanation": "follow(2, 1): User with userId 2 follows user with userId 1.\nfollow(1, 2): User with userId 1 follows user with userId 2.\npostTweet(1, 6): User with userId 1 posts tweet with tweetId 6.\ngetNewsFeed(1): Outputs feed of userId 1 = [6].\ngetNewsFeed(2): Outputs feed of userId 2 = [6]. This includes tweets of userId 1 as well.\nunfollow(2, 1): User with userId 2 unfollows user with userId 1.\ngetNewsFeed(2): Outputs feed of userId 2 = [], its empty as userId 2 no longer follows userId 1"
+        }
+    ]
+}

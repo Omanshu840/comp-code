@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given an array âARRâ with N positive integers. We need to find if there is a subset in âARRâ with a sum equal to K. If there is, return true else return false.",
+    "examples": [
+        {
+            "input": "N = 4, ARR = [4, 3, 5, 2], K = 6",
+            "output": "true",
+            "explanation": "One possible subset with sum = 6 is [4, 2]. Thereâs also [3, 3] but that doesnât exist in the array. As soon as we find one subset whose sum is equal to K, the answer is true."
+        },
+        {
+            "input": "N = 3, ARR = [1, 2, 5], K = 4",
+            "output": "false",
+            "explanation": "Possible subsets and their sums: [1] â 1, [2] â 2, [5] â 5, [1,2] â 3, [1,5] â 6, [2,5] â 7, [1,2,5] â 8. None of them equal 4, so the answer is false."
+        }
+    ]
+}

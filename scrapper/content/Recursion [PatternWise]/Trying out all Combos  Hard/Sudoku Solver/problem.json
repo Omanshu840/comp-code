@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Create a program that fills in the blank cells in a Sudoku puzzle to solve it.\n\n\n\nEvery sudoku solution needs to follow to these guidelines:\n\n\n\n1) In every row, the numbers 1 through 9 must appear exactly once.\n\n2) In every column, the numbers 1 through 9 must appear exactly once.\n\n3) In each of the grid's nine 3x3 sub-boxes, the numbers 1 through 9 must appear exactly once.\n\n\n\nEmpty cells are indicated by the '.' character. .",
+    "examples": [
+        {
+            "input": "",
+            "output": "",
+            "explanation": "The output is a valid Sudoku solution that fills in all empty cells such that each number 1 through 9 appears exactly once in every row, column, and 3x3 sub-box."
+        },
+        {
+            "input": "",
+            "output": "",
+            "explanation": "The output is one of the possible valid Sudoku solutions that fills all empty cells following the Sudoku rules."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string s, find the minimum number of insertions needed to make it a palindrome. A palindrome is a sequence that reads the same backward as forward. You can insert characters at any position in the string.",
+    "examples": [
+        {
+            "input": "s = \"abcaa\"",
+            "output": "2",
+            "explanation": "Insert 2 characters \"c\", and \"b\" to make \"abcacba\", which is a palindrome."
+        },
+        {
+            "input": "s = \"ba\"",
+            "output": "1",
+            "explanation": "Insert \"a\" at the beginning to make \"aba\", which is a palindrome."
+        }
+    ]
+}

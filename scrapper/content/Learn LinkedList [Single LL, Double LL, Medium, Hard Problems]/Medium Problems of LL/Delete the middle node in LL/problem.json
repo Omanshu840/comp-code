@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a linked list of integers, delete the middle node of the linked list and return the modified head. However, if the linked list has an even number of nodes, delete the second middle node.",
+    "examples": [
+        {
+            "input": "1->2->3->4->5",
+            "output": "1->2->4->5",
+            "explanation": "Node with value 3 is at the middle node and deleted."
+        },
+        {
+            "input": "1->2->3->4",
+            "output": "1->2->4",
+            "explanation": "The linked list has an even number of nodes hence we delete the second middle node which is 3."
+        }
+    ]
+}

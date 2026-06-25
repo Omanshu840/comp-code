@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, convert it to a Linked List where the linked list nodes follow the same order as the pre-order traversal of the binary tree.\n\nUse the right pointer of the Binary Tree as the ânextâ pointer for the linked list and set the left pointer to null. Do this in place and do not create extra nodes.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 5 3 4 -1 6 -1 -1 -1 -1 7",
+            "output": "1 -1 2 -1 3 -1 4 -1 5 -1 6 -1 7",
+            "explanation": "The given binary tree has a preorder traversal order of [1, 2, 3, 4, 5, 6, 7]. To flatten the tree, we convert it into a linked list. In this linked list, the nodes follow the same order as the preorder traversal. The right pointer of each node in the linked list serves the function of the 'next' pointer. Additionally, we set the left pointer of each node to null. This process is done in place, modifying the existing binary tree structure to achieve the desired linked list representation.\n\n\nExample 2:"
+        },
+        {
+            "input": "Binary Tree: 15 40 62 -1 -1 10 20",
+            "output": "15 -1 40 -1 62 -1 10 -1 20",
+            "explanation": "The given binary tree has a preorder traversal order of [15, 40, 62, 10, 20]. To flatten the tree, we convert it into a linked list. The nodes follow the same order as the preorder traversal. The right pointer of each node in the linked list serves as the 'next' pointer. The left pointer of each node is set to null. This process modifies the existing binary tree structure to achieve the desired linked list representation."
+        }
+    ]
+}

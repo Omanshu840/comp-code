@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a sorted array containing N integers and a number X, you have to find the occurrences of X in the given array.",
+    "examples": [
+        {
+            "input": "N = 7,  X = 3 , array[] = {2, 2 , 3 , 3 , 3 , 3 , 4}",
+            "output": "4",
+            "explanation": "3 is occurring 4 times in \nthe given array so it is our answer.\n\n\nExample 2:"
+        },
+        {
+            "input": "N = 8,  X = 2 , array[] = {1, 1, 2, 2, 2, 2, 2, 3}",
+            "output": "5",
+            "explanation": "2 is occurring 5 times in the given array so it is our answer."
+        }
+    ]
+}

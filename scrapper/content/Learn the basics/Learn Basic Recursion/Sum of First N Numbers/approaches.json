@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Brute Force Approach",
+        "intuition_and_algorithm": "The most straightforward way to find the sum of the first N natural numbers is to iterate from 1 to N and keep adding each number to a running total. This approach is beginner-friendly and easy to understand because it directly mimics the problem definition. However, it is less efficient than the formula-based approach since it requires looping through all numbers, which means more time complexity when N is large.\n\n\n\n Initialize a variable to store the sum as 0. Start a loop from 1 and go up to the given number. In each iteration, add the current number to the sum. After the loop finishes, the sum variable will hold the result. Return or print the sum.",
+        "images": [],
+        "complexities": {
+            "time": "O(N),We iterate from 1 to N once, performing a constant-time addition operation in each iteration, resulting in linear time complexity.",
+            "space": "O(1),We only use a few variables to store the sum and loop counter, so the space usage remains constant regardless of N."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Function to find sum of first N natural numbers using loop\n    int sumOfNaturalNumbers(int N) {\n        // Initialize sum to 0\n        int sum = 0;\n\n        // Loop from 1 to N\n        for (int i = 1; i <= N; i++) {\n            // Add current number to sum\n            sum += i;\n        }\n\n        // Return the computed sum\n        return sum;\n    }\n};\n\n// Driver code\nint main() {\n    // Create object of Solution class\n    Solution obj;\n\n    // Input value for N\n    int N;\n    cin >> N;\n\n    // Call the function and store the result\n    int result = obj.sumOfNaturalNumbers(N);\n\n    // Print the result\n    cout << result << endl;\n    return 0;\n}",
+            "java": "import.java.util.*;\nclass Solution {\n    // Function to find sum of first N natural numbers using loop\n    public int sumOfNaturalNumbers(int N) {\n        // Initialize sum to 0\n        int sum = 0;\n\n        // Loop from 1 to N\n        for (int i = 1; i <= N; i++) {\n            // Add current number to sum\n            sum += i;\n        }\n\n        // Return the computed sum\n        return sum;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Create object of Solution class\n        Solution obj = new Solution();\n\n        // Input value for N\n        java.util.Scanner sc = new java.util.Scanner(System.in);\n        int N = sc.nextInt();\n\n        // Call the function and store the result\n        int result = obj.sumOfNaturalNumbers(N);\n\n        // Print the result\n        System.out.println(result);\n\n        sc.close();\n    }\n}",
+            "python": "class Solution:\n    # Function to find sum of first N natural numbers using loop\n    def sumOfNaturalNumbers(self, N):\n        # Initialize sum to 0\n        total = 0\n        \n        # Loop from 1 to N\n        for i in range(1, N + 1):\n            # Add current number to sum\n            total += i\n        \n        # Return the computed sum\n        return total\n\n# Driver code\nif __name__ == \"__main__\":\n    # Create object of Solution class\n    obj = Solution()\n    \n    # Input value for N\n    N = int(input())\n    \n    # Call the function and store the result\n    result = obj.sumOfNaturalNumbers(N)\n    \n    # Print the result\n    print(result)",
+            "javascript": "class Solution {\n    // Function to find sum of first N natural numbers using loop\n    sumOfNaturalNumbers(N) {\n        // Initialize sum to 0\n        let sum = 0;\n\n        // Loop from 1 to N\n        for (let i = 1; i <= N; i++) {\n            // Add current number to sum\n            sum += i;\n        }\n\n        // Return the computed sum\n        return sum;\n    }\n}\n\n// Driver code\nconst obj = new Solution();\n\n// Input value for N\nconst fs = require('fs');\nconst N = parseInt(fs.readFileSync(0, 'utf-8').trim());\n\n// Call the function and store the result\nconst result = obj.sumOfNaturalNumbers(N);\n\n// Print the result\nconsole.log(result);"
+        }
+    },
+    {
+        "name": "Using Formula",
+        "intuition_and_algorithm": "We can use the formula for the sum of N numbers, i.e N(N+1)/2.\n\nTake a variable sum.Initialize it with N(N+1)/2, where N is a given number.",
+        "images": [],
+        "complexities": {
+            "time": "O(1)",
+            "space": "O(1)"
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Function to find sum of first N natural numbers using formula\n    int sumOfNaturalNumbers(int N) {\n        // Apply formula directly\n        return (N * (N + 1)) / 2;\n    }\n};\n\n// Driver code\nint main() {\n    Solution obj;\n    int N;\n    cin >> N;\n    cout << obj.sumOfNaturalNumbers(N) << endl;\n    return 0;\n}",
+            "java": "import.java.util.*;\nclass Solution {\n    // Function to find sum of first N natural numbers using formula\n    public int sumOfNaturalNumbers(int N) {\n        // Apply formula directly\n        return (N * (N + 1)) / 2;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution obj = new Solution();\n        java.util.Scanner sc = new java.util.Scanner(System.in);\n        int N = sc.nextInt();\n        System.out.println(obj.sumOfNaturalNumbers(N));\n        sc.close();\n    }\n}",
+            "python": "class Solution:\n    # Function to find sum of first N natural numbers using formula\n    def sumOfNaturalNumbers(self, N):\n        # Apply formula directly\n        return (N * (N + 1)) // 2\n\n# Driver code\nif __name__ == \"__main__\":\n    obj = Solution()\n    N = int(input())\n    print(obj.sumOfNaturalNumbers(N))",
+            "javascript": "class Solution {\n    // Function to find sum of first N natural numbers using formula\n    sumOfNaturalNumbers(N) {\n        // Apply formula directly\n        return (N * (N + 1)) / 2;\n    }\n}\n\n// Driver code\nconst obj = new Solution();\nconst fs = require('fs');\nconst N = parseInt(fs.readFileSync(0, 'utf-8').trim());\nconsole.log(obj.sumOfNaturalNumbers(N));"
+        }
+    },
+    {
+        "name": "Recursive Approach",
+        "intuition_and_algorithm": "Instead of looping, we can solve the problem using recursion by defining the sum of the first N natural numbers as:\n\nsum(N) = N + sum(N-1), with the base case sum(1) = 1.\n\n\nRecursive way of calculating the sum of first N Natural Numbers:\n\n\n\n\nDefine a recursive function to calculate the sum of natural numbers.\nIf the input is the smallest natural number, return it directly as the base case.\nOtherwise, add the current number to the result of calling the same function with the previous number.\nRepeat this process until the base case is reached.\nThe results from each call combine to give the final sum.",
+        "images": [
+            "https://static.takeuforward.org/content/1.png-YiBNcjoD",
+            "https://static.takeuforward.org/content/2.png-fSUd2roz"
+        ],
+        "complexities": {
+            "time": "O(N),The function is called N times, with each call performing O(1) work.",
+            "space": "O(N),Due to recursive function calls being stored on the call stack, which grows linearly with N."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Recursive function to find sum of first N natural numbers\n    int sumOfNaturalNumbers(int N) {\n        // Base case: if N is 1, return 1\n        if (N == 1) {\n            return 1;\n        }\n        // Recursive case: current number + sum of previous numbers\n        return N + sumOfNaturalNumbers(N - 1);\n    }\n};\n\n// Driver code\nint main() {\n    Solution obj;\n    int N;\n    cin >> N;\n    cout << obj.sumOfNaturalNumbers(N) << endl;\n    return 0;\n}",
+            "java": "class Solution {\n    // Recursive function to find sum of first N natural numbers\n    public int sumOfNaturalNumbers(int N) {\n        // Base case: if N is 1, return 1\n        if (N == 1) {\n            return 1;\n        }\n        // Recursive case: current number + sum of previous numbers\n        return N + sumOfNaturalNumbers(N - 1);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution obj = new Solution();\n        java.util.Scanner sc = new java.util.Scanner(System.in);\n        int N = sc.nextInt();\n        System.out.println(obj.sumOfNaturalNumbers(N));\n        sc.close();\n    }\n}",
+            "python": "class Solution:\n    # Recursive function to find sum of first N natural numbers\n    def sumOfNaturalNumbers(self, N):\n        # Base case: if N is 1, return 1\n        if N == 1:\n            return 1\n        # Recursive case: current number + sum of previous numbers\n        return N + self.sumOfNaturalNumbers(N - 1)\n\n# Driver code\nif __name__ == \"__main__\":\n    obj = Solution()\n    N = int(input())\n    print(obj.sumOfNaturalNumbers(N))",
+            "javascript": "class Solution {\n    // Recursive function to find sum of first N natural numbers\n    sumOfNaturalNumbers(N) {\n        // Base case: if N is 1, return 1\n        if (N === 1) {\n            return 1;\n        }\n        // Recursive case: current number + sum of previous numbers\n        return N + this.sumOfNaturalNumbers(N - 1);\n    }\n}\n\n// Driver code\nconst obj = new Solution();\nconst fs = require('fs');\nconst N = parseInt(fs.readFileSync(0, 'utf-8').trim());\nconsole.log(obj.sumOfNaturalNumbers(N));"
+        }
+    }
+]

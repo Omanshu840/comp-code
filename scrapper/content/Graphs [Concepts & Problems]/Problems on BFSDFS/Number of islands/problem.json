@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a boolean 2D matrix grid of size N x M. You have to find the number of distinct islands where a group of connected 1s (horizontally or vertically) forms an island. Two islands are considered to be distinct if and only if one island is equal to another (not rotated or reflected).",
+    "examples": [
+        {
+            "input": "",
+            "output": "1",
+            "explanation": "Island at the top left corner is the same as the island at the bottom right corner."
+        },
+        {
+            "input": "",
+            "output": "3",
+            "explanation": "Island at the top right corner is the same as the island at the bottom left corner."
+        }
+    ]
+}

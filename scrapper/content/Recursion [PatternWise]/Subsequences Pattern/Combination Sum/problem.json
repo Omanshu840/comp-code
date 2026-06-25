@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "array = [2,3,6,7], target = 7",
+            "output": "[[2,2,3],[7]]",
+            "explanation": "2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.\n             7 is a candidate, and 7 = 7.\n             These are the only two combinations.\n\n\nExample 2:"
+        },
+        {
+            "input": "array = [2], target = 1",
+            "output": "[]\nExplaination: No combination is possible.",
+            "explanation": ""
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a linked list that may contain a cycle, return the starting point of that cycle. If there is no cycle in the linked list return null.",
+    "examples": [
+        {
+            "input": "LL: 1  2  3  4  5",
+            "output": "3",
+            "explanation": "This linked list contains a loop of size 3 starting at node with value 3."
+        },
+        {
+            "input": "LL: 1 -> 2 -> 3 -> 4 -> 9 -> 9",
+            "output": "NULL",
+            "explanation": "This linked list does not contain a loop hence has no starting point"
+        }
+    ]
+}

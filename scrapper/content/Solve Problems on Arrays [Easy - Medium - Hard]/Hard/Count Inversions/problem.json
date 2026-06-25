@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Given an array of N integers, count the inversion of the array (using\n    merge-sort).",
+    "examples": []
+}

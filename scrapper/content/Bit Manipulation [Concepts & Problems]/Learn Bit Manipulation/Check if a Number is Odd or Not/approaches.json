@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "Odd numbers leave a remainder when divided by 2, while even numbers do not.\nUse this property to determine the parity of a number.\nIf there's a remainder, the number is odd; if not, it's even.\nThis is a simple and direct way to distinguish between even and odd values.",
+        "images": [],
+        "complexities": {
+            "time": "O(1)  â The modulus operation takes constant time.",
+            "space": "O(1)  â No extra space is required."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Function to check if a number is odd\n    bool isOdd(int n) {\n        return (n % 2 != 0);  // Return true if the number is odd, else false\n    }\n};\n\nint main() {\n    Solution sol;\n    int num = 7;\n\n    if (sol.isOdd(num)) {\n        cout << num << \" is odd.\" << endl;\n    } else {\n        cout << num << \" is not odd.\" << endl;\n    }\n\n    return 0;\n}",
+            "java": "class Solution {\n    // Function to check if a number is odd\n    public boolean isOdd(int n) {\n        return n % 2 != 0;  // Return true if the number is odd, else false\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int num = 7;\n\n        if (sol.isOdd(num)) {\n            System.out.println(num + \" is odd.\");\n        } else {\n            System.out.println(num + \" is not odd.\");\n        }\n    }\n}",
+            "python": "class Solution:\n    # Function to check if a number is odd\n    def isOdd(self, n):\n        return n % 2 != 0  # Return True if the number is odd, else False\n\nif __name__ == \"__main__\":\n    sol = Solution()\n    num = 7\n\n    if sol.isOdd(num):\n        print(f\"{num} is odd.\")\n    else:\n        print(f\"{num} is not odd.\")",
+            "javascript": "class Solution {\n    // Function to check if a number is odd\n    isOdd(n) {\n        return n % 2 !== 0;  // Return true if the number is odd, else false\n    }\n}\n\n\nconst sol = new Solution();\nconst num = 7;\n\nif (sol.isOdd(num)) {\n    console.log(`${num} is odd.`);\n} else {\n    console.log(`${num} is not odd.`);\n}"
+        }
+    }
+]

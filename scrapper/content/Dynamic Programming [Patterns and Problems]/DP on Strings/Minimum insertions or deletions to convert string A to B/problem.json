@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given two strings, str1 and str2. We are allowed the following operations:\n1. Delete any number of characters from string str1.2. Insert any number of characters in string str1.\nReturn the minimum number of operations required to convert str1 to str2.",
+    "examples": [
+        {
+            "input": "str1 = \"kitten\", str2 = \"sitting\"",
+            "output": "5",
+            "explanation": "To transform \"kitten\" to \"sitting\", delete \"k\" and insert \"s\" to get \"sitten\", then delete 'e' and insert \"i\" to get \"sittin\", and insert \"g\" at the end to get \"sitting\"."
+        },
+        {
+            "input": "str1 = \"flaw\", str2 = \"lawn\"",
+            "output": "2",
+            "explanation": "To transform \"flaw\" to \"lawn\", delete \"f\" and insert \"n\" at the end. Hence minimum number of operations required is 2\"."
+        }
+    ]
+}

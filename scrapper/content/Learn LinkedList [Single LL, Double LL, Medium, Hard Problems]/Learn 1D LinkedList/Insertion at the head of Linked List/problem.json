@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a linked list and an integer value val, insert a new node with that value at the beginning (before the head) of the list and return the updated linked list.",
+    "examples": [
+        {
+            "input": "0->1->2, val = 5",
+            "output": "5->0->1->2",
+            "explanation": "We need to insert the value 5 before the head of the given Linked List."
+        },
+        {
+            "input": "12->5->8->7, val = 4",
+            "output": "4->12->5->8->7",
+            "explanation": "We need to insert the value 4 before the head of the given Linked List."
+        }
+    ]
+}

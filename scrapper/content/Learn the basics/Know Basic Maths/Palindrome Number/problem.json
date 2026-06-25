@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer N, return true if it is a palindrome else return false.",
+    "examples": [
+        {
+            "input": "N = 4554",
+            "output": "Palindrome Number",
+            "explanation": "The reverse of 4554 is 4554 and therefore it is palindrome number\n                                        \nExample 2:"
+        },
+        {
+            "input": "N = 7789",
+            "output": "Not Palindrome",
+            "explanation": "The reverse of number 7789 is 9877 and therefore it is not palindrome"
+        }
+    ]
+}

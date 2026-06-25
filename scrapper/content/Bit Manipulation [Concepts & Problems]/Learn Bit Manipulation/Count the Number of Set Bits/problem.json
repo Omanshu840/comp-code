@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer n, return the number of set bits (1s) in its binary representation. \n    Can you solve it in O(log n) time complexity?",
+    "examples": [
+        {
+            "input": "n = 5",
+            "output": "2",
+            "explanation": "The binary representation of 5 is 101, which has 2 set bits.\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 15",
+            "output": "4",
+            "explanation": "The binary representation of 15 is 1111, which has 4 set bits."
+        }
+    ]
+}

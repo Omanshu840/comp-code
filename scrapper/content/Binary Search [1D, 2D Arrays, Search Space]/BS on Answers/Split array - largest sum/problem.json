@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Given an integer array âAâ of size âNâ and an integer âK'. Split the array âAâ into âKâ non-empty subarrays such that the largest sum of any subarray is minimized. Your task is to return the minimized largest sum of the split.\nA subarray is a contiguous part of the array.",
+    "examples": []
+}

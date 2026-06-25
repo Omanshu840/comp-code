@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two integers a and b, swap them in-place using only 2 variables (without using a temporary variable).",
+    "examples": [
+        {
+            "input": "a = 5, b = 10",
+            "output": "a = 10, b = 5\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "a = -100, b = -200",
+            "output": "a = -200, b = -100",
+            "explanation": ""
+        }
+    ]
+}

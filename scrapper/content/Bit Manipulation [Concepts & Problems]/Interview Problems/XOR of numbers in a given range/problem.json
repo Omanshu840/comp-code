@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two integers L and R. Find the XOR of the elements in the range [L , R].",
+    "examples": [
+        {
+            "input": "L = 3 , R = 5",
+            "output": "2",
+            "explanation": "answer = (3 ^ 4 ^ 5) = 2.\n\n\nExample 2:"
+        },
+        {
+            "input": "L = 1, R = 3",
+            "output": "0",
+            "explanation": "answer = (1 ^ 2 ^ 3) = 0."
+        }
+    ]
+}

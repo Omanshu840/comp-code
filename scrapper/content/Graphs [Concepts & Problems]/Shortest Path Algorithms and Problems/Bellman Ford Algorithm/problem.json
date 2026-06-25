@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Given a weighted, directed and connected graph of V vertices and E edges, Find the shortest distance of all the vertices from the source vertex S.\nNote: If the Graph contains a negative cycle then return an array consisting of only -1.",
+    "examples": []
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a positive integer n, set the rightmost unset (0) bit of its binary representation to 1 and return the resulting integer. \n\nIf all bits are already set, return the number as it is.",
+    "examples": [
+        {
+            "input": "n = 10 (binary: 1010)",
+            "output": "11 (binary: 1011)",
+            "explanation": "The rightmost unset bit is the least significant bit (LSB). Setting it to 1 gives 1011 = 11.\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 7 (binary: 111)",
+            "output": "7 (binary: 111)",
+            "explanation": "All bits are already set to 1, so the number remains the same."
+        }
+    ]
+}

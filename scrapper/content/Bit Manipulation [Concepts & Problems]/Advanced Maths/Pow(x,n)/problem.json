@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement the power function pow(x, n) , which calculates the x raised to n i.e. xn.",
+    "examples": [
+        {
+            "input": "x = 2.0000, n = 10",
+            "output": "1024.0000",
+            "explanation": "The answer is calculated as 2^10, which equals 1024.\n\n\nExample 2:"
+        },
+        {
+            "input": "x = 2.0000, n = -2",
+            "output": "0.2500",
+            "explanation": "The answer is calculated as 2^(-2), which is equal to 1/4 = 0.25."
+        }
+    ]
+}

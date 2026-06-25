@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a linked list where every node in the linked list contains two pointers:\n\nânextâ which points to the next node in the list.\nârandomâ which points to a random node in the list or ânullâ.",
+    "examples": [
+        {
+            "input": "[[1, -1], [2, 0], [3, 4], [4, 1], [5, 2]]",
+            "output": "1 2 3 4 5, true",
+            "explanation": "All the nodes in the new list have same corresponding values as original nodes.\nAll the random pointers point to their corresponding nodes in the new list.\n'true' represents that the nodes and references were created new.\n\nExample 2:"
+        },
+        {
+            "input": "[[5, -1], [3, -1], [2, 1], [1, 1]]",
+            "output": "5 3 2 1, true",
+            "explanation": "All the nodes in the new list have same corresponding values as original nodes.\nAll the random pointers point to their corresponding nodes in the new list.\n'true' represents that the nodes and references were created new.\n[[5, -1], [3, -1], [2, -1], [1, -1]] will be incorrect, although it has the same values."
+        }
+    ]
+}

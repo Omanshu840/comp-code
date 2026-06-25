@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer array arr of size N, sorted in ascending order (with distinct values), the array is rotated at any index which is unknown. Find the minimum element in the array.",
+    "examples": [
+        {
+            "input": "arr = [4,5,6,7,0,1,2,3]",
+            "output": "0",
+            "explanation": "The minimum element in the array is 0."
+        },
+        {
+            "input": "arr = [3,4,5,1,2]",
+            "output": "1",
+            "explanation": "The minimum element in the array is 1."
+        }
+    ]
+}

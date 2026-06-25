@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a linked list and an integer value, find out whether the integer is present in the linked list or not. Return true if it is present, or else return false.",
+    "examples": [
+        {
+            "input": "0->1->2, val = 2",
+            "output": "True",
+            "explanation": "Since element 2 is present in the list, return true."
+        },
+        {
+            "input": "12->5->8->7, val = 6",
+            "output": "False",
+            "explanation": "The list does not contain element 6. Therefore, return false."
+        }
+    ]
+}

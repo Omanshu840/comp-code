@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer array nums of size n containing values from [1, n] and each value appears exactly once in the array, except for A, which appears twice and B which is missing.\n\nReturn the values A and B, as an array of size 2, where A appears in the 0-th index and B in the 1st index.\n\nNote: You are not allowed to modify the original array.",
+    "examples": [
+        {
+            "input": "nums = [3, 5, 4, 1, 1]",
+            "output": "[1, 2]",
+            "explanation": "1 appears twice in the array, and 2 is missing from the array. So the output is [1, 2].\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [1, 2, 3, 6, 7, 5, 7]",
+            "output": "[7, 4]",
+            "explanation": "7 appears twice in the array, and 4 is missing from the array. So the output is [7, 4]."
+        }
+    ]
+}

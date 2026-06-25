@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a binary grid of N*M. Find the distance of the nearest 1 in the grid for each cell.",
+    "examples": [
+        {
+            "input": "",
+            "output": "Example 2:",
+            "explanation": ""
+        },
+        {
+            "input": "",
+            "output": "",
+            "explanation": ""
+        }
+    ]
+}

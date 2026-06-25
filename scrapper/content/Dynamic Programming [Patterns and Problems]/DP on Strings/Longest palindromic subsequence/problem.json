@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string, Find the longest palindromic subsequence length in given string.\n\nA palindrome is a sequence that reads the same backwards as forward.\n\nA subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.",
+    "examples": [
+        {
+            "input": "s = \"eeeme\"",
+            "output": "4",
+            "explanation": "The longest palindromic subsequence is \"eeee\", which has a length of 4.\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"annb\"",
+            "output": "2",
+            "explanation": "The longest palindromic subsequence is \"nn\", which has a length of 2."
+        }
+    ]
+}

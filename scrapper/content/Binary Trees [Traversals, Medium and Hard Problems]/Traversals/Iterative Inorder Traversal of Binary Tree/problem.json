@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given root of binary tree, return the Inorder traversal of the binary tree.",
+    "examples": [
+        {
+            "input": "root = [1, 4, null, 4, 2]",
+            "output": "[4, 4, 2, 1]",
+            "explanation": "In this example, the preorder traversal of the binary tree produces the sequence [4, 4, 2, 1].\n\n\nExample 2:"
+        },
+        {
+            "input": "root = [1, null, 2, 3]",
+            "output": "[1, 3, 2]",
+            "explanation": "The preorder traversal of the binary tree results in the sequence [1, 3, 2]."
+        }
+    ]
+}

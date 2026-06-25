@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string num that contains only digits and an integer target, return all possibilities to insert the binary operators '+', '-', and/or '*' between the digits of num so that the resultant expression evaluates to the target value.\n\nNote that operands in the returned expressions should not contain leading zeros.\n\nNote that a number can contain multiple digits.",
+    "examples": [
+        {
+            "input": "num = \"123\", target = 6",
+            "output": "[\"1*2*3\",\"1+2+3\"]",
+            "explanation": "Both \"1*2*3\" and \"1+2+3\" evaluate to 6.\n\n\nExample 2:"
+        },
+        {
+            "input": "num = \"232\", target = 8",
+            "output": "[\"2*3+2\",\"2+3*2\"]",
+            "explanation": "Both \"2*3+2\" and \"2+3*2\" evaluate to 8."
+        }
+    ]
+}

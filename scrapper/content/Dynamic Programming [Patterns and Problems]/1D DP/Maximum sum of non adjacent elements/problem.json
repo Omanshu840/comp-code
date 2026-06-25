@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of N positive integers, we need to return the maximum sum of the subsequence such that no two elements of the subsequence are adjacent elements in the array.\nNote: A subsequence of an array is a list with elements of the array where some elements are deleted (or not deleted at all) and the elements should be in the same order in the subsequence as in the array.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 4]",
+            "output": "5",
+            "explanation": "Subsequence {1,4} gives maximum sum."
+        },
+        {
+            "input": "[2, 1, 4, 9]",
+            "output": "11",
+            "explanation": "Subsequence {2,9} gives maximum sum"
+        }
+    ]
+}

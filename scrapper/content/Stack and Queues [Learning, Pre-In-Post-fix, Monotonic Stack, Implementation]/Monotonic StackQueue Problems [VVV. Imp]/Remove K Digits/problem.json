@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string nums representing a non-negative integer, and an integer k, find the smallest possible integer after removing k digits from num.",
+    "examples": [
+        {
+            "input": "nums = \"541892\", k = 2",
+            "output": "\"1892\"",
+            "explanation": "Removing the two digits 5 and 4 yields the smallest number, 1892.\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = \"1002991\", k = 3",
+            "output": "\"21\"",
+            "explanation": "Remove the three digits 1(leading one), 9, and 9 to form the new number 21(Note that the output must not contain leading zeroes) which is the smallest."
+        }
+    ]
+}

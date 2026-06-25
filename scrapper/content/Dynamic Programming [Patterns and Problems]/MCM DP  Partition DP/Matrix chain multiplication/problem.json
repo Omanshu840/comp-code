@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a chain of matrices A1,..., An denoted by an array of size n+1, find out the minimum number of operations to multiply these n matrices .",
+    "examples": [
+        {
+            "input": "[40, 20, 30, 10, 30]",
+            "output": "26000",
+            "explanation": "Best parenthesization is ( (A1 x (A2 x A3)) x A4 )."
+        },
+        {
+            "input": "[10, 20, 30, 40, 30]",
+            "output": "30000",
+            "explanation": "Optimal parenthesization minimizes cost."
+        }
+    ]
+}

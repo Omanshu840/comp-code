@@ -1,0 +1,15 @@
+{
+    "problem_statement": ".",
+    "examples": [
+        {
+            "input": "arr = [4, 7, 1, 0]",
+            "output": "7 1 0",
+            "explanation": "The rightmost element (0) is always a leader.  \n7 and 1 are greater than the elements to their right, making them leaders as well.\n\n\nExample 2:"
+        },
+        {
+            "input": "arr = [10, 22, 12, 3, 0, 6]",
+            "output": "22 12 6",
+            "explanation": "6 is a leader because there are no elements after it.  \n12 is greater than all the elements to its right (3, 0, 6), and 22 is greater than 12, 3, 0, 6, making them leaders as well."
+        }
+    ]
+}

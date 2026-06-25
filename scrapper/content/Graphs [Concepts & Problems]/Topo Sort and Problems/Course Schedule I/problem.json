@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Problem Statement I (Course Schedule): There are a total of n tasks you have to pick, labeled from 0 to n-1. Some tasks may have prerequisites tasks, for example, to pick task 0 you have to first finish tasks 1, which is expressed as a pair: [0, 1]",
+    "examples": [
+        {
+            "input": "N = 4, P = 3,  array[] = {{1,0},{2,1},{3,2}}",
+            "output": "Yes",
+            "explanation": "It is possible to finish all the tasks in the order : 3 2 1 0.\nFirst, we will finish task 3. Then we will finish task 2, task 1, and task 0."
+        },
+        {
+            "input": "N = 4, P = 4,  array[] = {{1,2},{4,3},{2,4},{4,1}}",
+            "output": "No",
+            "explanation": "It is impossible to finish all the tasks. Letâs analyze the pairs:\nFor pair {1, 2} -> we need to finish task 1 first and then task 2. (order : 1 2).\nFor pair{4, 3} -> we need to finish task 4 first and then task 3. (order: 4 3).\nFor pair {2, 4} -> we need to finish task 2 first and then task 4. (order: 1 2 4 3).\nBut for pair {4, 1} -> we need to finish task 4 first and then task 1 but this pair contradicts the previous pair. So, it is not possible to finish all the tasks."
+        }
+    ]
+}

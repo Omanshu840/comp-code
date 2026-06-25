@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A valid parentheses string is defined by the following rules:\n    It is the empty string \"\".\nIf A is a valid parentheses string, then so is \"(\" + A + \")\".\nIf A and B are valid parentheses strings, then A + B is also valid.\nA primitive valid parentheses string is a non-empty valid string that cannot be split into two or more non-empty valid parentheses strings.\nGiven a valid parentheses string s, your task is to remove the outermost parentheses from every primitive component of s and return the resulting string.",
+    "examples": [
+        {
+            "input": "s = \"((()))\"",
+            "output": "\"(())\"",
+            "explanation": "The input string is a single primitive: \"((()))\".  \nRemoving the outermost layer yields: \"(())\".\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"()(()())(())\"",
+            "output": "\"(()())()\"",
+            "explanation": "Primitive decomposition: \"()\" + \"(()())\" + \"(())\"  \nAfter removing outermost parentheses: \"\" + \"()()\" + \"()\"\nFinal result: \"(()())()\"."
+        }
+    ]
+}

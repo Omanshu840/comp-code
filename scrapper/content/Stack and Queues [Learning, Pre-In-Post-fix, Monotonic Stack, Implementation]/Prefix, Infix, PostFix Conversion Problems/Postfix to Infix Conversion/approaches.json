@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "Traverse the postfix expression from left to right.\nUse a stack to store operands.\nFor each operator, pop two operands, combine them in infix order with parentheses, and push the result back.\nThe final item in the stack will be the infix expression.",
+        "images": [
+            "https://static.takeuforward.org/content/postin1.drawio.png-B5mhYtW5",
+            "https://static.takeuforward.org/content/postin2.drawio.png-o9rSVKkv",
+            "https://static.takeuforward.org/content/postin3.drawio.png-FsiRpEu2",
+            "https://static.takeuforward.org/content/postin4.drawio.png-sKJVU5ZU",
+            "https://static.takeuforward.org/content/postin5.drawio.png-wGkT2rc-",
+            "https://static.takeuforward.org/content/postin6.drawio.png-uMeWTUmQ",
+            "https://static.takeuforward.org/content/postin7.drawio.png-HTbR3w2f",
+            "https://static.takeuforward.org/content/postin8.drawio.png-WWQPgA_X",
+            "https://static.takeuforward.org/content/postin9.drawio.png-egfq-qGI"
+        ],
+        "complexities": {
+            "time": "O(n), a single pass over the postfix expression.",
+            "space": "O(n), stack space for storing operands."
+        },
+        "code": {
+            "cpp": "#include <iosbits/stdc++.htream>\nusing namespace std;\n\n// Function to convert postfix to infix\nstring postfixToInfix(string postfix) {\n    stack<string> s;\n    int n = postfix.size();\n\n    // Traverse the postfix expression from left to right\n    for (int i = 0; i < n; i++) {\n        char c = postfix[i];\n\n        // If the character is an operand, push it to the stack\n        if (isalnum(c)) {\n            s.push(string(1, c));\n        } else {\n            // Pop two operands from the stack\n            string op2 = s.top(); s.pop();\n            string op1 = s.top(); s.pop();\n\n            // Form the new infix expression and push back to stack\n            s.push(\"(\" + op1 + c + op2 + \")\");\n        }\n    }\n\n    // The final element in the stack is the result\n    return s.top();\n}\n\nint main() {\n    string postfix = \"AB*C+\";\n    cout << \"Infix Expression: \" << postfixToInfix(postfix) << endl;\n    return 0;\n}",
+            "java": "import java.util.*;\n\nclass PostfixToInfix {\n    // Function to convert postfix to infix\n    public String postfixToInfix(String postfix) {\n        Stack<String> s = new Stack<>();\n        int n = postfix.length();\n\n        // Traverse the postfix expression from left to right\n        for (int i = 0; i < n; i++) {\n            char c = postfix.charAt(i);\n\n            // If the character is an operand, push it to the stack\n            if (Character.isLetterOrDigit(c)) {\n                s.push(String.valueOf(c));\n            } else {\n                // Pop two operands from the stack\n                String op2 = s.pop();\n                String op1 = s.pop();\n\n                // Form the new infix expression and push back to stack\n                s.push(\"(\" + op1 + c + op2 + \")\");\n            }\n        }\n\n        // The final element in the stack is the result\n        return s.peek();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        PostfixToInfix converter = new PostfixToInfix();\n        String postfix = \"AB*C+\";\n        System.out.println(\"Infix Expression: \" + converter.postfixToInfix(postfix));\n    }\n}",
+            "python": "# Function to convert postfix to infix\ndef postfix_to_infix(postfix):\n    stack = []\n    \n    # Traverse the postfix expression from left to right\n    for c in postfix:\n        # If the character is an operand, push it to the stack\n        if c.isalnum():\n            stack.append(c)\n        else:\n            # Pop two operands from the stack\n            op2 = stack.pop()\n            op1 = stack.pop()\n\n            # Form the new infix expression and push back to stack\n            stack.append(f\"({op1}{c}{op2})\")\n    \n    # The final element in the stack is the result\n    return stack[-1]\n\n# Main function for testing\ndef main():\n    postfix = \"AB*C+\"\n    print(\"Infix Expression:\", postfix_to_infix(postfix))\n\nif __name__ == \"__main__\":\n    main()",
+            "javascript": "// Function to convert postfix to infix\nfunction postfixToInfix(postfix) {\n    let stack = [];\n\n    // Traverse the postfix expression from left to right\n    for (let i = 0; i < postfix.length; i++) {\n        let c = postfix[i];\n\n        // If the character is an operand, push it to the stack\n        if (/[a-zA-Z0-9]/.test(c)) {\n            stack.push(c);\n        } else {\n            // Pop two operands from the stack\n            let op2 = stack.pop();\n            let op1 = stack.pop();\n\n            // Form the new infix expression and push back to stack\n            stack.push(`(${op1}${c}${op2})`);\n        }\n    }\n\n    // The final element in the stack is the result\n    return stack[0];\n}\n\n// Main function for testing\nfunction main() {\n    let postfix = \"AB*C+\";\n    console.log(\"Infix Expression:\", postfixToInfix(postfix));\n}\n\nmain();"
+        }
+    }
+]

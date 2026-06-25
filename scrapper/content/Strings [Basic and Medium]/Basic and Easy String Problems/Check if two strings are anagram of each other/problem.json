@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two strings, check if two strings are anagrams of each other or not.",
+    "examples": [
+        {
+            "input": "CAT, ACT",
+            "output": "true",
+            "explanation": "Since the count of every letter of both strings are equal.\n\nExample 2:"
+        },
+        {
+            "input": "RULES, LESRT",
+            "output": "false",
+            "explanation": "Since the count of U and T  is not equal in both strings."
+        }
+    ]
+}

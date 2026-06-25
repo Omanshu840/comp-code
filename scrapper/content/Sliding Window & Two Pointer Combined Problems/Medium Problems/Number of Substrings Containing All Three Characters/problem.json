@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string s , consisting only of characters 'a' , 'b' , 'c'.Find the number of substrings that contain at least one occurrence of all these characters 'a' , 'b' , 'c'.",
+    "examples": [
+        {
+            "input": "s = \"abcba\"",
+            "output": "5",
+            "explanation": "The substrings containing at least one occurrence of the characters 'a' , 'b' , 'c' are \"abc\" , \"abcb\" , \"abcba\" , \"bcba\" , \"cba\"."
+        },
+        {
+            "input": "s = \"ccabcc\"",
+            "output": "8",
+            "explanation": "The substrings containing at least one occurrence of the characters 'a' , 'b' , 'c' are \"ccab\" , \"ccabc\" , \"ccabcc\" , \"cab\" , \"cabc\" , \"cabcc\" , \"abc\" , \"abcc\"."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Design a stack that supports the following operations in constant time: push, pop, top, and retrieving the minimum element.\n\nImplement the MinStack class:\n\nMinStack(): Initializes the stack object.\nvoid push(int val): Pushes the element val onto the stack.\n\nvoid pop(): removes the element on the top of the stack.\n\nint top(): gets the top element of the stack.\n\nint getMin(): retrieves the minimum element in the stack.",
+    "examples": [
+        {
+            "input": "[\"MinStack\", \"push\", \"push\", \"push\", \"getMin\", \"pop\", \"top\", \"getMin\"]  \n[ [], [-2], [0], [-3], [ ], [ ], [ ], [ ] ]",
+            "output": "[null, null, null, null, -3, null, 0, -2]",
+            "explanation": "MinStack minStack = new MinStack();  \n- minStack.push(-2);  \n- minStack.push(0);  \n- minStack.push(-3);  \n- minStack.getMin(); // returns -3  \n- minStack.pop();  \n- minStack.top(); // returns 0  \n- minStack.getMin(); // returns -2  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"MinStack\", \"push\", \"push\", \"getMin\", \"push\", \"pop\", \"getMin\", \"top\"]  \n[ [ ], [5], [1], [ ], [3], [ ], [ ], [ ] ]",
+            "output": "[null, null, null, 1, null, null, 1, 1]",
+            "explanation": "MinStack minStack = new MinStack();  \n- minStack.push(5);  \n- minStack.push(1);  \n- minStack.getMin(); // returns 1  \n- minStack.push(3);  \n- minStack.pop();  \n- minStack.getMin(); // returns 1  \n- minStack.top(); // returns 1"
+        }
+    ]
+}

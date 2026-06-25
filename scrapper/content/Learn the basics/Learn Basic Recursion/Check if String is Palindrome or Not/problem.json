@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string, check if the string is palindrome or not. A string is said to be\n    palindrome if the reverse of the string is the same as the string.",
+    "examples": [
+        {
+            "input": "Str =  âABCDCBAâ",
+            "output": "Palindrome",
+            "explanation": "String when reversed is the same as string.\n\nExample 2:"
+        },
+        {
+            "input": "Str = âTAKE U FORWARDâ",
+            "output": "Not Palindrome",
+            "explanation": "String when reversed is not the same as string."
+        }
+    ]
+}

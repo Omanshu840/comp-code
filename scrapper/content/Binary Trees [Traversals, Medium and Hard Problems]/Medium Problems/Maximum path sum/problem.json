@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, determine the maximum sum achievable along any path within the tree.\nA path in a binary tree is defined as a sequence of nodes where each pair of adjacent nodes is connected by an edge. Nodes can only appear once in the sequence, and the path is not required to start from the root. \nIdentify and compute the maximum sum possible along any path within the given binary tree.",
+    "examples": [
+        {
+            "input": "Binary Tree: -10 9 20 -1 -1 15 7",
+            "output": "42",
+            "explanation": "Out of all the paths possible in the Binary Tree, 15 -> 20 -> 7 has the greatest sum ie. 42."
+        },
+        {
+            "input": "Binary Tree: -2 2 1",
+            "output": "2",
+            "explanation": "Out of all the paths possible in the Binary Tree, a path starting and ending at the node with value 2 has the greatest sum ie. 2."
+        }
+    ]
+}

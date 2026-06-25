@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers arr, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window..",
+    "examples": [
+        {
+            "input": "arr = [4,0,-1,3,5,3,6,8], k = 3",
+            "output": "[4,3,5,5,6,8]",
+            "explanation": "Window position                   Max\n------------------------         -----\n[4  0  -1] 3  5  3  6  8           4\n 4 [0  -1  3] 5  3  6  8           3\n 4  0 [-1  3  5] 3  6  8           5\n 4  0  -1 [3  5  3] 6  8           5\n 4  0  -1  3 [5  3  6] 8           6\n 4  0  -1  3  5 [3  6  8]          8\n\nFor each window of size k=3, we find the maximum element in the window and add it to our output array."
+        },
+        {
+            "input": "arr= [20,25], k = 2",
+            "output": "[25]",
+            "explanation": "Thereâs just one window is size 2 that is possible and the maximum of the two elements is our answer."
+        }
+    ]
+}

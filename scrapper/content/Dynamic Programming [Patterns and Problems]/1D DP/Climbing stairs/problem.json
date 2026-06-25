@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a number of stairs. Starting from the 0th stair we need to climb to the\n    âNthâ stair. At a time we can climb either one or two steps. We need to return the total number of distinct ways to\n    reach from 0th to Nth stair.",
+    "examples": [
+        {
+            "input": "n = 2",
+            "output": "2",
+            "explanation": "There are 2 unique ways to climb to the 2nd step:\n1. 1 step + 1 step\n2. 2 steps"
+        },
+        {
+            "input": "n = 3",
+            "output": "3",
+            "explanation": "There are 3 unique ways to climb to the 3rd step:\n1. 1 step + 1 step + 1 step\n2. 2 steps + 1 step\n3. 1 step + 2 steps"
+        }
+    ]
+}

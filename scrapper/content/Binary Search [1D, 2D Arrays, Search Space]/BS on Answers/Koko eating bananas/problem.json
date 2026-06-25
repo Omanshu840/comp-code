@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A monkey Koko is given ânâ piles of bananas, whereas the 'ith' pile has âa[i]â bananas. An integer âhâ is also given, which denotes the time (in hours) for all the bananas to be eaten.\n\nEach hour, the monkey chooses a non-empty pile of bananas and eats âkâ bananas. If the pile contains less than âkâ bananas, then the monkey consumes all the bananas and wonât eat any more bananas in that hour.\n\nFind the minimum number of bananas âkâ to eat per hour so that the monkey can eat all the bananas within âhâ hours.",
+    "examples": [
+        {
+            "input": "N = 4, a[] = {7, 15, 6, 3}, h = 8",
+            "output": "5",
+            "explanation": "If Koko eats 5 bananas/hr, he will take 2, 3, 2, and 1 hour to eat the piles accordingly. So, he will take 8 hours to complete all the piles."
+        },
+        {
+            "input": "N = 5, a[] = {25, 12, 8, 14, 19}, h = 5",
+            "output": "25",
+            "explanation": "If Koko eats 25 bananas/hr, he will take 1, 1, 1, 1, and 1 hour to eat the piles accordingly."
+        }
+    ]
+}

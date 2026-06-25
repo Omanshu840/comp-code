@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of size n, sort the array using Merge Sort.",
+    "examples": [
+        {
+            "input": "N=7,arr[]={3,2,8,5,1,4,23}",
+            "output": "{1,2,3,4,5,8,23}",
+            "explanation": "Given array is sorted in non-decreasing order."
+        },
+        {
+            "input": "N=5, arr[]={4,2,1,6,7}",
+            "output": "{1,2,4,6,7}",
+            "explanation": "Given array is sorted in non-decreasing order."
+        }
+    ]
+}

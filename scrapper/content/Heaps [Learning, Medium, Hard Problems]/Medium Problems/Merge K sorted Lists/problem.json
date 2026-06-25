@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given heads of k sorted linked lists as an array called heads, merge them into one single sorted linked list and return the head of that list.",
+    "examples": [
+        {
+            "input": "heads = [[head -> 1 -> 2 -> 3 -> 4], [head -> -4 -> -3], [head -> -5 -> -3 -> 1 -> 2 -> 3 -> 4]]",
+            "output": "head -> -5 -> -4 -> -3 -> -3 -> 1 -> 1 -> 2 -> 2 -> 3 -> 3 -> 4 -> 4",
+            "explanation": "head -> -5 -> -4 -> -3 -> -3 -> 1 -> 1 -> 2 -> 2 -> 3 -> 3 -> 4 -> 4\nThe nodes in bold come from the 3rd list, the underlined nodes come from the 2nd list, rest are from the 1st list."
+        },
+        {
+            "input": "heads = [[head -> -5 -> -4 -> -1], [head -> 10 -> 11 -> 12]]",
+            "output": "head -> -5 -> -4 -> -1 -> 10 -> 11 -> 12",
+            "explanation": "head -> -5 -> -4 -> -1 -> 10 -> 11 -> 12\nThe nodes in bold come from the 1st list, rest are from the 2nd list."
+        }
+    ]
+}

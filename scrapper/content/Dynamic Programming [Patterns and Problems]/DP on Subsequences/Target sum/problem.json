@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given an array âARRâ of size âNâ and a number âTargetâ. Our task is to build an expression from the given array where we can place a â+â or â-â sign in front of an integer. We want to place a sign in front of every integer of the array and get our required target. We need to count the number of ways in which we can achieve our required target.",
+    "examples": [
+        {
+            "input": "nums = [1,1,1,1,1], target = 3",
+            "output": "5",
+            "explanation": "There are 5 ways to assign symbols to make the sum of nums be target 3.\n-1 + 1 + 1 + 1 + 1 = 3\n+1 - 1 + 1 + 1 + 1 = 3\n+1 + 1 - 1 + 1 + 1 = 3\n+1 + 1 + 1 - 1 + 1 = 3\n+1 + 1 + 1 + 1 - 1 = 3"
+        },
+        {
+            "input": "nums = [1], target = 1",
+            "output": "1",
+            "explanation": "There is only one number, and we can assign a '+' sign to it to reach the target.\n+1 = 1"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given two strings âS1â and âS2â. We need to return their shortest common supersequence. A supersequence is defined as the string which contains both the strings S1 and S2 as subsequences.",
+    "examples": [
+        {
+            "input": "str1 = \"mno\", str2 = \"nop\"",
+            "output": "\"mnop\"",
+            "explanation": "The shortest common supersequence is \"mnop\". It contains \"mno\" as the first three characters and \"nop\" as the last three characters, thus including both strings as subsequences."
+        },
+        {
+            "input": "str1 = \"dynamic\", str2 = \"program\"",
+            "output": "\"dynprogramic\"",
+            "explanation": "The shortest common supersequence is \"dynprogramic\". It includes all characters from both \"dynamic\" and \"program\", with minimal overlap. For example, \"dynamic\" appears as \"dyn...amic\" and \"program\" appears as \"...program...\" within \"dynprogramic\"."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a valid postfix expression as a string, where:\nOperands are single lowercase English letters ('a' to 'z')\nOperators are binary: '+', '-', '*', '/'\nThe expression contains no spaces and is guaranteed to be valid.\n\nWrite a function to convert the postfix expression into a prefix expression, also as a string without spaces.",
+    "examples": [
+        {
+            "input": "expression = \"ab+\"",
+            "output": "\"+ab\"",
+            "explanation": "Postfix â Prefix\n\n\nExample 2:"
+        },
+        {
+            "input": "expression = \"abc*+d-\"",
+            "output": "\"-+a*bcd\"",
+            "explanation": ""
+        }
+    ]
+}

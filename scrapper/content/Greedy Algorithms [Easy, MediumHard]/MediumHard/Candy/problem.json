@@ -1,0 +1,15 @@
+{
+    "problem_statement": "A line of N kids is standing there. The rating values listed in the integer array ratings are assigned to each kid.\nThese kids are receiving candy according to the following criteria:",
+    "examples": [
+        {
+            "input": "ratings = [1, 0, 5]",
+            "output": "5",
+            "explanation": "The distribution of candies will be 2, 1, 2 to the first, second, and third child respectively."
+        },
+        {
+            "input": "ratings = [1, 2, 2]",
+            "output": "4",
+            "explanation": "The distribution of candies will be 1, 2, 1 to the first, second, and third child respectively.The third gets only 1 candy because it satisfies both conditions mentioned above."
+        }
+    ]
+}

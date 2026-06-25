@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an m x n 2d array named matrix, where each cell is either 0 or 1. Return the number of unique ways to go from the top-left cell (matrix[0][0]) to the bottom-right cell (matrix[m-1][n-1]). A cell is blocked if its value is 1, and no path is possible through that cell.\n\nMovement is allowed in only two directions from a cell - right and bottom.",
+    "examples": [
+        {
+            "input": "matrix = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]",
+            "output": "2",
+            "explanation": "The two possible paths to reach the bottom-right cell are:  \n1) down â down â right â right  \n2) right â right â down â down  \nThus, the number of paths is 2.\n\n\nExample 2:"
+        },
+        {
+            "input": "matrix = [[0, 0, 0], [0, 0, 1], [0, 1, 0]]",
+            "output": "0",
+            "explanation": "There is no valid path to reach the bottom-right cell due to blocked cells (represented by 1)."
+        }
+    ]
+}

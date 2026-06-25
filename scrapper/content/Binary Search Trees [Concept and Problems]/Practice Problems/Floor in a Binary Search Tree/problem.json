@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Search Tree and a key, return the floor of the given key in the Binary Search Tree.\nFloor of a value refers to the value of the largest node in the Binary Search Tree that is smaller than or equal to the given key.\nIf the floor node does not exist, return nullptr.",
+    "examples": [
+        {
+            "input": "Binary Search Tree: 10 5 15 2 6 -1 -1, Key = 7",
+            "output": "6",
+            "explanation": "In the given BST, the largest value smaller or equal to 7 is 6."
+        },
+        {
+            "input": "Binary Search Tree: 8 5 12 4 7 10 14 -1 -1 6 -1 -1 -1 13, Key = 9",
+            "output": "8",
+            "explanation": "In the given BST, the largest value smaller or equal to 9 is 8."
+        }
+    ]
+}

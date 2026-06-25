@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of N integers, write a program to implement the Selection sorting algorithm.",
+    "examples": [
+        {
+            "input": "N = 6, array[] = {13,46,24,52,20,9}",
+            "output": "9,13,20,24,46,52",
+            "explanation": "After sorting the array is: 9, 13, 20, 24, 46, 52\n\nExample 2:"
+        },
+        {
+            "input": "N=5, array[] = {5,4,3,2,1}",
+            "output": "1,2,3,4,5",
+            "explanation": "After sorting the array is: 1, 2, 3, 4, 5"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array. You are asked to burst all the balloons.",
+    "examples": [
+        {
+            "input": "N = 4, array[] = {3, 1, 5, 8}",
+            "output": "167",
+            "explanation": "First, we will burst the second balloon with the value 1. Coins = 3*1*5 = 15. Second, we will burst the balloon with the value 5. Coins = 3*5*8 = 120. Third, we will burst the balloon with the value 3. Coins = 1*3*8 = 24. Fourth, we will burst the balloon with the value 8. Coins = 1*8*1 = 8. So, the total number of coins we can collect is 167. This is the maximum number of coins we can collect.\n\n\nExample 2:"
+        },
+        {
+            "input": "N = 2, array[] = {1, 5}",
+            "output": "10",
+            "explanation": "First, we will burst the second balloon with the value 1. Coins = 1*1*5 = 5. Second, we will burst the balloon with the value 5. Coins = 1*5*1 = 5. So, the total number of coins we can collect is 10. This is the maximum number of coins we can collect."
+        }
+    ]
+}

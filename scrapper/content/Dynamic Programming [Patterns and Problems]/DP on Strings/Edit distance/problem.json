@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "start = \"planet\", target = \"plan\"",
+            "output": "2",
+            "explanation": "To transform \"planet\" into \"plan\", the following operations are required:\n1. Delete the character 'e': \"planet\" -> \"plan\"\n2. Delete the character 't': \"plan\" -> \"plan\"\nThus, a total of 2 operations are needed.\n\nExample 2:"
+        },
+        {
+            "input": "start = \"abcdefg\", target = \"azced\"",
+            "output": "4",
+            "explanation": "To transform \"abcdefg\" into \"azced\", the following operations are required:\n1. Replace 'b' with 'z': \"abcdefg\" -> \"azcdefg\"\n2. Delete 'd': \"azcdefg\" -> \"azcefg\"\n3. Delete 'f': \"azcefg\" -> \"azceg\"\n4. Replace 'g' with 'd': \"azceg\" -> \"azced\"\nThus, a total of 4 operations are needed."
+        }
+    ]
+}

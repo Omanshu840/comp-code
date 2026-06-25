@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a First-In-First-Out (FIFO) queue using an array. The implemented queue should support the following operations: push, dequeue, pop, and isEmpty.\n\nImplement the ArrayQueue class:\n\nvoid push(int x): Adds element x to the end of the queue.\n\nint pop(): Removes and returns the front element of the queue.\n\nint peek(): Returns the front element of the queue without removing it.\n\nboolean isEmpty(): Returns true if the queue is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"ArrayQueue\", \"push\", \"push\", \"peek\", \"pop\", \"isEmpty\"]  \n[[], [5], [10], [], [], []]",
+            "output": "[null, null, null, 5, 5, false]",
+            "explanation": "ArrayQueue queue = new ArrayQueue();  \n- queue.push(5);  \n- queue.push(10);  \n- queue.peek(); // returns 5  \n- queue.pop(); // returns 5  \n- queue.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"ArrayQueue\", \"isEmpty\"]  \n[[]]",
+            "output": "[null, true]",
+            "explanation": "ArrayQueue queue = new ArrayQueue();  \n- queue.isEmpty(); // returns true"
+        }
+    ]
+}

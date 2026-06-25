@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a valid arithmetic expression in prefix notation. Your task is to convert it into a fully parenthesized infix expression.\n\nPrefix notation (also known as Polish notation) places the operator before its operands. In contrast, infix notation places the operator between operands.\n\nYour goal is to convert the prefix expression into a valid fully parenthesized infix expression.",
+    "examples": [
+        {
+            "input": "expression = \"+ab",
+            "output": "(a+b)\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "expression = \"*+ab-cd",
+            "output": "((a+b)*(c-d))",
+            "explanation": ""
+        }
+    ]
+}

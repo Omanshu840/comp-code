@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "arr = [1,15,7,9,2,5,10], k = 3",
+            "output": "84",
+            "explanation": "The partition will be the following to get the largest sum: [1, 15, 7 | 9 | 2, 5, 10]. \nAfter replacing the elements of each subarray with its maximum, the array will look like this: [15,15,15,9,10,10,10] and the sum will be 84."
+        },
+        {
+            "input": "arr = [2,2,2,2], k = 2",
+            "output": "8",
+            "explanation": "Partition as [2,2 | 2,2]; each sub-arrayâs max is 2. The array stays [2,2,2,2] and the sum is 8."
+        }
+    ]
+}

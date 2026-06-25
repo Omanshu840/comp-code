@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a postfix expression (a string), convert it into an equivalent infix expression. The postfix expression is evaluated from left to right. The infix expression should have the proper parentheses to ensure correct operator precedence.\n\nWrite a function to perform this conversion.",
+    "examples": [
+        {
+            "input": "\"ab+c*\"",
+            "output": "\"(a+b)*c\"\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "\"ab*cd/+\"",
+            "output": "\"(a*b)+(c/d)\"",
+            "explanation": ""
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": ".",
+    "examples": [
+        {
+            "input": "matrix = [[10, 40, 70], [20, 50, 80], [30, 60, 90]]",
+            "output": "210",
+            "explanation": "Day 1: fighting practice = 70\nDay 2: stealth training = 50\nDay 3: fighting practice = 90\nTotal = 70 + 50 + 90 = 210\nThis gives the optimal points.\n\nExample 2:"
+        },
+        {
+            "input": "matrix = [[70, 40, 10], [180, 20, 5], [200, 60, 30]]",
+            "output": "290",
+            "explanation": "Day 1: running = 70\nDay 2: stealth training = 20\nDay 3: running = 200\nTotal = 70 + 20 + 200 = 290\nThis gives the optimal points."
+        }
+    ]
+}

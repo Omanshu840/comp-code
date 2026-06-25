@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement a Last-In-First-Out (LIFO) stack using an array. The implemented stack should support the following operations: push, pop, peek, and isEmpty.\n\nImplement the ArrayStack class:\n\nvoid push(int x): Pushes element x onto the stack.\nint pop(): Removes and returns the top element of the stack.\nint top(): Returns the top element of the stack without removing it.\nboolean isEmpty(): Returns true if the stack is empty, false otherwise.",
+    "examples": [
+        {
+            "input": "[\"ArrayStack\", \"push\", \"push\", \"top\", \"pop\", \"isEmpty\"]  \n[[], [5], [10], [], [], []]",
+            "output": "[null, null, null, 10, 10, false]",
+            "explanation": "ArrayStack stack = new ArrayStack();  \n- stack.push(5);  \n- stack.push(10);  \n- stack.top(); // returns 10  \n- stack.pop(); // returns 10  \n- stack.isEmpty(); // returns false  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"ArrayStack\", \"isEmpty\", \"push\", \"pop\", \"isEmpty\"]  \n[[], [], [1], [], []]",
+            "output": "[null, true, null, 1, true]",
+            "explanation": "ArrayStack stack = new ArrayStack();  \n- stack.push(1);  \n- stack.pop(); // returns 1  \n- stack.isEmpty(); // returns true"
+        }
+    ]
+}

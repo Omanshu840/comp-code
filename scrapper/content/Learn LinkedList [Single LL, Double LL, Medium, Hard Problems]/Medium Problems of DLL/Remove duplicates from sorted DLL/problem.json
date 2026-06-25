@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a doubly linked list with its values sorted in non-decreasing order. Remove all duplicate occurrences of any value in the list so that only distinct values are present in the list.",
+    "examples": [
+        {
+            "input": "head -> 1 <-> 1 <-> 3 <-> 3 <-> 4 <-> 5",
+            "output": "head -> 1 <-> 3 <-> 4 <-> 5",
+            "explanation": "Duplicate occurences of 1 and 3 are deleted"
+        },
+        {
+            "input": "head -> 1 <-> 1 <-> 1 <-> 1 <-> 1 <-> 2",
+            "output": "head -> 1 <-> 2",
+            "explanation": "All duplicate occurences of 1 is deleted"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array nums, return the kth largest element in the array.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 3, 4, 5], k = 2",
+            "output": "4",
+            "explanation": "The 2nd largest number in the list [1, 2, 3, 4, 5] is 4.\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [-5, 4, 1, 2, -3], k = 5",
+            "output": "-5",
+            "explanation": "The 5th largest number in the list [-5, 4, 1, 2, -3] is -5."
+        }
+    ]
+}

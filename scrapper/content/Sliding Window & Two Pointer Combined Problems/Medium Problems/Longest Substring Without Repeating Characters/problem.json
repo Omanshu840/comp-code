@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string, S. Find the length of the longest substring without repeating characters.",
+    "examples": [
+        {
+            "input": "S = \"abcddabac\"",
+            "output": "4",
+            "explanation": "The longest substring with distinct characters is \"abcd\", which has a length of 4.\n\n\nExample 2:"
+        },
+        {
+            "input": "S = \"aaabbbccc\"",
+            "output": "2",
+            "explanation": "The longest substrings with distinct characters are \"ab\" and \"bc\", both having a length of 2."
+        }
+    ]
+}

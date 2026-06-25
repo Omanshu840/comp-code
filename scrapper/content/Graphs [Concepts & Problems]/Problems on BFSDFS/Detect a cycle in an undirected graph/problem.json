@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an undirected graph with V vertices and E edges, check whether it contains any cycle or not using DFS.",
+    "examples": [
+        {
+            "input": "V = 8, E = 7",
+            "output": "False",
+            "explanation": "No cycle is present in the given graph"
+        },
+        {
+            "input": "V = 8, E = 6",
+            "output": "True",
+            "explanation": "4->5->6->4 is a cycle."
+        }
+    ]
+}

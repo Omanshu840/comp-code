@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers asteroids, where each integer represents an asteroid in a row, determine the state of the asteroids after all collisions. In this array, the absolute value represents the size of the asteroid, and the sign represents its direction (positive meaning right and negative meaning left). All asteroids move at the same speed.\nWhen two asteroids meet, the smaller one will explode. If they are the same size, both will explode. Asteroids moving in the same direction will never meet.",
+    "examples": [
+        {
+            "input": "asteroids = [2, -2]",
+            "output": "[]",
+            "explanation": "The asteroid with size 2 and the one with size -2 collide, exploding each other.\n\n\nExample 2:"
+        },
+        {
+            "input": "asteroids = [10, 20, -10]",
+            "output": "[10, 20]",
+            "explanation": "The asteroid with size 20 and the one with size -10 collide, resulting in the remaining asteroid with size 20. The asteroids with sizes 10 and 20 never collide."
+        }
+    ]
+}

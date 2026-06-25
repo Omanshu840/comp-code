@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the root of a Binary Tree, create a function that performs a postorder traversal using two stacks and returns an array containing the traversal sequence.",
+    "examples": [
+        {
+            "input": "Binary Tree: 4 2 5 3 -1 7 6 -1 9 -1 -1 8 -1 1",
+            "output": "[1, 9, 3, 2, 7, 8, 6, 5, 4]",
+            "explanation": "We traverse the binary tree in the order of Left, Right, and then Root recursively. This results in the following traversal:  \n1 â 9 â 3 â 2 â 7 â 8 â 6 â 5 â 4.\n\n\nExample 2:"
+        },
+        {
+            "input": "Binary Tree: 1 2 3 4 5 6 7 -1 -1 8 -1 -1 -1 9 10",
+            "output": "[1, 2, 4, 5, 8, 3, 6, 7, 9, 10]",
+            "explanation": "We traverse the binary tree in the order of Left, Right, and then Root recursively. This results in the following traversal:  \n1 â 2 â 4 â 5 â 8 â 3 â 6 â 7 â 9 â 10."
+        }
+    ]
+}

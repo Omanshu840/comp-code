@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "n = 7, cuts = [1, 3, 4, 5]",
+            "output": "16",
+            "explanation": "Rearranging the cuts to be [3, 5, 1, 4] for example will lead to a scenario with total cost = 16"
+        },
+        {
+            "input": "n = 7, cuts = [1, 3, 6]",
+            "output": "14",
+            "explanation": "The optimal order for cutting the stick is [3, 1, 6].\nThe cost will be => 7 + 3 + 4 => 14."
+        }
+    ]
+}

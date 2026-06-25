@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Brute Force Approach",
+        "intuition_and_algorithm": "In a brute force approach, we ignore the fact that the array is nearly sorted. We treat it like any unsorted array and apply a general sorting algorithm to get the correct output. This works because sorting guarantees the correct position of every element, regardless of their initial distance from their target index. \n\nTake the entire array as input\nApply a full sorting algorithm to the array (like quicksort or mergesort)\nReturn the fully sorted array",
+        "images": [],
+        "complexities": {},
+        "code": {}
+    }
+]

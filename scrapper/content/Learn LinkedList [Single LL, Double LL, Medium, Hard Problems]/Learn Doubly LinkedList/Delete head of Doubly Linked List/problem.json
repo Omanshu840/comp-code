@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Doubly Linked List, delete the last node of the Doubly Linked List.",
+    "examples": [
+        {
+            "input": "DLL: 1 <-> 3 <-> 4 <-> 1",
+            "output": "DLL: 1 <-> 3 <-> 4",
+            "explanation": "Last node of the Doubly Linked List to be deleted is 1."
+        },
+        {
+            "input": "DLL: 7 <-> 5",
+            "output": "DLL: 7",
+            "explanation": "Last node of the Doubly Linked List to be deleted is 5."
+        }
+    ]
+}

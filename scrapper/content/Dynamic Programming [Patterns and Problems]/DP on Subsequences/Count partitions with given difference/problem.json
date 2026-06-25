@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array with N positive integers and an integer D, count the number of ways we can partition the given array into two subsets, S1 and S2 such that S1 - S2 = D and S1 is always greater than or equal to S2.",
+    "examples": [
+        {
+            "input": "arr = [1, 1, 2, 3], diff = 1",
+            "output": "3",
+            "explanation": "The subsets are [1, 2] and [1, 3], [1, 3] and [1, 2], [1, 1, 2] and [3]."
+        },
+        {
+            "input": "arr = [1, 2, 3, 4], diff = 2",
+            "output": "2",
+            "explanation": "The subsets are [1, 3] and [2, 4], [1, 2, 3] and [4]."
+        }
+    ]
+}

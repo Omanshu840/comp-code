@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two distinct words startWord and targetWord, and a list denoting wordList of unique words of equal lengths. Find all shortest transformation sequence(s) from startWord to targetWord. You can return them in any order possible.",
+    "examples": [
+        {
+            "input": "startWord = \"der\", targetWord = \"dfs\",\nwordList = {\"des\",\"der\",\"dfr\",\"dgt\",\"dfs\"}",
+            "output": "[ [ âderâ, âdfrâ, âdfsâ ], [ âderâ, âdesâ, âdfsâ] ]",
+            "explanation": "The length of the smallest transformation sequence here is 3.\nFollowing are the only two shortest ways to get to the targetWord from the startWord :\n\"der\" -> ( replace ârâ by âsâ ) -> \"des\" -> ( replace âeâ by âfâ ) -> \"dfs\".\n\"der\" -> ( replace âeâ by âfâ ) -> \"dfr\" -> ( replace ârâ by âsâ ) -> \"dfs\".\n\nExample 2:"
+        },
+        {
+            "input": "startWord = \"gedk\", targetWord= \"geek\"\nwordList = {\"geek\", \"gefk\"}",
+            "output": "[ [ âgedkâ, âgeekâ ] ]",
+            "explanation": "The length of the smallest transformation sequence here is 2.\nFollowing is the only shortest way to get to the targetWord from the startWord :\n\"gedk\" -> ( replace âdâ by âeâ ) -> \"geek\"."
+        }
+    ]
+}

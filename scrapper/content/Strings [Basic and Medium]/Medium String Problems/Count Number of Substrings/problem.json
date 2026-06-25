@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a string s and a positive integer k.\nReturn the number of substrings that contain exactly k distinct characters.",
+    "examples": [
+        {
+            "input": "s = \"pqpqs\", k = 2",
+            "output": "7",
+            "explanation": "All substrings with exactly 2 distinct characters:  \n\"pq\", \"pqp\", \"pqpq\", \"qp\", \"qpq\", \"pqs\", \"qs\"  \nTotal = 7.\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"abcbaa\", k = 3",
+            "output": "5",
+            "explanation": "All substrings with exactly 3 distinct characters:  \n\"abc\", \"abcb\", \"abcba\", \"bcba\", \"cbaa\"  \nTotal = 5."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer k and a string s, any character in the string can be selected and changed to any other uppercase English character. This operation can be performed up to k times. After completing these steps, return \nthe length of the longest substring that contains the same letter.",
+    "examples": [
+        {
+            "input": "s = \"BAABAABBBAAA\", k = 2",
+            "output": "6",
+            "explanation": "We can change the B at index 0 and 3 (0-based indexing) to A. The new string becomes \"AAAAAABBBAAA\". The substring \"AAAAAA\" is the longest substring with the same letter, and its length is 6."
+        },
+        {
+            "input": "s = \"AABABBA\", k = 1",
+            "output": "4",
+            "explanation": "We can change one character to get the new string \"AABBBBA\". The substring \"BBBB\" is the longest with the same character. There are other ways to achieve this result as well."
+        }
+    ]
+}

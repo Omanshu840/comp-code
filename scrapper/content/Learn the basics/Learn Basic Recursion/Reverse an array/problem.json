@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given an array. The task is to reverse the array and print it.",
+    "examples": [
+        {
+            "input": "N = 5, arr[] = {5,4,3,2,1}",
+            "output": "{1,2,3,4,5}",
+            "explanation": "Since the order of elements gets reversed the first element will occupy the fifth position, the second element occupies the fourth position and so on."
+        },
+        {
+            "input": "N=6 arr[] = {10,20,30,40}",
+            "output": "{40,30,20,10}",
+            "explanation": "Since the order of elements gets reversed the first element will occupy the fifth position, the second element occupies the fourth position and so on."
+        }
+    ]
+}

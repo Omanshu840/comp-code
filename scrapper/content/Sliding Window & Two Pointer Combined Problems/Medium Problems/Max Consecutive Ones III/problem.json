@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.",
+    "examples": [
+        {
+            "input": "nums = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0] , k = 3",
+            "output": "10",
+            "explanation": "The maximum number of consecutive 1's are obtained only if we flip the 0's present at position 3, 4, 5 (0 base indexing).\nThe array after flipping becomes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0].\nThe number of consecutive 1's is 10."
+        },
+        {
+            "input": "nums = [0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1] , k = 3",
+            "output": "9",
+            "explanation": "The underlines 1's are obtained by flipping 0's in the new array.\n[1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1].\nThe number of consecutive 1's is 9."
+        }
+    ]
+}

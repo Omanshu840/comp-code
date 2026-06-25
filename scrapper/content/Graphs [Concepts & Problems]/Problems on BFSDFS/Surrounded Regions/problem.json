@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a matrix mat of size N x M where every element is either âOâ or âXâ.\n    Replace all âOâ with âXâ that is surrounded by âXâ. An âOâ (or a set of âOâ) is considered to be surrounded by âXâ\n    if there are âXâ at locations just below, just above just left, and just right of it.",
+    "examples": [
+        {
+            "input": "n = 5, m = 4",
+            "output": "Example 2:",
+            "explanation": ""
+        },
+        {
+            "input": "n = 5, m = 4",
+            "output": "",
+            "explanation": ""
+        }
+    ]
+}

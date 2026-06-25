@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a doubly linked list of size âNâ consisting of positive integers, your task is to reverse it and return the head of the modified doubly linked list.",
+    "examples": [
+        {
+            "input": "DLL - 1 <-> 2 <-> 3 <-> 4",
+            "output": "DLL - 4 <-> 3 <-> 2 <-> 1",
+            "explanation": "The doubly linked list is reversed and its last node is returned at the new head pointer."
+        },
+        {
+            "input": "DLL-10 <-> 20 <-> 30",
+            "output": "DLL - 30 <-> 20 <-> 10",
+            "explanation": "In this case, the doubly linked list is reversed and its former tail is returned as its new head."
+        }
+    ]
+}

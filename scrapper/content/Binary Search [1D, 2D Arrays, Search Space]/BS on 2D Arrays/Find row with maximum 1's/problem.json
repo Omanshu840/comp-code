@@ -1,0 +1,4 @@
+{
+    "problem_statement": "You have been given a non-empty grid âmatâ with 'n' rows and 'm' columns consisting of only 0s and 1s. All the rows are sorted in ascending order.\nYour task is to find the index of the row with the maximum number of ones.\nNote: If two rows have the same number of ones, consider the one with a smaller index. If there's no row with at least 1 zero, return -1",
+    "examples": []
+}

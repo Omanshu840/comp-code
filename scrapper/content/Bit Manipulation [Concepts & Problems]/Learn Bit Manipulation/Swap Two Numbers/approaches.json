@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "Use the XOR (^) operator to swap two integers without a temporary variable.\nSet a = a ^ b. This updates a to store the XOR of both values.\nSet b = a ^ b. This changes b to the original value of a.\nSet a = a ^ b. This updates a to the original value of b.\nThis technique works due to XOR properties: x ^ x = 0 and x ^ 0 = x.",
+        "images": [],
+        "complexities": {
+            "time": "O(1)  Constant operations.",
+            "space": "O(1)  No extra space used."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\n// Function to swap using XOR bit manipulation\nvoid swapXOR(int &a, int &b) {\n    // Step 1: XOR a and b, store in a\n    a = a ^ b;\n\n    // Step 2: XOR new a with b, result is original a â store in b\n    b = a ^ b;\n\n    // Step 3: XOR new a with new b, result is original b â store in a\n    a = a ^ b;\n}\n\nint main() {\n    int a = 5, b = 10;\n\n    // Call the swap function\n    swapXOR(a, b);\n\n    // Print the result after swapping\n    cout << \"a = \" << a << \", b = \" << b << endl;\n\n    return 0;\n}",
+            "java": "// Swapper class with swapXOR function\nclass Swapper {\n    // Function to swap two numbers using XOR\n    public void swapXOR(int[] arr) {\n        // Step 1: XOR first and second\n        arr[0] = arr[0] ^ arr[1];\n\n        // Step 2: XOR new first with second, result is original first\n        arr[1] = arr[0] ^ arr[1];\n\n        // Step 3: XOR new first with new second, result is original second\n        arr[0] = arr[0] ^ arr[1];\n    }\n}\n\n// Separate Main class\npublic class Main {\n    public static void main(String[] args) {\n        // Initialize array with two numbers\n        int[] nums = {5, 10};\n\n        // Create swapper object and call swapXOR\n        Swapper swapper = new Swapper();\n        swapper.swapXOR(nums);\n\n        // Print the result\n        System.out.println(\"a = \" + nums[0] + \", b = \" + nums[1]);\n    }\n}",
+            "python": "# Function to swap two numbers using XOR\ndef swap_xor(a, b):\n    # Step 1: a becomes a ^ b\n    a = a ^ b\n\n    # Step 2: b becomes a ^ b â which is original a\n    b = a ^ b\n\n    # Step 3: a becomes a ^ b â which is original b\n    a = a ^ b\n\n    # Return swapped values\n    return a, b\n\n# Driver function (acts as main)\ndef main():\n    # Initial values\n    a, b = 5, 10\n\n    # Swap using XOR\n    a, b = swap_xor(a, b)\n\n    # Print results\n    print(f\"a = {a}, b = {b}\")\n\n# Call main function\nif __name__ == \"__main__\":\n    main()",
+            "javascript": "function swapXOR(a, b) {\n    // Step 1: a becomes a ^ b\n    a = a ^ b;\n\n    // Step 2: b becomes a ^ b â original a\n    b = a ^ b;\n\n    // Step 3: a becomes a ^ b â original b\n    a = a ^ b;\n\n    // Return swapped values\n    return [a, b];\n}\n\n// Main function (entry point)\nfunction main() {\n    // Initial values\n    let a = 5, b = 10;\n\n    // Perform swap\n    [a, b] = swapXOR(a, b);\n\n    // Print results\n    console.log(\"a =\", a, \"b =\", b);\n}\n\n// Call main function\nmain();"
+        }
+    }
+]

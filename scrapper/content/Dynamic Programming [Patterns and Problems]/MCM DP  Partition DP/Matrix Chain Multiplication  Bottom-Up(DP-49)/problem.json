@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a chain of matrices A1, A2, A3,.....An, you have to figure out the most efficient way to multiply these matrices. In other words, determine where to place parentheses to minimize the number of multiplications.\n\nGiven an array nums of size n. Dimension of matrix Ai ( 0 < i < n ) is nums[i - 1] x nums[i].Find a minimum number of multiplications needed to multiply the chain.\n\nNote: Solve using tabulation.",
+    "examples": [
+        {
+            "input": "nums = [10, 15, 20, 25]",
+            "output": "8000",
+            "explanation": "There are two ways to multiply the chain:\n- A1 * (A2 * A3) â requires 11250 multiplications.\n- (A1 * A2) * A3 â requires 8000 multiplications.\nThus, the minimum number of multiplications required is 8000.\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [4, 2, 3]",
+            "output": "24",
+            "explanation": "There is only one way to multiply the chain: A1 * A2, which requires 24 multiplications."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a singly linked list representing a positive integer number.\n    Each node of the linked list represents a digit of the number, with the 1st node containing the leftmost digit of\n    the number and so on. Check whether the linked list values form a palindrome or not. Return true if it forms a\n    palindrome, otherwise, return false.\n\n    .",
+    "examples": [
+        {
+            "input": "head -> 3 -> 7 -> 5 -> 7 -> 3",
+            "output": "true",
+            "explanation": "37573 is a palindrome.\n\nExample 2:"
+        },
+        {
+            "input": "head -> 1 -> 1 -> 2 -> 1",
+            "output": "false",
+            "explanation": "1121 is not a palindrome."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a root of binary tree, find the lowest common ancestor (LCA) of two given nodes (p, q) in the tree.\n\nThe lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).",
+    "examples": [
+        {
+            "input": "root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4], p = 5, q = 1",
+            "output": "3",
+            "explanation": "The lowest common ancestor (LCA) of nodes 5 and 1 is node 3, as it is the first common ancestor of both nodes in the binary tree.\n\n\nExample 2:"
+        },
+        {
+            "input": "root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4], p = 5, q = 4",
+            "output": "5",
+            "explanation": "The lowest common ancestor (LCA) of nodes 5 and 4 is node 5, as node 5 is the ancestor of node 4 in the binary tree."
+        }
+    ]
+}

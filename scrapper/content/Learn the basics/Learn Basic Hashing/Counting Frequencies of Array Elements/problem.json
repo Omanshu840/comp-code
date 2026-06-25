@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array, we have found the number of occurrences of each element in the\n    array.",
+    "examples": [
+        {
+            "input": "arr[] = {10,5,10,15,10,5};",
+            "output": "10  3\n\t            5  2\n                15  1",
+            "explanation": "10 occurs 3 times in the array\n\t      5 occurs 2 times in the array\n              15 occurs 1 time in the array\n\nExample2:"
+        },
+        {
+            "input": "arr[] = {2,2,3,4,4,2};",
+            "output": "2  3\n\t           3  1\n               4  2",
+            "explanation": "2 occurs 3 times in the array\n\t     3 occurs 1 time in the array\n             4 occurs 2 time in the array"
+        }
+    ]
+}

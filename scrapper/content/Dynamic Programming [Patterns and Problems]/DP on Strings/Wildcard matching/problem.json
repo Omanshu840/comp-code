@@ -1,0 +1,15 @@
+{
+    "problem_statement": "We are given two strings âS1â and âS2â. String S1 can have the following two special characters.",
+    "examples": [
+        {
+            "input": "S1 = \"ab*cd\", S2 = \"abdefcd\"",
+            "output": "true",
+            "explanation": "\"ab\" matches \"ab\", '*' matches \"def\", \"cd\" matches \"cd\". The strings match."
+        },
+        {
+            "input": "S1 = \"*a*b\", S2 = \"aaab\"",
+            "output": "true",
+            "explanation": "First '*' matches \"aa\", 'a' matches 'a', second '*' matches empty string, 'b' matches 'b'. The strings match."
+        }
+    ]
+}

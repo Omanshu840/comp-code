@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Implement the Trie class:\n\nTrie(): Initializes the trie object.\nvoid insert (String word): Inserts the string word into the trie.\nboolean search (String word): Returns true if the string word is in the trie (i.e., was inserted before), and false otherwise.\nboolean startsWith (String prefix): Returns true if there is a previously inserted string word that has the prefix prefix, and false otherwise.",
+    "examples": [
+        {
+            "input": "[\"Trie\", \"insert\", \"search\", \"search\", \"startsWith\", \"insert\", \"search\"]  \n[ [] , [\"apple\"], [\"apple\"], [\"app\"], [\"app\"], [\"app\"], [\"app\"] ]",
+            "output": "[null, null, true, false, true, null, true]",
+            "explanation": "- Trie trie = new Trie()  \n- trie.insert(\"apple\")  \n- trie.search(\"apple\")  // returns True  \n- trie.search(\"app\")   // returns False  \n- trie.startsWith(\"app\") // returns True  \n- trie.insert(\"app\")  \n- trie.search(\"app\")   // returns True  \n\n\nExample 2:"
+        },
+        {
+            "input": "[\"Trie\", \"insert\", \"insert\", \"startsWith\", \"search\"]  \n[ [] , \"takeu\" , \"banana\" , \"bana\" , \"takeu\" ]",
+            "output": "[null, null, null, true, true]",
+            "explanation": "- Trie trie = new Trie()  \n- trie.insert(\"takeu\")  \n- trie.insert(\"banana\")  \n- trie.startsWith(\"bana\") // returns True  \n- trie.search(\"takeu\")   // returns True"
+        }
+    ]
+}

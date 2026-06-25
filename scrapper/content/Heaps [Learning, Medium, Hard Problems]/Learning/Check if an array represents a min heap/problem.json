@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of integers nums. Check whether the array represents a binary min-heap or not. Return true if it does, otherwise return false.\nA binary min-heap is a complete binary tree where the key at the root is the minimum among all keys present in a binary min-heap and the same property is recursively true for all nodes in a Binary Tree.",
+    "examples": [
+        {
+            "input": "nums = [10, 20, 30, 21, 23]",
+            "output": "true",
+            "explanation": "Each node has a lower or equal value than its children."
+        },
+        {
+            "input": "nums = [10, 20, 30, 25, 15]",
+            "output": "false",
+            "explanation": "The node with value 20 has a child with value 15, thus it is not a min-heap."
+        }
+    ]
+}

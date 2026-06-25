@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer n, return true if it is a power of two. Otherwise, return false.\n    An integer n is a power of two if there exists an integer x such that n == 2Ë£.",
+    "examples": [
+        {
+            "input": "n = 16",
+            "output": "true",
+            "explanation": "2â´ = 16, so 16 is a power of two.\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 3",
+            "output": "false",
+            "explanation": "3 is not a power of two."
+        }
+    ]
+}

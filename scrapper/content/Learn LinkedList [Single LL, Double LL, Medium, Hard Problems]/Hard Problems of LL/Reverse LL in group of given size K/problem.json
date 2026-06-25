@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given the head of a singly linked list containing integers, reverse the nodes of the list in groups of k and return the head of the modified list. If the number of nodes is not a multiple of k, then the remaining nodes at the end should be kept as is and not reversed.\n\n\n\nDo not change the values of the nodes, only change the links between nodes.",
+    "examples": [
+        {
+            "input": "head -> 1 -> 2 -> 3 -> 4 -> 5, k = 2",
+            "output": "head -> 2 -> 1 -> 4 -> 3 -> 5",
+            "explanation": "The groups 1 -> 2 and 3 -> 4 were reversed as 2 -> 1 and 4 -> 3."
+        },
+        {
+            "input": "head -> 1 -> 2 -> 3 -> 4 -> 5, k = 3",
+            "output": "head -> 3 -> 2 -> 1 -> 4 -> 5",
+            "explanation": "The groups 1 -> 2 -> 3 were reversed as 3 -> 2 -> 1.\nNote that 4 -> 5 was not reversed."
+        }
+    ]
+}

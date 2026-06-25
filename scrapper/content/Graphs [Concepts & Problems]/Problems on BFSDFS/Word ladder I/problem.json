@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given are the two distinct words startWord and targetWord, and a list denoting\n    wordList of unique words of equal lengths. Find the length of the shortest transformation sequence from startWord to\n    targetWord..",
+    "examples": [
+        {
+            "input": "wordList = {\"des\",\"der\",\"dfr\",\"dgt\",\"dfs\"}\nstartWord = \"der\", targetWord = \"dfs\"",
+            "output": "3",
+            "explanation": "The length of the smallest transformation sequence from \"der\" to \n\"dfs\" is 3 i.e. \"der\" -> (replace âeâ by âfâ) -> \"dfr\" -> (replace ârâ by âsâ)  -> \"dfs\". So, it takes 3 different strings for us to reach the targetWord. Each of these strings are present in the wordList.\n\nExample 2:"
+        },
+        {
+            "input": "wordList = {\"geek\", \"gefk\"}\nstartWord = \"gedk\", targetWord= \"geek\"",
+            "output": "2",
+            "explanation": "The length of the smallest transformation sequence \nfrom \"gedk\" to \"geek\" is 2 i.e. \"gedk\" -> (replace âdâ by âeâ) -> \"geek\" \nSo, it takes 2 different strings for us to reach the targetWord. \nEach of these strings are present in the wordList."
+        }
+    ]
+}

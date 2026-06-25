@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an infix expression, Your task is to convert the given infix expression to a prefix expression.",
+    "examples": [
+        {
+            "input": "x + y * z / w + u",
+            "output": "++x/*yzwu",
+            "explanation": "The infix expression \"x + y * z / w + u\" is converted to prefix form as \"++x/*yzwu\" by applying the rules of infix to prefix conversion.\n\n\nExample 2:"
+        },
+        {
+            "input": "a + b",
+            "output": "+ab",
+            "explanation": "The infix expression \"a + b\" is converted to prefix form as \"+ab\"."
+        }
+    ]
+}

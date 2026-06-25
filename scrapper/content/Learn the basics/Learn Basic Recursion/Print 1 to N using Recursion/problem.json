@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "N = 4",
+            "output": "1, 2, 3, 4",
+            "explanation": "All the numbers from 1 to 4 are printed."
+        },
+        {
+            "input": "N = 1",
+            "output": "1",
+            "explanation": "This is the base case."
+        }
+    ]
+}

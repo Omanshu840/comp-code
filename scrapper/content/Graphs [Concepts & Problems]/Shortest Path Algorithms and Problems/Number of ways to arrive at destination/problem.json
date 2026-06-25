@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are in a city that consists of n intersections numbered from 0 to n - 1 with bi-directional roads between some intersections. The inputs are generated such that you can reach any intersection from any other intersection and that there is at most one road between any two intersections.\n\nYou are given an integer n and a 2D integer array âroadsâ where roads[i] = [ui, vi, timei] means that there is a road between intersections ui and vi that takes timei minutes to travel. You want to know in how many ways you can travel from intersection 0 to intersection n - 1 in the shortest amount of time.\n\nReturn the number of ways you can arrive at your destination in the shortest amount of time. Since the answer may be large, return it modulo 109 + 7.",
+    "examples": [
+        {
+            "input": "n = 7, m = 10  \nedges = [[0, 6, 7], [0, 1, 2], [1, 2, 3], [1, 3, 3], [6, 3, 3], [3, 5, 1], [6, 5, 1], [2, 5, 1], [0, 4, 5], [4, 6, 2]]",
+            "output": "4",
+            "explanation": "The four ways to get from city 0 to city 6 in 7 minutes (the shortest time) are:  \n- 0 â 6  \n- 0 â 4 â 6  \n- 0 â 1 â 2 â 5 â 6  \n- 0 â 1 â 3 â 5 â 6  \n\n\nExample 2:"
+        },
+        {
+            "input": "n = 6, m = 8  \nedges = [[0, 5, 8], [0, 2, 2], [0, 1, 1], [1, 3, 3], [1, 2, 3], [2, 5, 6], [3, 4, 2], [4, 5, 2]]",
+            "output": "3",
+            "explanation": "The three ways to get from city 0 to city 5 in 8 minutes (the shortest time) are:  \n- 0 â 5  \n- 0 â 2 â 5  \n- 0 â 1 â 3 â 4 â 5"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer N return the reverse of the given number.",
+    "examples": [
+        {
+            "input": "N = 12345",
+            "output": "54321",
+            "explanation": "The reverse of 12345 is 54321."
+        },
+        {
+            "input": "N = 7789",
+            "output": "9877",
+            "explanation": "The reverse of number 7789 is 9877."
+        }
+    ]
+}

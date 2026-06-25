@@ -1,0 +1,15 @@
+{
+    "problem_statement": "The weight of N items and their corresponding values are given. We have to put these items in a knapsack of weight W such that the total value obtained is maximized.\n\nNote: We can either take the item as a whole or break it into smaller units.",
+    "examples": [
+        {
+            "input": "val = [60, 100, 120], wt = [10, 20, 30], capacity = 50",
+            "output": "240.000000",
+            "explanation": "- Take item 0 (w = 10, v = 60)  \n- Take item 1 (w = 20, v = 100)  \n- Take 2â3 of item 2 (w = 20, v = 80)  \nTotal value = 60 + 100 + 80 = 240\n\n\nExample 2:"
+        },
+        {
+            "input": "val = [60, 100], wt = [10, 20], capacity = 50",
+            "output": "160.000000",
+            "explanation": "Both items fit entirely since total weight 10 + 20 = 30 â¤ 50.  \nTotal value = 60 + 100 = 160"
+        }
+    ]
+}

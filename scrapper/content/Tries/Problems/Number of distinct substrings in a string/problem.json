@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "s = \"aba\"",
+            "output": "6",
+            "explanation": "The distinct substrings are \"a\", \"ab\", \"ba\", \"b\", \"aba\", \"\"."
+        },
+        {
+            "input": "s = \"abc\"",
+            "output": "7",
+            "explanation": "The distinct substrings are \"a\", \"ab\", \"abc\", \"b\", \"bc\", \"c\", \"\"."
+        }
+    ]
+}

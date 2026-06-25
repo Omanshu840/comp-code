@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string s, return the longest happy prefix of s. A happy prefix is a string that is both a proper prefix and a proper suffix. If no such prefix exists, return an empty string .",
+    "examples": [
+        {
+            "input": "s = \"ababab\"",
+            "output": "\"abab\"",
+            "explanation": "\"abab\" is the longest prefix which is also suffix. They can overlap in the original string."
+        },
+        {
+            "input": "s = \"aaaa\"",
+            "output": "\"aaa\"",
+            "explanation": "\"aaa\" is the longest proper prefix which is also a proper suffix in the string \"aaaa\"."
+        }
+    ]
+}

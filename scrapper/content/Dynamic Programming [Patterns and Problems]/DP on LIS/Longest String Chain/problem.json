@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an array of strings words[], the task is to return the longest string chain. A string chain is defined as a sequence of words where:\n\nEach word (except the first) can be formed by inserting exactly one character into the previous word.\nThe first word of the chain can be any word from the words[] array.\nThe task is to determine the length of the longest chain.",
+    "examples": [
+        {
+            "input": "words = [\"a\", \"ab\", \"abc\", \"abcd\", \"abcde\"]",
+            "output": "5",
+            "explanation": "The longest chain is [\"a\", \"ab\", \"abc\", \"abcd\", \"abcde\"].  \nEach word in the chain is formed by adding exactly one character to the previous word.\n\n\nExample 2:"
+        },
+        {
+            "input": "words = [\"dog\", \"dogs\", \"dots\", \"dot\", \"d\", \"do\"]",
+            "output": "4",
+            "explanation": "The longest chain is [\"d\", \"do\", \"dot\", \"dots\"].  \nEach word is formed by inserting one character into the previous word."
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+{
+    "problem_statement": "Given an array âarr of integer numbers, âar[i]â represents the number of pages in the âi-thâ book. There are a âmâ number of students, and the task is to allocate all the books to the students.Allocate books in such a way that:",
+    "examples": []
+}

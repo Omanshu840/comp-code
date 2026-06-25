@@ -1,0 +1,15 @@
+{
+    "problem_statement": "The n-queens is the problem of placing n queens on n Ã n chessboard such that no two queens can attack each other. Given an integer n, return all distinct solutions to the n -queens puzzle. Each solution contains a distinct boards configuration of the queen's placement, where âQâ and â.â indicate queen and empty space respectively.",
+    "examples": [
+        {
+            "input": "N = 4",
+            "output": "[[\".Q..\",\"...Q\",\"Q...\",\"..Q.\"],[\"..Q.\",\"Q...\",\"...Q\",\".Q..\"]]",
+            "explanation": "There exist two distinct solutions to the 4-queens puzzle as shown below"
+        },
+        {
+            "input": "N = 1",
+            "output": "[[\"Q\"]]",
+            "explanation": "There is only one way to place 1 queen on 1x1 chessboard."
+        }
+    ]
+}

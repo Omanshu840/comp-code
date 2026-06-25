@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a m x n binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
+    "examples": [
+        {
+            "input": "matrix = [[1,0,1,0,0],[1,0,1,1,1],[1,1,1,1,1],[1,0,0,1,0]]",
+            "output": "6",
+            "explanation": "The highlighted part depicts the rectangle with the largest area i.e. 6"
+        },
+        {
+            "input": "matrix = [[1]]",
+            "output": "1",
+            "explanation": "In this case, there is only one rectangle with area 1."
+        }
+    ]
+}

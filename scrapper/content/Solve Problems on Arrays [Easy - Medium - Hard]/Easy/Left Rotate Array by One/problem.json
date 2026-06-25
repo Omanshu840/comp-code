@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer array nums, rotate the array to the left by one.\n\nNote: There is no need to return anything, just modify the given array.",
+    "examples": [
+        {
+            "input": "nums = [1, 2, 3, 4, 5]",
+            "output": "[2, 3, 4, 5, 1]",
+            "explanation": "Initially, nums = [1, 2, 3, 4, 5]  \nRotating once to the left results in nums = [2, 3, 4, 5, 1].\n\n\nExample 2:"
+        },
+        {
+            "input": "nums = [-1, 0, 3, 6]",
+            "output": "[0, 3, 6, -1]",
+            "explanation": "Initially, nums = [-1, 0, 3, 6]  \nRotating once to the left results in nums = [0, 3, 6, -1]."
+        }
+    ]
+}

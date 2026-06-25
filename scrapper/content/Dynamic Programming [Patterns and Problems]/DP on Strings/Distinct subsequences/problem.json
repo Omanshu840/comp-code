@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two strings s and t, return the number of distinct subsequences of s that equal t.\n\n\n\nA subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters. For example, \"ace\" is a subsequence of \"abcde\" while \"aec\" is not.\n\n\n\nThe task is to count how many different ways we can form t from s by deleting some (or no) characters from s.",
+    "examples": [
+        {
+            "input": "s = \"axbxax\", t = \"axa\"",
+            "output": "2",
+            "explanation": "In the string \"axbxax\", there are two distinct subsequences \"axa\":\n(a)(x)bx(a)x\n(a)xb(x)(a)x"
+        },
+        {
+            "input": "s = \"babgbag\", t = \"bag\"",
+            "output": "5",
+            "explanation": "In the string \"babgbag\", there are five distinct subsequences \"bag\":\n(ba)(b)(ga)(g)\n(ba)(bg)(ag)\n(bab)(ga)(g)\n(bab)(g)(ag)\n(babg)(a)(g)"
+        }
+    ]
+}

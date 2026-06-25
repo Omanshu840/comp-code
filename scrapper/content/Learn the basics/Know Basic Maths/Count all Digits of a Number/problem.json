@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer N, return the number of digits in N.",
+    "examples": [
+        {
+            "input": "N = 12345",
+            "output": "5",
+            "explanation": "The number 12345 has 5 digits.\n                        \nExample 2:"
+        },
+        {
+            "input": "N = 7789",
+            "output": "4",
+            "explanation": "The number 7789 has 4 digits."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Directed Graph with V vertices and E edges, check whether it contains any cycle or not using BFS.",
+    "examples": [
+        {
+            "input": "V = 5, E = 5",
+            "output": "True",
+            "explanation": "2->3->4->2 is a cycle."
+        },
+        {
+            "input": "V = 4, E = 3",
+            "output": "False",
+            "explanation": "There is no cycle in the graph. This is a directed acyclic graph."
+        }
+    ]
+}

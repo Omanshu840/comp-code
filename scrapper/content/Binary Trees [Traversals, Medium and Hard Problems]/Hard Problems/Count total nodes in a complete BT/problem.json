@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Complete Binary Tree, count and return the number of nodes in the given tree.\nA Complete Binary Tree is a binary tree in which all levels are completely filled, except possibly for the last level, and all nodes are as left as possible.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 3 4 5 6",
+            "output": "6",
+            "explanation": "There are 6 nodes in this Binary Tree."
+        },
+        {
+            "input": "Binary Tree: 2 4 3 5 9 8 7 1 6",
+            "output": "9",
+            "explanation": "There are 9 nodes in this Binary Tree."
+        }
+    ]
+}

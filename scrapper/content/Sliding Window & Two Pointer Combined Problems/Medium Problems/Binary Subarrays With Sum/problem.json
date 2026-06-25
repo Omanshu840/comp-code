@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a binary array nums (containing only 0s and 1s) and an integer goal.\nReturn the number of non-empty subarrays of nums that sum to goal.\nA subarray is a contiguous part of the array.",
+    "examples": [
+        {
+            "input": "nums = [1, 0, 0, 1, 1, 0], goal = 2",
+            "output": "6",
+            "explanation": "There are 6 subarrays with sum exactly equal to 2:\n[1, 0, 0, 1], [0, 0, 1, 1], [0, 1, 1], [1, 1], [1, 1, 0], [0,0,1,1,0]"
+        },
+        {
+            "input": "nums = [0,0,0,0,0,0], goal = 0",
+            "output": "21",
+            "explanation": "All subarrays with only 0s will have sum = 0.  \nThere are 21 such subarrays in total (n(n+1)/2 = 6*7/2 = 21)."
+        }
+    ]
+}

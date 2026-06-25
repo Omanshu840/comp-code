@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given an n Ã n matrix grid where grid[i][j] is the unique elevation of cell (i, j).\nRain starts falling at time t = 0.\nAt any later time t â¥ 0, every cell is covered by water to depth t.\nYou may move 4-directionally (up, down, left, right) between adjacent cells instantaneously iff the elevations of both cells are â¤ t.\nStarting from the top-left cell (0, 0), return the minimum time t at which you can reach the bottom-right cell (n â 1, n â 1).",
+    "examples": [
+        {
+            "input": "grid = [[0,2],[1,3]]",
+            "output": "3",
+            "explanation": "t = 0, only (0,0) is reachable.  \nt = 1, cells {0,0},{1,0} reachable, but (1,1) still blocked (elevation 3).  \nt = 2, cells {0,0},{0,1},{1,0} reachable.  \nt = 3, all cells â¤ 3 are flooded, so we can swim to (1,1). Minimum t = 3."
+        },
+        {
+            "input": "grid = [[ 0, 1, 2, 3, 4],[24,23,22,21, 5],[12,13,14,15,16],[11,17,18,19,20],[10, 9, 8, 7, 6]]",
+            "output": "16",
+            "explanation": "The earliest moment the start and end cells belong to the same flooded component is t = 16."
+        }
+    ]
+}

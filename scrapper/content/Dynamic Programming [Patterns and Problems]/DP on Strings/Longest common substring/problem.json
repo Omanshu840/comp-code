@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two strings str1 and str2, find the length of their longest common substring.\n\nA substring is a contiguous sequence of characters within a string.",
+    "examples": [
+        {
+            "input": "str1 = \"abcde\", str2 = \"abfce\"",
+            "output": "2",
+            "explanation": "The longest common substring is \"ab\", which has a length of 2.\n\n\nExample 2:"
+        },
+        {
+            "input": "str1 = \"abcdxyz\", str2 = \"xyzabcd\"",
+            "output": "4",
+            "explanation": "The longest common substring is \"abcd\", which has a length of 4."
+        }
+    ]
+}

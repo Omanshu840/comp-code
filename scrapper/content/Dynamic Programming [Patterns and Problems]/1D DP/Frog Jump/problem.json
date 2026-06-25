@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a number of stairs and a frog, the frog wants to climb from the 0th stair\n    to the (N-1)th stair. At a time the frog can climb either one or two steps. A height[N] array is also given.\n    Whenever the frog jumps from a stair i to stair j, the energy consumed in the jump is abs(height[i]- height[j]),\n    where abs() means the absolute difference. We need to return the minimum energy that can be used by the frog to jump\n    from stair 0 to stair N-1..",
+    "examples": [
+        {
+            "input": "heights = [2, 1, 3, 5, 4]",
+            "output": "2",
+            "explanation": "One possible route can be,\n0th step -> 2nd Step = abs(2 - 3) = 1\n2nd step -> 4th step = abs(3 - 4) = 1\nTotal = 1 + 1 = 2.\n\nExample 2:"
+        },
+        {
+            "input": "heights = [7, 5, 1, 2, 6]",
+            "output": "9",
+            "explanation": "One possible route can be,\n0th step -> 1st Step = abs(7 - 5) = 2\n1st step -> 3rd step = abs(5 - 2) = 3\n3rd step -> 4th step = abs(2 - 6) = 4\nTotal = 2 + 3 + 4 = 9."
+        }
+    ]
+}

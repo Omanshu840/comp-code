@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a string s and an integer k.Find the length of the longest substring with at most k distinct characters",
+    "examples": [
+        {
+            "input": "s = \"aababbcaacc\" , k = 2",
+            "output": "6",
+            "explanation": "The longest substring with at most two distinct characters is \"aababb\".\nThe length of the string 6"
+        },
+        {
+            "input": "s = \"abcddefg\" , k = 3",
+            "output": "4",
+            "explanation": "The longest substring with at most three distinct characters is \"bcdd\".\nThe length of the string 4."
+        }
+    ]
+}

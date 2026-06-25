@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "str1 = \"abcd\", str2=\"bdef\"",
+            "output": "\"bd\"",
+            "explanation": "LCS of two strings is \"bd\"."
+        },
+        {
+            "input": "str1 = \"apple\" str2 = \"waffle\"",
+            "output": "\"ale\"",
+            "explanation": "LCS of two strings is \"ale\"."
+        }
+    ]
+}

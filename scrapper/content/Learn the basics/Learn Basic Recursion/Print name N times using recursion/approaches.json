@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Approach",
+        "intuition_and_algorithm": "To print your name N times using recursion, the approach involves defining a recursive function that takes the current count as a parameter. The function checks if the count has reached N, if it has, the recursion terminates. Otherwise, it prints the name once and recursively calls itself, incrementing the count by one. This way, the name gets printed exactly N times as the recursion progresses. The key is to use the count to keep track of how many times the name has been printed so far and stop once it reaches N.",
+        "images": [],
+        "complexities": {
+            "time": "O(N) , we print our name exactly N times.",
+            "space": "O(N) , stack space used for recursive calls."
+        },
+        "code": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    // Recursive function to print name count times\n    void printName(string name, int count, int N) {\n        // Base case: if count equals N, stop recursion\n        if (count == N)\n            return;\n\n        // Print the name\n        cout << name << \"\\n\";\n\n        // Recursive call with incremented count\n        printName(name, count + 1, N);\n    }\n};\n\nint main() {\n    Solution sol;\n    int N = 5;\n    string name = \"Ashish\";\n\n    sol.printName(name, 0, N);\n\n    return 0;\n}",
+            "java": "class Solution {\n    // Recursive function to print name count times\n    public void printName(String name, int count, int N) {\n        // Base case: if count equals N, stop recursion\n        if (count == N)\n            return;\n\n        // Print the name\n        System.out.println(name);\n\n        // Recursive call with incremented count\n        printName(name, count + 1, N);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int N = 5;\n        String name = \"Ashish\";\n\n        sol.printName(name, 0, N);\n    }\n}",
+            "python": "class Solution:\n    # Recursive function to print name count times\n    def printName(self, name, count, N):\n        # Base case: if count equals N, stop recursion\n        if count == N:\n            return\n\n        # Print the name\n        print(name)\n\n        # Recursive call with incremented count\n        self.printName(name, count + 1, N)\n\nif __name__ == \"__main__\":\n    sol = Solution()\n    N = 5\n    name = \"Ashish\"\n\n    sol.printName(name, 0, N)",
+            "javascript": "class Solution {\n    // Recursive function to print name count times\n    printName(name, count, N) {\n        // Base case: if count equals N, stop recursion\n        if (count === N) return;\n\n        // Print the name\n        console.log(name);\n\n        // Recursive call with incremented count\n        this.printName(name, count + 1, N);\n    }\n}\n\n// Driver code\nconst sol = new Solution();\nconst N = 5;\nconst name = \"Ashish\";\n\nsol.printName(name, 0, N);"
+        }
+    }
+]

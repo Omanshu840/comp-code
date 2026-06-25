@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a set of N jobs where each job comes with a deadline and profit. The profit can only be earned upon completing the job within its deadline. Find the number of jobs done and the maximum profit that can be obtained. Each job takes a single unit of time and only one job can be performed at a time.",
+    "examples": [
+        {
+            "input": "N = 4, Jobs = {(1, 4, 20), (2, 1, 10), (3, 1, 40), (4, 1, 30)}",
+            "output": "2 60",
+            "explanation": "- The 3rd job with a deadline of 1 is performed during the first unit of time.  \n- The 1st job is performed during the second unit of time as its deadline is 4.  \nProfit = 40 + 20 = 60.  \nSo, the result is 2 jobs with a total profit of 60.\n\n\nExample 2:"
+        },
+        {
+            "input": "N = 5, Jobs = {(1, 2, 100), (2, 1, 19), (3, 2, 27), (4, 1, 25), (5, 1, 15)}",
+            "output": "2 127",
+            "explanation": "The first and third jobs, both having a deadline of 2, give the highest profit.  \nProfit = 100 + 27 = 127.  \nSo, the result is 2 jobs with a total profit of 127."
+        }
+    ]
+}

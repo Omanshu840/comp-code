@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a Binary Tree, determine whether the given tree is symmetric or not. A Binary Tree would be Symmetric, when its mirror image is exactly the same as the original tree. If we were to draw a vertical line through the centre of the tree, the nodes on the left and right side would be mirror images of each other.",
+    "examples": [
+        {
+            "input": "Binary Tree: 1 2 2 3 4 4 3",
+            "output": "True",
+            "explanation": "If we were to draw a vertical line through the centre of the tree, dividing it into left and right parts, we observe that the nodes on the left and right sides are mirror images of each other.\n\n\n\n\n\nExample 2:"
+        },
+        {
+            "input": "Binary Tree: 1 2 2 -1 3 -1 3",
+            "output": "False",
+            "explanation": "While the tree has a symmetric structure at the first level with nodes 2 and 2, the subtrees under nodes 2 and 2 are not symmetric. If we were to draw a vertical line through the centre of the tree, dividing it into left and right parts, we observe that the nodes on the left and right sides are not mirror images of each other."
+        }
+    ]
+}

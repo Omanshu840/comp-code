@@ -1,0 +1,15 @@
+{
+    "problem_statement": "",
+    "examples": [
+        {
+            "input": "s = âbababcbadcedeâ",
+            "output": "4",
+            "explanation": "If we do 4 partitions in the following way, each substring of the partition will be a palindrome.\nbab | abcba | d | c | ede."
+        },
+        {
+            "input": "s = \"aab\"",
+            "output": "1",
+            "explanation": "If we do 1 partition in the following way, each substring of the partition will be a palindrome.\naa | b."
+        }
+    ]
+}

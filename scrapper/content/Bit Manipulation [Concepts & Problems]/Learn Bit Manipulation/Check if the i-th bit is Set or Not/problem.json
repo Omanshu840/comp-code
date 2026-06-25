@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given two integers n and i, return true if the ith bit in the binary representation of n (counting from the least significant bit, 0-indexed) is set (i.e., equal to 1). Otherwise, return false.",
+    "examples": [
+        {
+            "input": "n = 5, i = 0",
+            "output": "true",
+            "explanation": "Binary representation of 5 is 101. The 0-th bit from LSB is set (1).\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 10, i = 1",
+            "output": "true",
+            "explanation": "Binary representation of 10 is 1010. The 1-st bit from LSB is set (1)."
+        }
+    ]
+}

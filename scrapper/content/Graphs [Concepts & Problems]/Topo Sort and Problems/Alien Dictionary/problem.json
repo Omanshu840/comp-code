@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Determine the order of characters in an alien language given a sorted list of words from its dictionary.",
+    "examples": [
+        {
+            "input": "N = 5, K = 4\ndict = {\"baa\",\"abcd\",\"abca\",\"cab\",\"cad\"}",
+            "output": "b d a c",
+            "explanation": "We will analyze every consecutive pair to find out the order of the characters. The pair âbaaâ and âabcdâ suggests âbâ appears before âaâ in the alien dictionary.The pair âabcdâ and âabcaâ suggests âdâ appears before âaâ in the alien dictionary. The pair âabcaâ and âcabâ suggests âaâ appears before âcâ in the alien dictionary. The pair âcabâ and âcadâ suggests âbâ appears before âdâ in the alien dictionary. So, [âbâ, âdâ, âaâ, âcâ] is a valid ordering.\n\n\nExample 2:"
+        },
+        {
+            "input": "N = 3, K = 3\ndict = {\"caa\",\"aaa\",\"aab\"}",
+            "output": "c a b",
+            "explanation": "Similarly, if we analyze the consecutive pair for this example, we will figure out [âcâ, âaâ, âbâ] is a valid ordering."
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given an integer N. Print the Fibonacci series up to the Nth term.",
+    "examples": [
+        {
+            "input": "N = 5",
+            "output": "0 1 1 2 3 5",
+            "explanation": "0 1 1 2 3 5 is the fibonacci series up to 5th term.(0 based indexing)\n\nExample 2:"
+        },
+        {
+            "input": "6",
+            "output": "0 1 1 2 3 5 8",
+            "explanation": "0 1 1 2 3 5 8 is the fibonacci series upto 6th term.(o based indexing)"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the maximum number of nested parentheses.",
+    "examples": [
+        {
+            "input": "s = \"(1+(2*3)+((8)/4))+1\"",
+            "output": "3",
+            "explanation": "Digit 8 is inside of 3 nested parentheses in the string.\n\n\nExample 2:"
+        },
+        {
+            "input": "s = \"(1)+((2))+(((3)))\"",
+            "output": "3",
+            "explanation": "Digit 3 is inside of 3 nested parentheses in the string."
+        }
+    ]
+}

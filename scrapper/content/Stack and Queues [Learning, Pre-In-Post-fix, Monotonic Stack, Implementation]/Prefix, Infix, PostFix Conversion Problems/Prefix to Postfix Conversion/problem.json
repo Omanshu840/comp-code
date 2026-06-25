@@ -1,0 +1,15 @@
+{
+    "problem_statement": "You are given a valid prefix expression consisting of binary operators and single-character operands. Your task is to convert it into a valid postfix expression.\nPrefix (Polish) notation places the operator before operands.\nPostfix (Reverse Polish) notation places the operator after operands.",
+    "examples": [
+        {
+            "input": "expression = \"+ab",
+            "output": "ab+\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "expression = \"*+ab-cd",
+            "output": "ab+cd-*",
+            "explanation": ""
+        }
+    ]
+}

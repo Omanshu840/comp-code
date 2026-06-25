@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.\n\nNote: You can only move either down or right at any point in time.",
+    "examples": [
+        {
+            "input": "grid = [[5,9,6],[11,5,2]]",
+            "output": "21",
+            "explanation": "Minimum sum is achieved via path 5->9->5->2 i.e. 21."
+        },
+        {
+            "input": "grid = [[1,2,3],[4,5,6]]",
+            "output": "12",
+            "explanation": "Minimum sum is achieved via path 1->2->3->6 i.e. 12."
+        }
+    ]
+}
