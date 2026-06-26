@@ -130,11 +130,10 @@ export default defineConfig({
         "theme_color": "#111111",
         "icons": [
           {
-            src: "/compcode-mark.svg",
+            src: "/compcode-mark.png",
             sizes: "any",
-            type: "image/svg+xml",
-            purpose: "any maskable",
-          },
+            type: "image/png",
+          }
         ],
       },
       workbox: {

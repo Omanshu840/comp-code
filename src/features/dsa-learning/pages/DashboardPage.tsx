@@ -1,4 +1,4 @@
-import { BookOpen, Check, ChevronDown, Play } from "lucide-react"
+import { BookOpen, Check, ChevronDown, Flame, Play } from "lucide-react"
 import { useMemo, useRef, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
@@ -17,9 +17,46 @@ import { cn } from "@/lib/utils"
 import { getTrackPreview, getSystemDesignTrackPreview } from "../content"
 import type { DsaProblem } from "../content"
 import { useCompletedProblems } from "../hooks/useCompletedProblems"
+import { useStreak } from "../hooks/useStreak"
 import { difficultyVariant, getActiveProblemId, getProblemStatus } from "../utils"
 
 type Track = "DSA" | "System Design"
+
+const bgColor = {
+  blue: "bg-blue-500",
+  green: "bg-green-500",
+  purple: "bg-purple-500",
+  fuchsia: "bg-fuchsia-500",
+  rose: "bg-rose-500",
+  indigo: "bg-indigo-500",
+  teal: "bg-teal-500",
+  cyan: "bg-cyan-500",
+  emerald: "bg-emerald-500",
+  lime: "bg-lime-500",
+  amber: "bg-amber-500",
+  sky: "bg-sky-500",
+  violet: "bg-violet-500",
+  pink: "bg-pink-500",
+}
+
+const bgOpacityColor = {
+  blue: "bg-blue-500/10",
+  green: "bg-green-500/10",
+  purple: "bg-purple-500/10",
+  fuchsia: "bg-fuchsia-500/10",
+  rose: "bg-rose-500/10",
+  indigo: "bg-indigo-500/10",
+  teal: "bg-teal-500/10",
+  cyan: "bg-cyan-500/10",
+  emerald: "bg-emerald-500/10",
+  lime: "bg-lime-500/10",
+  amber: "bg-amber-500/10",
+  sky: "bg-sky-500/10",
+  violet: "bg-violet-500/10",
+  pink: "bg-pink-500/10",
+}
+
+const colorKeys = Object.keys(bgColor) as (keyof typeof bgColor)[]
 
 export function DashboardPage() {
   const tracks: { name: Track; icon: React.ReactNode }[] = [
@@ -31,6 +68,7 @@ export function DashboardPage() {
   const [isTrackSwitcherOpen, setIsTrackSwitcherOpen] = useState(false)
 
   const { completed } = useCompletedProblems()
+  const { streak } = useStreak()
   const navigate = useNavigate()
 
   const track = useMemo(() => {
@@ -58,14 +96,17 @@ export function DashboardPage() {
   const groupedProblems = useMemo(() => {
     return track.reduce(
       (acc, problem) => {
-        const subcategory = problem.subcategoryName
-        if (!acc[subcategory]) {
-          acc[subcategory] = []
+        const { categoryName, subcategoryName } = problem
+        if (!acc[categoryName]) {
+          acc[categoryName] = {}
         }
-        acc[subcategory].push(problem)
+        if (!acc[categoryName][subcategoryName]) {
+          acc[categoryName][subcategoryName] = []
+        }
+        acc[categoryName][subcategoryName].push(problem)
         return acc
       },
-      {} as Record<string, DsaProblem[]>,
+      {} as Record<string, Record<string, DsaProblem[]>>,
     )
   }, [track])
 
@@ -79,8 +120,12 @@ export function DashboardPage() {
   }
 
   return (
-    <div className="w-full">
-      <header className="sticky top-0 z-30 flex flex-col gap-4">
+    <div
+      className={cn(
+        "relative space-y-8 rounded-lg",
+      )}
+    >
+      <div className="sticky top-0 z-30 flex flex-col gap-4 ">
         <div className="flex items-center justify-between bg-background px-2 py-2 sm:px-6 lg:px-8">
           <Dialog open={isTrackSwitcherOpen} onOpenChange={setIsTrackSwitcherOpen}>
             <DialogTrigger asChild>
@@ -112,104 +157,160 @@ export function DashboardPage() {
               </div>
             </DialogContent>
           </Dialog>
+          <div className="flex items-center gap-2">
+            <Flame className="size-5 text-orange-500" />
+            <span className="font-bold text-lg">{streak}</span>
+          </div>
         </div>
         {activeProblem && (
           <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col bg-card p-4 rounded-lg border">
-              <div className="text-xs text-muted-foreground">
-                {activeProblem.categoryName} &gt; {activeProblem.subcategoryName}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-muted-foreground">
+                    {activeProblem.categoryName} &gt; {activeProblem.subcategoryName}
+                  </div>
+                  <h1 className="text-lg font-semibold truncate">
+                    {activeProblem.problem_name}
+                  </h1>
+                </div>
+                <Button
+                  className="shrink-0"
+                  onClick={() => handleProblemClick(activeProblem)}
+                >
+                  <Play className="size-4" />
+                </Button>
               </div>
-              <h1 className="text-lg font-semibold truncate">
-                {activeProblem.problem_name}
-              </h1>
             </div>
           </div>
         )}
-      </header>
+      </div>
 
-      <div className="mx-auto w-full max-w-2xl px-4 pb-28 sm:px-6 lg:px-8">
-
-        <section className="relative mx-auto mt-8 max-w-xl pb-10" id="track">
-          <div className="absolute left-1/2 top-6 h-full w-px -translate-x-1/2 bg-border" />
-          <div className="space-y-8">
+      <div>
+        {/* mx-auto w-full max-w-2xl px-4 pb-28 sm:px-6 lg:px-8 */}
+        <section className="relative mx-auto" id="track">
+          {/* relative mx-auto max-w-xl pb-10 */}
+          {/* <div className="absolute left-1/2 top-6 h-full w-px -translate-x-1/2 bg-border" /> */}
+          <div>
             {Object.entries(groupedProblems).map(
-              ([subcategoryName, problems]) => (
-                <div key={subcategoryName} className="relative">
-                  <div className="z-10 h-0 text-center">
-                    <div className="inline-block rounded-full border-2 border-primary bg-background px-4 py-2 font-semibold text-primary">
-                      {subcategoryName}
+              ([categoryName, subcategories], index) => {
+                const baseColor = colorKeys[index % colorKeys.length]
+                return (
+                  <div
+                    key={categoryName}
+                    className={cn(
+                      "relative space-y-8 rounded-lg p-4 py-8",
+                      bgOpacityColor[baseColor],
+                    )}
+                  >
+                    <div className="z-10 text-center mb-8">
+                      <div
+                        className={cn(
+                          "inline-flex items-center rounded-lg px-4 py-3 text-lg font-bold text-white",
+                          bgColor[baseColor],
+                        )}
+                      >
+                        {categoryName}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-4 pt-20">
-                    {problems.map((problem) => {
-                      const status = getProblemStatus(
-                        problem,
-                        completed,
-                        activeId,
-                      )
-                      const enabled = problem.approaches.length > 0 || trackType === "System Design"
-                      const ref =
-                        problem.problem_id === activeId ? activeProblemRef : null
-
-                      return (
-                        <div
-                          className={cn(
-                            "relative flex justify-center transition-all duration-300",
-                            status !== "active" && "scale-95 opacity-70",
-                          )}
-                          key={problem.problem_id}
-                          ref={ref}
-                        >
-                          <Card className="z-10 flex w-full max-w-sm items-center gap-3 border-border bg-background p-3 shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#3f3f46]">
-                            <Button
-                              aria-disabled={!enabled}
-                              className={cn(
-                                "grid size-14 shrink-0 place-items-center rounded-xl bg-success border border-foreground text-foreground transition",
-                                status === "completed" && "bg-accent text-black",
-                                status === "active" &&
-                                "bg-primary text-accent-foreground",
-                                !enabled && "cursor-not-allowed opacity-70",
-                              )}
-                              onClick={() => handleProblemClick(problem)}
-                            >
-                              {status === "completed" ? <Check /> : <Play />}
-                            </Button>
-                            <div className="min-w-0 flex-1">
-                              <div className="truncate text-sm font-semibold">
-                                {problem.problem_name}
-                              </div>
-                              <div className="mt-1 flex items-center gap-2">
-                                <Badge
-                                  variant={difficultyVariant(problem.difficulty)}
-                                >
-                                  {problem.difficulty}
-                                </Badge>
-                              </div>
+                    {Object.entries(subcategories).map(
+                      ([subcategoryName, problems]) => (
+                        <div key={subcategoryName} className="relative">
+                          <div className="z-10 h-0 text-center">
+                            <div className="inline-block rounded-full border-2 border-primary bg-background px-3 py-1 text-sm font-semibold text-primary">
+                              {subcategoryName}
                             </div>
-                            <Button
-                              asChild
-                              disabled={!enabled}
-                              size="icon"
-                              variant="ghost"
-                            >
-                              <Link
-                                to={
-                                  enabled
-                                    ? `/${problem.problem_id}/revision`
-                                    : "#"
-                                }
-                              >
-                                <BookOpen className="size-4" />
-                              </Link>
-                            </Button>
-                          </Card>
+                          </div>
+
+                          <div className="space-y-4 pt-16">
+                            {problems.map((problem) => {
+                              const status = getProblemStatus(
+                                problem,
+                                completed,
+                                activeId,
+                              )
+                              const enabled =
+                                problem.approaches.length > 0 ||
+                                trackType === "System Design"
+                              const ref =
+                                problem.problem_id === activeId
+                                  ? activeProblemRef
+                                  : null
+
+                              return (
+                                <div
+                                  className={cn(
+                                    "relative flex justify-center transition-all duration-300",
+                                    status !== "active" &&
+                                      "scale-95 opacity-70",
+                                  )}
+                                  key={problem.problem_id}
+                                  ref={ref}
+                                >
+                                  <Card className="z-10 flex w-full max-w-sm items-center gap-3 border-border bg-background p-3 shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#3f3f46]">
+                                    <Button
+                                      aria-disabled={!enabled}
+                                      className={cn(
+                                        "grid size-14 shrink-0 place-items-center rounded-xl bg-success border border-foreground text-foreground transition",
+                                        status === "completed" &&
+                                          "bg-accent text-black",
+                                        status === "active" &&
+                                          "bg-primary text-background",
+                                        !enabled &&
+                                          "cursor-not-allowed opacity-70",
+                                      )}
+                                      onClick={() =>
+                                        handleProblemClick(problem)
+                                      }
+                                    >
+                                      {status === "completed" ? (
+                                        <Check />
+                                      ) : (
+                                        <Play />
+                                      )}
+                                    </Button>
+                                    <div className="min-w-0 flex-1">
+                                      <div className="truncate text-sm font-semibold">
+                                        {problem.problem_name}
+                                      </div>
+                                      <div className="mt-1 flex items-center gap-2">
+                                        <Badge
+                                          variant={difficultyVariant(
+                                            problem.difficulty,
+                                          )}
+                                        >
+                                          {problem.difficulty}
+                                        </Badge>
+                                      </div>
+                                    </div>
+                                    <Button
+                                      asChild
+                                      disabled={!enabled}
+                                      size="icon"
+                                      variant="ghost"
+                                    >
+                                      <Link
+                                        to={
+                                          enabled
+                                            ? `/${problem.problem_id}/revision`
+                                            : "#"
+                                        }
+                                      >
+                                        <BookOpen className="size-4" />
+                                      </Link>
+                                    </Button>
+                                  </Card>
+                                </div>
+                              )
+                            })}
+                          </div>
                         </div>
-                      )
-                    })}
+                      ),
+                    )}
                   </div>
-                </div>
-              ),
+                )
+              },
             )}
           </div>
         </section>
