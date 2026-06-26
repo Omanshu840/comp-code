@@ -124,7 +124,7 @@ export default defineConfig({
         "name": "CompCode DSA",
         "short_name": "CompCode",
         "description": "A gamified DSA learning path with revision mode.",
-        "start_url": "/learn",
+        "start_url": "/comp-code/",
         "display": "standalone",
         "background_color": "#fafafa",
         "theme_color": "#111111",
