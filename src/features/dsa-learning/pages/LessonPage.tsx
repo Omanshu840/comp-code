@@ -35,7 +35,7 @@ export function LessonPage() {
   const progress = ((card + 1) / LESSON_CARDS.length) * 100
 
   if (!problem || !problem.problem) {
-    return <Navigate replace to="/learn" />
+    return <Navigate replace to="/" />
   }
 
   const lessonProblem = problem
@@ -43,7 +43,7 @@ export function LessonPage() {
   function continueLesson() {
     if (card === LESSON_CARDS.length - 1) {
       markCompleted(lessonProblem.problem_id)
-      navigate("/learn")
+      navigate("/")
       return
     }
 
@@ -56,7 +56,7 @@ export function LessonPage() {
     <div className="bg-background text-foreground">
       <header className="sticky top-0 z-10 flex h-16 items-center gap-3 border-b border-border bg-background/95 px-4 backdrop-blur">
         <Button aria-label="Exit lesson" asChild size="icon" variant="ghost">
-          <Link to="/learn">
+          <Link to="/">
             <X className="size-5" />
           </Link>
         </Button>

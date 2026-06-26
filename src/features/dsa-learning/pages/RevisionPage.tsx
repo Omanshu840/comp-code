@@ -20,7 +20,7 @@ export function RevisionPage() {
   const problem = getProblemById(problemId)
 
   if (!problem) {
-    return <Navigate replace to="/learn" />
+    return <Navigate replace to="/" />
   }
 
   const anchors = [
@@ -33,7 +33,7 @@ export function RevisionPage() {
     <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-28 pt-5 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:px-10 lg:pb-12">
       <aside className="top-6 hidden self-start lg:sticky lg:block">
         <Button asChild className="mb-4" variant="outline">
-          <Link to="/learn">
+          <Link to="/">
             <ChevronLeft className="size-4" />
             Path
           </Link>
@@ -55,8 +55,8 @@ export function RevisionPage() {
               {problem.categoryName}
             </span>
           </div>
-          <h1 className="text-4xl font-semibold tracking-normal sm:text-5xl">{problem.problem_name}</h1>
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+          <h1 className="text-2xl font-semibold tracking-normal">{problem.problem_name}</h1>
+          <p className="mt-5 text-sm leading-8 text-muted-foreground">
             {cleanScrapedText(problem.problem?.problem_statement)}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
@@ -102,7 +102,7 @@ export function RevisionPage() {
             {(problem.problem?.examples ?? []).map((example, index) => (
               <div className="border border-border p-4" key={`${example.input}-${index}`}>
                 <div className="text-sm font-semibold">Example {index + 1}</div>
-                <pre className="mt-3 overflow-x-auto bg-muted p-3 font-mono text-xs">
+                <pre className="mt-3 whitespace-pre-wrap break-words bg-muted p-3 font-mono text-xs">
 {`Input: ${example.input}
 Output: ${example.output}${example.explanation ? `
 ${example.explanation}` : ""}`}
@@ -118,8 +118,8 @@ ${example.explanation}` : ""}`}
               <Code2 className="size-4" />
               Approach {index + 1}
             </div>
-            <h2 className="mt-3 text-2xl font-semibold">{approach.name}</h2>
-            <p className="mt-4 whitespace-pre-line text-base leading-8 text-muted-foreground">
+            <h2 className="mt-3 text-xl font-semibold">{approach.name}</h2>
+            <p className="mt-4 whitespace-pre-line text-sm leading-8 text-muted-foreground">
               {cleanScrapedText(approach.intuition_and_algorithm)}
             </p>
             {approach.images?.length ? <ImageCarousel images={approach.images} /> : null}

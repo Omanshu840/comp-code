@@ -20,7 +20,9 @@ export function UserAuth() {
     return (
       <div className="flex items-center gap-4">
         <div className="text-right">
-          <div className="font-semibold">{user?.username}</div>
+          <div className="font-semibold">
+            {user && typeof user === "object" && "username" in user && typeof user.username === "string" ? user.username : "User"}
+          </div>
           <div className="text-xs text-muted-foreground">LeetCode User</div>
         </div>
         <Button onClick={logout} variant="outline" size="sm">

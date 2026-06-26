@@ -139,6 +139,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        maximumFileSizeToCacheInBytes: 7 * 1024 * 1024, // 7 MB
         runtimeCaching: [
           {
             handler: "CacheFirst",
@@ -155,6 +156,17 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/@monaco-editor/react")) {
+            return "monaco-editor"
+          }
+        },
+      },
     },
   },
 })

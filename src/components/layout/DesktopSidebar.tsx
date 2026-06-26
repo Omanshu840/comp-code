@@ -1,4 +1,4 @@
-import { BookOpen, Code, Map, User } from "lucide-react"
+import { BookOpen, Code } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
 import { cn } from "@/lib/utils"
 import type { PropsWithChildren } from "react"
@@ -8,7 +8,7 @@ function DesktopLink({
   children,
 }: PropsWithChildren<{ href: string }>) {
   const { pathname } = useLocation()
-  const isActive = pathname.startsWith(href)
+  const isActive = href === "/" ? pathname === href : pathname.startsWith(href)
   return (
     <Link
       to={href}
@@ -31,27 +31,15 @@ export function DesktopSidebar() {
             <li>
               <ul role="list" className="-mx-2 space-y-1">
                 <li>
-                  <DesktopLink href="/learn">
+                  <DesktopLink href="/">
                     <BookOpen className="size-5" />
                     Learn
                   </DesktopLink>
                 </li>
                 <li>
-                  <DesktopLink href="/learn/roadmap">
-                    <Map className="size-5" />
-                    Compendium
-                  </DesktopLink>
-                </li>
-                <li>
-                  <DesktopLink href="/leetcode">
+                  <DesktopLink href="/solve">
                     <Code className="size-5" />
-                    Leetcode
-                  </DesktopLink>
-                </li>
-                <li>
-                  <DesktopLink href="/profile">
-                    <User className="size-5" />
-                    Profile
+                    Solve
                   </DesktopLink>
                 </li>
               </ul>

@@ -1,4 +1,4 @@
-import { BookOpen, Code, Map, User } from "lucide-react"
+import { BookOpen, Code } from "lucide-react"
 import type { ReactNode, PropsWithChildren } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { cn } from "@/lib/utils"
@@ -9,7 +9,7 @@ function MobileLink({
   children,
 }: PropsWithChildren<{ href:string }>) {
   const { pathname } = useLocation()
-  const isActive = pathname.startsWith(href)
+  const isActive = href === "/" ? pathname === href : pathname.startsWith(href)
   return (
     <Link
       to={href}
@@ -33,18 +33,12 @@ export function AppShell({ children }: { children: ReactNode }) {
       <main className={cn("md:pl-64", !hideNav && "pb-20 md:pb-0")}>{children}</main>
 
       {!hideNav && (
-        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-background/95 px-4 py-6 backdrop-blur md:hidden">
-          <MobileLink href="/learn">
+        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-background/95 px-4 py-6 backdrop-blur md:hidden">
+          <MobileLink href="/">
             <BookOpen className="size-5" />
           </MobileLink>
-          <MobileLink href="/learn/roadmap">
-            <Map className="size-5" />
-          </MobileLink>
-          <MobileLink href="/leetcode">
+          <MobileLink href="/solve">
             <Code className="size-5" />
-          </MobileLink>
-          <MobileLink href="/profile">
-            <User className="size-5" />
           </MobileLink>
         </nav>
       )}

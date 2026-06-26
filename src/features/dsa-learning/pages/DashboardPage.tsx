@@ -1,11 +1,17 @@
-import { BookOpen, Check, Play } from "lucide-react"
+import { BookOpen, Check, ChevronDown, Play } from "lucide-react"
 import { useMemo, useRef, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 
 import { getTrackPreview, getSystemDesignTrackPreview } from "../content"
@@ -16,7 +22,14 @@ import { difficultyVariant, getActiveProblemId, getProblemStatus } from "../util
 type Track = "DSA" | "System Design"
 
 export function DashboardPage() {
+  const tracks: { name: Track; icon: React.ReactNode }[] = [
+    { name: "DSA", icon: <BookOpen className="size-8" /> },
+    { name: "System Design", icon: <BookOpen className="size-8" /> },
+  ]
+
   const [trackType, setTrackType] = useState<Track>("DSA")
+  const [isTrackSwitcherOpen, setIsTrackSwitcherOpen] = useState(false)
+
   const { completed } = useCompletedProblems()
   const navigate = useNavigate()
 
@@ -36,7 +49,6 @@ export function DashboardPage() {
     setTimeout(() => {
       if (activeProblemRef.current) {
         activeProblemRef.current.scrollIntoView({
-          behavior: "smooth",
           block: "center",
         })
       }
@@ -58,23 +70,48 @@ export function DashboardPage() {
   }, [track])
 
   const handleProblemClick = (problem: DsaProblem) => {
-    navigate(`/learn/${problem.problem_id}/lesson`)
+    navigate(`/${problem.problem_id}/lesson`)
+  }
+
+  const handleTrackChange = (newTrack: Track) => {
+    setTrackType(newTrack)
+    setIsTrackSwitcherOpen(false)
   }
 
   return (
     <div className="w-full">
       <header className="sticky top-0 z-30 flex flex-col gap-4">
-        <div className="flex items-center justify-between bg-background">
-          <ToggleGroup
-            type="single"
-            defaultValue="DSA"
-            onValueChange={(value: Track) => {
-              if (value) setTrackType(value)
-            }}
-          >
-            <ToggleGroupItem value="DSA">DSA</ToggleGroupItem>
-            <ToggleGroupItem value="System Design">System Design</ToggleGroupItem>
-          </ToggleGroup>
+        <div className="flex items-center justify-between bg-background px-2 py-2 sm:px-6 lg:px-8">
+          <Dialog open={isTrackSwitcherOpen} onOpenChange={setIsTrackSwitcherOpen}>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="flex items-center gap-2">
+                <span>{trackType}</span>
+                <ChevronDown className="size-4" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="top-20 translate-y-0 sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Switch course</DialogTitle>
+              </DialogHeader>
+              <div className="grid grid-cols-2 gap-4">
+                {tracks.map((track) => (
+                  <button
+                    key={track.name}
+                    onClick={() => handleTrackChange(track.name)}
+                    className={cn(
+                      "flex flex-col items-center gap-3 rounded-lg border-2 p-4 transition-colors",
+                      trackType === track.name
+                        ? "border-primary bg-primary/10"
+                        : "border-border hover:bg-muted",
+                    )}
+                  >
+                    {track.icon}
+                    <span className="font-semibold">{track.name}</span>
+                  </button>
+                ))}
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
         {activeProblem && (
           <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8">
@@ -117,7 +154,10 @@ export function DashboardPage() {
 
                       return (
                         <div
-                          className="relative flex justify-center"
+                          className={cn(
+                            "relative flex justify-center transition-all duration-300",
+                            status !== "active" && "scale-95 opacity-70",
+                          )}
                           key={problem.problem_id}
                           ref={ref}
                         >
@@ -156,7 +196,7 @@ export function DashboardPage() {
                               <Link
                                 to={
                                   enabled
-                                    ? `/learn/${problem.problem_id}/revision`
+                                    ? `/${problem.problem_id}/revision`
                                     : "#"
                                 }
                               >

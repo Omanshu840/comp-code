@@ -275,7 +275,7 @@ export function ProblemListPage({ embedded = false }: ProblemListPageProps) {
                         <TableCell className="font-medium">
                           <div className="space-y-1">
                             <Button asChild className="h-auto p-0 text-left" variant="link">
-                              <Link to={`/problems/${problem.titleSlug}`}>
+                              <Link to={`/solve/problems/${problem.titleSlug}`}>
                                 {problem.title}
                               </Link>
                             </Button>
