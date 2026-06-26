@@ -9,7 +9,7 @@
         {
             "input": "s = \"()(()())(())\"",
             "output": "\"(()())()\"",
-            "explanation": "Primitive decomposition: \"()\" + \"(()())\" + \"(())\"  \nAfter removing outermost parentheses: \"\" + \"()()\" + \"()\"\nFinal result: \"(()())()\"."
+            "explanation": "Primitive decomposition: \"()\" + \"(()())\" + \"(())\"  \nAfter removing outermost parentheses: \"\" + \"()()\" + \"()\"\nFinal"
         }
     ]
 }

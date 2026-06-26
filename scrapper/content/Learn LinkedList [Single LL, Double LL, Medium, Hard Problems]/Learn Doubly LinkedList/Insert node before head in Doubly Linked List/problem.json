@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given a doubly linked list, and a value âkâ, insert a node having value âkâ at the end of the doubly linked list.",
-    "examples": []
+    "examples": [
+        {
+            "input": "DLL: 1 <-> 2 <-> 3 <-> 4  \nValue to be Inserted: 6",
+            "output": "DLL: 1 <-> 2 <-> 3 <-> 4 <-> 6",
+            "explanation": "A new node with value 6 has been inserted at the end of the doubly linked list after the tail node.\n\n\nExample 2:"
+        },
+        {
+            "input": "DLL: 10 <-> 20 <-> 30  \nValue to be Inserted: 40",
+            "output": "DLL: 10 <-> 20 <-> 30 <-> 40",
+            "explanation": "In this case, a new node with value 40 is inserted after 30, which is at the end of the doubly linked list."
+        }
+    ]
 }

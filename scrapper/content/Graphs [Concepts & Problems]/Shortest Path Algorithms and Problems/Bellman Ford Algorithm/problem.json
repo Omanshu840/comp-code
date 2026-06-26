@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given a weighted, directed and connected graph of V vertices and E edges, Find the shortest distance of all the vertices from the source vertex S.\nNote: If the Graph contains a negative cycle then return an array consisting of only -1.",
-    "examples": []
+    "examples": [
+        {
+            "input": "V = 6, \nE = [[3, 2, 6], [5, 3, 1], [0, 1, 5], [1, 5, -3], [1, 2, -2], [3, 4, -2], [2, 4, 3]], \nS = 0",
+            "output": "0 5 3 3 1 2\n\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "V = 2, E = [[0,1,9]],  S = 0",
+            "output": "0 9",
+            "explanation": "Shortest distance of all nodes from the source node is returned."
+        }
+    ]
 }

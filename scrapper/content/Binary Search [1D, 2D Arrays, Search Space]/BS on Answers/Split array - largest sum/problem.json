@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given an integer array âAâ of size âNâ and an integer âK'. Split the array âAâ into âKâ non-empty subarrays such that the largest sum of any subarray is minimized. Your task is to return the minimized largest sum of the split.\nA subarray is a contiguous part of the array.",
-    "examples": []
+    "examples": [
+        {
+            "input": "N = 5, a[] = {1,2,3,4,5}, k = 3",
+            "output": "6",
+            "explanation": "There are many ways to split the array a[] into k consecutive subarrays. The best way to do this is to split the array a[] into [1, 2, 3], [4], and [5], where the largest sum among the three subarrays is only 6.\n\nExample 2:"
+        },
+        {
+            "input": "N = 3, a[] = {3,5,1}, k = 3",
+            "output": "5",
+            "explanation": "There is only one way to split the array a[] into 3 subarrays, i.e., [3], [5], and [1]. The largest sum among these subarrays is 5."
+        }
+    ]
 }

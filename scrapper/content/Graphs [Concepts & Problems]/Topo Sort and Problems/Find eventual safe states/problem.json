@@ -1,4 +1,15 @@
 {
     "problem_statement": "A directed graph of V vertices and E edges is given in the form of an adjacency\n    list adj. Each node of the graph is labeled with a distinct integer in the range 0 to V - 1. A node is a terminal\n    node if there are no outgoing edges. A node is a safe node if every possible path starting from that node leads to a\n    terminal node. You have to return an array containing all the safe nodes of the graph. The answer should be sorted\n    in ascending order.",
-    "examples": []
+    "examples": [
+        {
+            "input": "N = 7, E = 7",
+            "output": "{2 4 5 6}\n\nExample 2:",
+            "explanation": ""
+        },
+        {
+            "input": "N = 4, E = 4",
+            "output": "{3}",
+            "explanation": ""
+        }
+    ]
 }

@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given a non-empty array of integers arr, every element appears twice except for one. Find that single one.",
-    "examples": []
+    "examples": [
+        {
+            "input": "arr[] = {2,2,1}",
+            "output": "1",
+            "explanation": "In this array, only the element 1 appear once and so it is the answer.\n\n\nExample 2:"
+        },
+        {
+            "input": "arr[] = {4,1,2,1,2}",
+            "output": "4",
+            "explanation": "In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer."
+        }
+    ]
 }

@@ -3,13 +3,10 @@ import os
 import re
 from bs4 import BeautifulSoup
 
-BASE_DIR = 'TakeUForward_Content'
+BASE_DIR = 'content'
 
 def clean_nextjs_html(raw_html):
-    """
-    Decodes the escaped JSON string, stitches broken Next.js chunks together, 
-    and removes the <script> wrappers so BeautifulSoup can parse the actual HTML tags.
-    """
+    """Decodes escaped JSON, stitches NextJS chunks, and strips script tags."""
     if not raw_html:
         return ""
     
@@ -25,7 +22,7 @@ def clean_nextjs_html(raw_html):
     return decoded
 
 def parse_complexities(text):
-    """Extracts Time and Space complexity from a block of text using robust Regex."""
+    """Extracts Time and Space complexity."""
     time_comp = "N/A"
     space_comp = "N/A"
     
@@ -67,22 +64,23 @@ def process_problem_data(json_path):
         text = ps_strong.parent.text
         problem_dict["problem_statement"] = re.sub(r'(?i)Problem Statement\s*:\s*', '', text).strip()
         
-    # ROBUST EXAMPLES PARSING
+    # --- UPGRADED ROBUST EXAMPLES PARSING ---
     example_div = soup.find(id="article_examples")
     if example_div:
-        # Get all text, replacing HTML tags with newlines
         raw_text = example_div.get_text(separator='\n')
         
-        # Split the text by the word "Input" (case-insensitive)
-        input_splits = re.split(r'(?i)Input\s*:', raw_text)
+        # Split by "Input:" OR "Input Format:" 
+        input_splits = re.split(r'(?i)Input(?: Format)?\s*:', raw_text)
         
-        # Skip the first split as it's usually just the word "Examples" or whitespace
         for chunk in input_splits[1:]:
-            out_split = re.split(r'(?i)Output\s*:', chunk)
+            # Split by "Output:" OR "Result:"
+            out_split = re.split(r'(?i)(?:Output|Result)\s*:', chunk)
             
             if len(out_split) > 1:
-                inp_text = out_split[0].strip()
+                # Clean up the input text (removing "Example 1:" prefixes if they exist)
+                inp_text = re.sub(r'(?i)Example\s*\d+\s*:\s*', '', out_split[0]).strip()
                 
+                # Split by "Explanation:"
                 exp_split = re.split(r'(?i)Explanation\s*:', out_split[1])
                 out_text = exp_split[0].strip()
                 exp_text = exp_split[1].strip() if len(exp_split) > 1 else ""
@@ -104,7 +102,7 @@ def process_problem_data(json_path):
             appr = {
                 "name": "",
                 "intuition_and_algorithm": "",
-                "images": [],  # <--- Added image array here
+                "images": [],
                 "complexities": {},
                 "code": {}
             }
@@ -120,15 +118,11 @@ def process_problem_data(json_path):
             if algo_div:
                 appr["intuition_and_algorithm"] = algo_div.text.strip()
                 
-                # IMAGE EXTRACTION
-                # Find the carousel inside the algorithm div
                 carousel = algo_div.find('div', class_=re.compile(r'image-carousel-container'))
                 if carousel:
-                    # Find all images inside the carousel
                     imgs = carousel.find_all('img')
                     for img in imgs:
                         src = img.get('src')
-                        # Deduplicate URLs (because desktop/mobile views often duplicate the same image)
                         if src and src not in appr["images"]:
                             appr["images"].append(src)
                 

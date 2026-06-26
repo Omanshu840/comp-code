@@ -1,4 +1,15 @@
 {
     "problem_statement": "You are given 'Nâ roses and you are also given an array 'arr'  where 'arr[i]'  denotes that the 'ith' rose will bloom on the 'arr[i]th' day.\nYou can only pick already bloomed roses that are adjacent to make a bouquet. You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet.\nFind the minimum number of days required to make at least âm' bouquets each containing 'k' roses. Return -1 if it is not possible.",
-    "examples": []
+    "examples": [
+        {
+            "input": "N = 8, arr[] = {7, 7, 7, 7, 13, 11, 12, 7}, m = 2, k = 3",
+            "output": "12",
+            "explanation": "On the 12th the first 4 flowers and the last 3 flowers would have already bloomed. So, we can easily make 2 bouquets, one with the first 3 and another with the last 3 flowers.\n\nExample 2:"
+        },
+        {
+            "input": "N = 5, arr[] = {1, 10, 3, 10, 2}, m = 3, k = 2",
+            "output": "-1",
+            "explanation": "If we want to make 3 bouquets of 2 flowers each, we need at least 6 flowers. But we are given only 5 flowers, so, we cannot make the bouquets."
+        }
+    ]
 }

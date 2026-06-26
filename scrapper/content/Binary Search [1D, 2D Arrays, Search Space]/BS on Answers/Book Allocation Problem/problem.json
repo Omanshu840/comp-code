@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given an array âarr of integer numbers, âar[i]â represents the number of pages in the âi-thâ book. There are a âmâ number of students, and the task is to allocate all the books to the students.Allocate books in such a way that:",
-    "examples": []
+    "examples": [
+        {
+            "input": "n = 4, m = 2, arr[] = {12, 34, 67, 90}",
+            "output": "113",
+            "explanation": "The allocation of books will be 12, 34, 67 | 90. One student will get the first 3 books and the other will get the last one.\n\n\n\nExample 2:"
+        },
+        {
+            "input": "n = 5, m = 4, arr[] = {25, 46, 28, 49, 24}",
+            "output": "71",
+            "explanation": "The allocation of books will be 25, 46 | 28 | 49 | 24."
+        }
+    ]
 }

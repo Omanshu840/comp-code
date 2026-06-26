@@ -43,8 +43,8 @@ export function AuthGuard({
 
   return (
     <>
-      <div className="min-h-svh p-6">
-        <Card className="mx-auto mt-10 max-w-lg">
+      <div className="p-4">
+        <Card className="mx-auto max-w-lg">
           <CardHeader>
             <CardTitle>Login Required</CardTitle>
             <CardDescription>

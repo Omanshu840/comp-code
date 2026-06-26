@@ -2,6 +2,7 @@ import path from "path"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig, type Plugin } from "vite"
+import { VitePWA } from "vite-plugin-pwa"
 
 const LEETCODE_PROXY_PREFIX = "/api/leetcode"
 const LEETCODE_BASE_URL = "https://leetcode.com"
@@ -112,7 +113,45 @@ function createLeetCodeProxyPlugin(): Plugin {
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/comp-code/" : "/",
-  plugins: [react(), tailwindcss(), createLeetCodeProxyPlugin()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    createLeetCodeProxyPlugin(),
+    VitePWA({
+      registerType: "autoUpdate",
+      includeAssets: ["compcode-mark.svg"],
+      manifest: {
+        "name": "CompCode DSA",
+        "short_name": "CompCode",
+        "description": "A gamified DSA learning path with revision mode.",
+        "start_url": "/learn",
+        "display": "standalone",
+        "background_color": "#fafafa",
+        "theme_color": "#111111",
+        "icons": [
+          {
+            src: "/compcode-mark.svg",
+            sizes: "any",
+            type: "image/svg+xml",
+            purpose: "any maskable",
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        runtimeCaching: [
+          {
+            handler: "CacheFirst",
+            urlPattern: /.*\.(?:woff2?|ttf|eot)$/,
+          },
+          {
+            handler: "NetworkFirst",
+            urlPattern: new RegExp(`^${LEETCODE_PROXY_PREFIX}/.*`),
+          },
+        ],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

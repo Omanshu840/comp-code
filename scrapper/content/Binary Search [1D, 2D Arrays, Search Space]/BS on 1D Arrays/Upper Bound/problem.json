@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given a sorted array of N integers and an integer x, write a program to find the upper bound of x.",
-    "examples": []
+    "examples": [
+        {
+            "input": "N = 4, arr[] = {1,2,2,3}, x = 2",
+            "output": "3",
+            "explanation": "Index 3 is the smallest index such that arr[3] > x.\n\nExample 2:"
+        },
+        {
+            "input": "N = 6, arr[] = {3,5,8,9,15,19}, x = 9",
+            "output": "4",
+            "explanation": "Index 4 is the smallest index such that arr[4] > x."
+        }
+    ]
 }

@@ -1,4 +1,15 @@
 {
     "problem_statement": "You are given a sorted array arr of distinct values and a target value x. You need to search for the index of the target value in the array.",
-    "examples": []
+    "examples": [
+        {
+            "input": "arr[] = {1,2,4,7}, x = 6",
+            "output": "3",
+            "explanation": "6 is not present in the array. So, if we will insert 6 in the 3rd index(0-based indexing), the array will still be sorted. {1,2,4,6,7}.\n\nExample 2:"
+        },
+        {
+            "input": "arr[] = {1,2,4,7}, x = 2",
+            "output": "1",
+            "explanation": "2 is present in the array and so we will return its index i.e. 1."
+        }
+    ]
 }

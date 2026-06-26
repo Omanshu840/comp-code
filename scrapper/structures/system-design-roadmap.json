@@ -1,0 +1,40 @@
+[
+  {
+    "category_id": "sd-1",
+    "category_name": "System Design Fundamentals",
+    "subcategories": [
+      {
+        "subcategory_id": "sd-1-1",
+        "subcategory_name": "Core Concepts",
+        "problems": [
+          {
+            "problem_id": "sd-1-1-1",
+            "problem_name": "Scaling, Caching, and Load Balancing",
+            "difficulty": "Easy"
+          },
+          {
+            "problem_id": "sd-1-1-2",
+            "problem_name": "Databases and Data Partitioning",
+            "difficulty": "Easy"
+          }
+        ]
+      },
+      {
+        "subcategory_id": "sd-1-2",
+        "subcategory_name": "Case Studies",
+        "problems": [
+          {
+            "problem_id": "sd-1-2-1",
+            "problem_name": "Design a URL Shortener",
+            "difficulty": "Medium"
+          },
+          {
+            "problem_id": "sd-1-2-2",
+            "problem_name": "Design a Social Media Feed",
+            "difficulty": "Medium"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges,\n    Find the number of strongly connected components in the graph..",
-    "examples": []
+    "examples": [
+        {
+            "input": "",
+            "output": "3",
+            "explanation": "Three strongly connected components are marked below:"
+        },
+        {
+            "input": "",
+            "output": "4",
+            "explanation": "Four strongly connected components are marked below:"
+        }
+    ]
 }

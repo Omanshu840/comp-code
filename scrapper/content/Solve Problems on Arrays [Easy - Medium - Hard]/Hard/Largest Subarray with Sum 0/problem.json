@@ -1,4 +1,15 @@
 {
     "problem_statement": "Given an array containing both positive and negative integers, we have to find the length of the longest subarray with the sum of all elements equal to zero.",
-    "examples": []
+    "examples": [
+        {
+            "input": "N = 6, array[] = {9, -3, 3, -1, 6, -5}",
+            "output": "5",
+            "explanation": "The following subarrays sum to zero:\n- {-3, 3}\n- {-1, 6, -5}\n- {-3, 3, -1, 6, -5}\nThe length of the longest subarray with sum zero is 5.\n\n\nExample 2:"
+        },
+        {
+            "input": "N = 8, array[] = {6, -2, 2, -8, 1, 7, 4, -10}",
+            "output": "8",
+            "explanation": "Subarrays with sum zero:\n- {-2, 2}\n- {-8, 1, 7}\n- {-2, 2, -8, 1, 7}\n- {6, -2, 2, -8, 1, 7, 4, -10}\nThe length of the longest subarray with sum zero is 8."
+        }
+    ]
 }

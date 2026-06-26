@@ -1,4 +1,15 @@
 {
     "problem_statement": "You have been given a non-empty grid âmatâ with 'n' rows and 'm' columns consisting of only 0s and 1s. All the rows are sorted in ascending order.\nYour task is to find the index of the row with the maximum number of ones.\nNote: If two rows have the same number of ones, consider the one with a smaller index. If there's no row with at least 1 zero, return -1",
-    "examples": []
+    "examples": [
+        {
+            "input": "n = 3, m = 3, \nmat[] = \n1 1 1\n0 0 1\n0 0 0",
+            "output": "0",
+            "explanation": "The row with the maximum number of ones is 0 (0 - indexed).\n\nExample 2:"
+        },
+        {
+            "input": "n = 2, m = 2 , \nmat[] = \n0 0\n0 0",
+            "output": "-1",
+            "explanation": "The matrix does not contain any 1. So, -1 is the answer."
+        }
+    ]
 }

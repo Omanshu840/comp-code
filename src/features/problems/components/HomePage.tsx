@@ -1,3 +1,7 @@
+import { Map } from "lucide-react"
+import { Link } from "react-router-dom"
+
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { ProblemListPage } from "./ProblemListPage"
@@ -11,14 +15,22 @@ export function HomePage() {
           <div className="inline-flex rounded-full border border-border/70 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.24em] uppercase text-muted-foreground backdrop-blur">
             CompCode
           </div>
-          <div className="space-y-1.5">
-            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Practice, review, and revisit solved problems
-            </h1>
-            <p className="max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Switch between your solved history and the full problem browser
-              without leaving the home page.
-            </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="space-y-1.5">
+              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Practice, review, and revisit solved problems
+              </h1>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">
+                Switch between your solved history and the full problem browser
+                without leaving the home page.
+              </p>
+            </div>
+            <Button asChild className="w-fit">
+              <Link to="/learn">
+                <Map className="size-4" />
+                DSA Path
+              </Link>
+            </Button>
           </div>
         </section>
 
