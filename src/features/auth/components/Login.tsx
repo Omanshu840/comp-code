@@ -88,7 +88,7 @@ export default function Login() {
           )}
 
           <div className="flex justify-center">
-            <img src="/compcode-mark.png" alt="CompCode Logo" className="h-32 w-32 rounded-2xl border border-primary" />
+            <img src="/comp-code/compcode-mark.png" alt="CompCode Logo" className="h-32 w-32 rounded-2xl border border-primary" />
           </div>
 
           <div className="mt-4 text-center">

@@ -16,7 +16,7 @@ import cleanScrapedText, {
   getProblemById,
   type Approach,
 } from "../content"
-import { useDsaProgress, useDsaStreak } from "../hooks/use-progress"
+import { useLessonCompletion } from "../hooks/use-progress"
 import { difficultyVariant } from "../utils"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { CodeBlock } from "../components/CodeBlock"
@@ -59,8 +59,10 @@ const STEP_SUBTITLES = {
 export function LessonPage() {
   const { problemId } = useParams()
   const navigate = useNavigate()
-  const { addProgress } = useDsaProgress()
-  const { updateStreak } = useDsaStreak()
+  // Only exposes mutation functions — no useQuery calls, so no extra network
+  // requests fire when the lesson mounts. Progress and streak data are already
+  // cached from the Dashboard.
+  const { addProgress, updateStreak } = useLessonCompletion()
   const problem = getProblemById(problemId)
   const [card, setCard] = useState(0)
 

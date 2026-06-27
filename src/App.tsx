@@ -6,6 +6,7 @@ import { LessonPage } from "@/features/dsa-learning/pages/LessonPage"
 import { RevisionPage } from "@/features/dsa-learning/pages/RevisionPage"
 import { HomePage } from "@/features/problems/components/HomePage"
 import { ProblemDetailPage } from "@/features/problems/components/ProblemDetailPage"
+import { ProfilePage } from "@/features/profile/pages/ProfilePage"
 import Login from "./features/auth/components/Login"
 import { useAuth } from "./features/auth/hooks/useAuth"
 import { ProtectedRoute } from "./app/ProtectedRoute"
@@ -27,6 +28,7 @@ function AppRoutes() {
               element={<ProblemDetailPage />}
               path="/solve/problems/:slug"
             />
+            <Route element={<ProfilePage />} path="/profile" />
             <Route element={<Navigate replace to="/" />} path="*" />
           </Route>
         </Route>

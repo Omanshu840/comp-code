@@ -1,4 +1,4 @@
-import { BookOpen, Code } from "lucide-react"
+import { BookOpen, Code, User } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
 import { cn } from "@/lib/utils"
 import type { PropsWithChildren } from "react"
@@ -40,6 +40,12 @@ export function DesktopSidebar() {
                   <DesktopLink href="/solve">
                     <Code className="size-5" />
                     Solve
+                  </DesktopLink>
+                </li>
+                <li>
+                  <DesktopLink href="/profile">
+                    <User className="size-5" />
+                    Profile
                   </DesktopLink>
                 </li>
               </ul>
