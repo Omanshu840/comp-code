@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ArrowLeft, Code2 } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 
 import { useAuth } from "../hooks/useAuth"
 
@@ -88,12 +88,10 @@ export default function Login() {
           )}
 
           <div className="flex justify-center">
-            <div className="flex h-24 w-24 items-center justify-center rounded-[32px] bg-primary text-primary-foreground shadow-lg">
-              <Code2 className="h-11 w-11" />
-            </div>
+            <img src="/compcode-mark.png" alt="CompCode Logo" className="h-32 w-32 rounded-2xl border border-primary" />
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-4 text-center">
             <h1 className="text-3xl font-bold tracking-tight">
               CompCode
             </h1>

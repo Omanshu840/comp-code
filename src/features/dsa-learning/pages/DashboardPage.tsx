@@ -16,8 +16,7 @@ import { cn } from "@/lib/utils"
 
 import { getTrackPreview, getSystemDesignTrackPreview } from "../content"
 import type { DsaProblem } from "../content"
-import { useCompletedProblems } from "../hooks/useCompletedProblems"
-import { useStreak } from "../hooks/useStreak"
+import { useDsaProgress, useDsaStreak } from "../hooks/use-progress"
 import { difficultyVariant, getActiveProblemId, getProblemStatus } from "../utils"
 
 type Track = "DSA" | "System Design"
@@ -67,8 +66,12 @@ export function DashboardPage() {
   const [trackType, setTrackType] = useState<Track>("DSA")
   const [isTrackSwitcherOpen, setIsTrackSwitcherOpen] = useState(false)
 
-  const { completed } = useCompletedProblems()
-  const { streak } = useStreak()
+  const { progress } = useDsaProgress()
+  const completed = useMemo(
+    () => new Set(progress?.map((p) => p.problem_id) ?? []),
+    [progress],
+  )
+  const { streak } = useDsaStreak()
   const navigate = useNavigate()
 
   const track = useMemo(() => {
@@ -159,7 +162,7 @@ export function DashboardPage() {
           </Dialog>
           <div className="flex items-center gap-2">
             <Flame className="size-5 text-orange-500" />
-            <span className="font-bold text-lg">{streak}</span>
+            <span className="font-bold text-lg">{streak?.streak ?? 0}</span>
           </div>
         </div>
         {activeProblem && (

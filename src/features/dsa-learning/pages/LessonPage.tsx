@@ -16,7 +16,7 @@ import cleanScrapedText, {
   getProblemById,
   type Approach,
 } from "../content"
-import { useCompletedProblems } from "../hooks/useCompletedProblems"
+import { useDsaProgress, useDsaStreak } from "../hooks/use-progress"
 import { difficultyVariant } from "../utils"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { CodeBlock } from "../components/CodeBlock"
@@ -59,7 +59,8 @@ const STEP_SUBTITLES = {
 export function LessonPage() {
   const { problemId } = useParams()
   const navigate = useNavigate()
-  const { markCompleted } = useCompletedProblems()
+  const { addProgress } = useDsaProgress()
+  const { updateStreak } = useDsaStreak()
   const problem = getProblemById(problemId)
   const [card, setCard] = useState(0)
 
@@ -74,7 +75,8 @@ export function LessonPage() {
   function continueLesson() {
     window.scrollTo(0, 0)
     if (card === cards.length - 1 && problem) {
-      markCompleted(problem.problem_id)
+      addProgress(problem.problem_id)
+      updateStreak()
       navigate("/")
       return
     }

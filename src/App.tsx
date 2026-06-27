@@ -8,15 +8,13 @@ import { HomePage } from "@/features/problems/components/HomePage"
 import { ProblemDetailPage } from "@/features/problems/components/ProblemDetailPage"
 import Login from "./features/auth/components/Login"
 import { useAuth } from "./features/auth/hooks/useAuth"
-import { Button } from "./components/ui/button"
 import { ProtectedRoute } from "./app/ProtectedRoute"
 
 function AppRoutes() {
-  const { session, supabase } = useAuth()
+  const { session } = useAuth()
 
   return (
     <>
-      {session && <Button onClick={() => supabase.auth.signOut()}>Logout</Button>}
       <Routes>
         <Route path="/login" element={session ? <Navigate to="/" /> : <Login />} />
         <Route element={<ProtectedRoute />}>
