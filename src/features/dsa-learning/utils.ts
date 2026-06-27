@@ -1,4 +1,5 @@
 import type { DsaProblem } from "./content"
+import type { SystemDesignTrackItem } from "./utils/system-design-content"
 
 export function getProblemStatus(problem: DsaProblem, completed: Set<string>, activeId: string) {
   if (completed.has(problem.problem_id)) {
@@ -12,7 +13,7 @@ export function getProblemStatus(problem: DsaProblem, completed: Set<string>, ac
   return "pending"
 }
 
-export function getActiveProblemId(track: DsaProblem[], completed: Set<string>) {
+export function getActiveProblemId(track: DsaProblem[] | SystemDesignTrackItem[], completed: Set<string>) {
   // Find the index of the last completed problem in the track order.
   const lastCompletedIndex = track.reduce((lastIndex, problem, currentIndex) => {
     return completed.has(problem.problem_id) ? currentIndex : lastIndex

@@ -10,6 +10,8 @@ import { ProfilePage } from "@/features/profile/pages/ProfilePage"
 import Login from "./features/auth/components/Login"
 import { useAuth } from "./features/auth/hooks/useAuth"
 import { ProtectedRoute } from "./app/ProtectedRoute"
+import { SystemDesignLessonPage } from "./features/dsa-learning/pages/SystemDesignLessonPage"
+import { SystemDesignRevisionPage } from "./features/dsa-learning/pages/SystemDesignRevisionPage"
 
 function AppRoutes() {
   const { session } = useAuth()
@@ -22,7 +24,9 @@ function AppRoutes() {
           <Route element={<AppLayout />}>
             <Route element={<DashboardPage />} path="/" />
             <Route element={<LessonPage />} path="/:problemId/lesson" />
+            <Route element={<SystemDesignLessonPage />} path="/system-design/:problemId/lesson" />
             <Route element={<RevisionPage />} path="/:problemId/revision" />
+            <Route element={<SystemDesignRevisionPage />} path="/system-design/:problemId/revision" />
             <Route element={<HomePage />} path="/solve" />
             <Route
               element={<ProblemDetailPage />}
