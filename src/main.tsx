@@ -9,6 +9,7 @@ import { BrowserRouter, HashRouter } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
 import { queryClient } from "@/lib/query-client.ts"
 import App from "./App.tsx"
+import { AuthProvider } from "./features/auth/components/AuthProvider.tsx"
 import "./index.css"
 
 const Router = import.meta.env.VITE_USE_HASH_ROUTER === "true"
@@ -20,7 +21,9 @@ createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <Router>
         <ThemeProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </ThemeProvider>
       </Router>
       {import.meta.env.DEV ? (
