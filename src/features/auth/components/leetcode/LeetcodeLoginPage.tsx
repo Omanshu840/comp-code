@@ -7,12 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { useAuthStore } from "@/store/auth-store"
+import { useLeetcodeAuthStore } from "@/store/leetcode-auth-store"
 
-import { LoginForm } from "./LoginForm"
+import { LeetcodeLoginForm } from "./LeetcodeLoginForm"
 
-export function LoginPage() {
-  const { isAuthenticated, logout, user } = useAuthStore()
+export function LeetcodeLoginPage() {
+  const { isAuthenticated, logout, user } = useLeetcodeAuthStore()
 
   function handleLogout() {
     logout()
@@ -96,7 +96,7 @@ export function LoginPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <LoginForm />
+            <LeetcodeLoginForm />
           </CardContent>
           <CardFooter className="border-t border-border/70 pt-6 text-xs leading-5 text-muted-foreground">
             Your cookies are required because LeetCode does not expose an

@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
-import { useAuthStore } from "@/store/auth-store"
+import { useLeetcodeAuthStore } from "@/store/leetcode-auth-store"
 
 import { getSolvedProblems } from "../api/getSolvedProblems"
 import {
@@ -118,7 +118,7 @@ function buildNotesPrompt({
 
 export function SolvedProblemsPanel() {
   const queryClient = useQueryClient()
-  const user = useAuthStore((state) => state.user)
+  const user = useLeetcodeAuthStore((state) => state.user)
   const username = typeof user?.username === "string" ? user.username : ""
   const [selectedProblemSlug, setSelectedProblemSlug] = useState<string | null>(
     null,

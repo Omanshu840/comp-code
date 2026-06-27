@@ -13,7 +13,7 @@ const MATCHED_USER_QUERY = `
   }
 `
 
-type MatchedUser = {
+type MatchedLeetcodeUser = {
   username: string
   profile: {
     realName: string
@@ -22,11 +22,11 @@ type MatchedUser = {
   } | null
 }
 
-type MatchedUserResponse = {
-  matchedUser: MatchedUser | null
+type MatchedLeetcodeUserResponse = {
+  matchedUser: MatchedLeetcodeUser | null
 }
 
-export async function validateSession(): Promise<MatchedUser> {
+export async function validateLeetcodeSession(): Promise<MatchedLeetcodeUser> {
   const userStatusData = await graphqlRequest<{
     userStatus: {
       username: string | null
@@ -47,7 +47,7 @@ export async function validateSession(): Promise<MatchedUser> {
     throw new Error("Invalid LeetCode session")
   }
 
-  const data = await graphqlRequest<MatchedUserResponse>({
+  const data = await graphqlRequest<MatchedLeetcodeUserResponse>({
     query: MATCHED_USER_QUERY,
     variables: {
       username,

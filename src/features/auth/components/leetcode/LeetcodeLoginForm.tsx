@@ -8,20 +8,20 @@ import {
   clearLeetCodeAuthTokens,
   setLeetCodeAuthTokens,
 } from "@/lib/api-client"
-import { useAuthStore } from "@/store/auth-store"
+import { useLeetcodeAuthStore } from "@/store/leetcode-auth-store"
 
-import { validateSession } from "../api/validateSession"
+import { validateLeetcodeSession } from "../../api/validateLeetcodeSession"
 
 type LoginFormProps = {
   submitLabel?: string
   onSuccess?: () => void
 }
 
-export function LoginForm({
+export function LeetcodeLoginForm({
   submitLabel = "Validate and continue",
   onSuccess,
 }: LoginFormProps) {
-  const { login, logout, setUser } = useAuthStore()
+  const { login, logout, setUser } = useLeetcodeAuthStore()
   const [session, setSession] = useState("")
   const [csrf, setCsrf] = useState("")
   const [error, setError] = useState<string | null>(null)
@@ -34,7 +34,7 @@ export function LoginForm({
 
     try {
       setLeetCodeAuthTokens(session, csrf)
-      const matchedUser = await validateSession()
+      const matchedUser = await validateLeetcodeSession()
 
       login(session, csrf)
       setUser(matchedUser)

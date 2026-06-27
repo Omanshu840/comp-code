@@ -6,21 +6,21 @@ import {
   setLeetCodeAuthTokens,
 } from "../lib/api-client"
 
-type AuthUser = Record<string, unknown> | null
+type LeetcodeAuthUser = Record<string, unknown> | null
 
-type AuthState = {
+type LeetcodeAuthState = {
   isAuthenticated: boolean
   session: string | null
   csrf: string | null
-  user: AuthUser
+  user: LeetcodeAuthUser
   login: (session: string, csrf: string) => void
-  setUser: (user: AuthUser) => void
+  setUser: (user: LeetcodeAuthUser) => void
   logout: () => void
 }
 
-const AUTH_STORAGE_KEY = "auth-storage"
+const LEETCODE_AUTH_STORAGE_KEY = "leetcode-auth-storage"
 
-export const useAuthStore = create<AuthState>()(
+export const useLeetcodeAuthStore = create<LeetcodeAuthState>()(
   persist(
     (set) => ({
       isAuthenticated: false,
@@ -49,7 +49,7 @@ export const useAuthStore = create<AuthState>()(
       },
     }),
     {
-      name: AUTH_STORAGE_KEY,
+      name: LEETCODE_AUTH_STORAGE_KEY,
       onRehydrateStorage: () => (state) => {
         if (!state?.session || !state.csrf) {
           clearLeetCodeAuthTokens()
