@@ -17,6 +17,7 @@ import cleanScrapedText, {
   type Approach,
 } from "../content"
 import { useLessonCompletion } from "../hooks/use-progress"
+import { useSound } from "../hooks/use-sound"
 import { difficultyVariant } from "../utils"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { CodeBlock } from "../components/CodeBlock"
@@ -65,6 +66,8 @@ export function LessonPage() {
   const { addProgress, updateStreak } = useLessonCompletion()
   const problem = getProblemById(problemId)
   const [card, setCard] = useState(0)
+  const playNavigationSound = useSound("/sounds/navigation.mp3")
+  const playSuccessSound = useSound("/sounds/success.mp3")
 
   if (!problem || !problem.problem) {
     return <Navigate replace to="/" />
@@ -81,6 +84,11 @@ export function LessonPage() {
       updateStreak()
       navigate("/")
       return
+    }
+    if(card === cards.length - 2) {
+      playSuccessSound()
+    } else {
+      playNavigationSound()
     }
     setCard((v) => Math.min(v + 1, cards.length - 1))
   }

@@ -1,15 +1,3 @@
-/**
- * SystemDesignLessonPage.tsx
- *
- * Renders a system-design lesson as a linear card sequence:
- *   Intro → Teaching cards → Visual models → Quick checks →
- *   Practice exercises → Checkpoint → Done
- *
- * Interactive quiz cards (MCQ, True/False, Fill-blank, Scenario) must be
- * answered before the Continue button is enabled.
- * Match and Ordering cards are shown with a self-check reveal.
- */
-
 import {
   Trophy,
   X,
@@ -38,6 +26,7 @@ import {
   isInteractiveItem,
 } from "../utils/system-design-content"
 import { useLessonCompletion } from "../hooks/use-progress"
+import { useSound } from "../hooks/use-sound"
 import type { SystemDesignCard, QuizItem, MatchItem, OrderingItem } from "../types/system-design-types"
 
 // ─── Difficulty badge colour ──────────────────────────────────────────────────
@@ -372,6 +361,11 @@ export function SystemDesignLessonPage() {
   const navigate = useNavigate()
   const { addProgress, updateStreak } = useLessonCompletion()
 
+  const playNav = useSound("/sounds/navigation.mp3")
+  const playSuccess = useSound("/sounds/correct-answer.wav")
+  const playError = useSound("/sounds/wrong-answer.wav")
+  const playComplete = useSound("/sounds/success.mp3")
+
   const result = getLectureAndLesson(problemId ?? "")
 
   const [cardIndex, setCardIndex] = useState(0)
@@ -401,6 +395,24 @@ export function SystemDesignLessonPage() {
     if (answered) return
     setAnswerValue(value)
     setAnswered(true)
+
+    if (currentCard.type === "quick_check" || currentCard.type === "practice") {
+      const { item } = currentCard
+      if (isInteractiveItem(item)) {
+        let isCorrect = false
+        if (item.type === "mcq" || item.type === "fill_blank" || item.type === "scenario") {
+          isCorrect = value === item.correctAnswerIndex
+        } else if (item.type === "true_false") {
+          isCorrect = value === item.correctAnswer
+        }
+
+        if (isCorrect) {
+          playSuccess()
+        } else {
+          playError()
+        }
+      }
+    }
   }
 
   function continueLesson() {
@@ -410,6 +422,11 @@ export function SystemDesignLessonPage() {
       updateStreak()
       navigate("/")
       return
+    }
+    if (cardIndex === cards.length - 2) {
+      playComplete()
+    } else {
+      playNav()
     }
     // Reset quiz state for the next card
     setAnswered(false)

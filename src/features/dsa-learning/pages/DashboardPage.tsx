@@ -19,6 +19,7 @@ import { getSystemDesignTrackPreview, type SystemDesignTrackItem } from "../util
 import type { DsaProblem } from "../content"
 import { useDsaProgress, useDsaStreak } from "../hooks/use-progress"
 import { difficultyVariant, getActiveProblemId, getProblemStatus } from "../utils"
+import { useSound } from "../hooks/use-sound"
 
 // ─── Track type ───────────────────────────────────────────────────────────────
 
@@ -94,6 +95,7 @@ export function DashboardPage() {
   // page reloads and sessions.
   const [trackType, setTrackType] = useState<Track>(readStoredTrack)
   const [isTrackSwitcherOpen, setIsTrackSwitcherOpen] = useState(false)
+  const playStartSound = useSound("/sounds/start.mp3")
 
   const { progress } = useDsaProgress()
   const completed = useMemo(
@@ -137,6 +139,7 @@ export function DashboardPage() {
   }, [track])
 
   const handleProblemClick = (problem: DsaProblem | SystemDesignTrackItem) => {
+    playStartSound()
     if(trackType === "DSA") {
       navigate(`/${problem.problem_id}/lesson`)
     } else if(trackType === "System Design") {
