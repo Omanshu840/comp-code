@@ -418,13 +418,13 @@ export function SystemDesignLessonPage() {
   function continueLesson() {
     window.scrollTo(0, 0)
     if (cardIndex === cards.length - 1) {
-      addProgress(lesson.id)
-      updateStreak()
       navigate("/")
       return
     }
     if (cardIndex === cards.length - 2) {
       playComplete()
+      addProgress(lesson.id)
+      updateStreak()
     } else {
       playNav()
     }

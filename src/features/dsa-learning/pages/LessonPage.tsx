@@ -79,13 +79,13 @@ export function LessonPage() {
 
   function continueLesson() {
     window.scrollTo(0, 0)
-    if (card === cards.length - 1 && problem) {
-      addProgress(problem.problem_id)
-      updateStreak()
+    if (card === cards.length - 1) {
       navigate("/")
       return
     }
-    if(card === cards.length - 2) {
+    if(card === cards.length - 2 && problem) {
+      addProgress(problem.problem_id)
+      updateStreak()
       playSuccessSound()
     } else {
       playNavigationSound()

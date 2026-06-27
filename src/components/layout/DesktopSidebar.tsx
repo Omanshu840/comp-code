@@ -24,7 +24,7 @@ function DesktopLink({
 
 export function DesktopSidebar() {
   return (
-    <aside className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col md:border-r">
+    <aside className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col lg:border-r">
       <div className="flex flex-col gap-y-5 overflow-y-auto px-6 pt-5">
         <nav className="flex flex-1 flex-col">
           <ul role="list" className="flex flex-1 flex-col gap-y-7">

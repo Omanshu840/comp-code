@@ -12,6 +12,7 @@ import { useAuth } from "./features/auth/hooks/useAuth"
 import { ProtectedRoute } from "./app/ProtectedRoute"
 import { SystemDesignLessonPage } from "./features/dsa-learning/pages/SystemDesignLessonPage"
 import { SystemDesignRevisionPage } from "./features/dsa-learning/pages/SystemDesignRevisionPage"
+import ResetPassword from "./features/auth/components/ResetPassword"
 
 function AppRoutes() {
   const { session } = useAuth()
@@ -20,6 +21,7 @@ function AppRoutes() {
     <>
       <Routes>
         <Route path="/login" element={session ? <Navigate to="/" /> : <Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
             <Route element={<DashboardPage />} path="/" />
