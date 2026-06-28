@@ -162,9 +162,6 @@ export function buildSystemDesignCards(lesson: SystemDesignLesson): SystemDesign
   // 6. Checkpoint
   cards.push({ type: "checkpoint", checkpoint: lesson.checkpoint })
 
-  // 7. Done
-  cards.push({ type: "done" })
-
   return cards
 }
 

@@ -1,5 +1,4 @@
 import {
-  Trophy,
   X,
   Lightbulb,
   Clock,
@@ -27,7 +26,13 @@ import {
 } from "../utils/system-design-content"
 import { useLessonCompletion } from "../hooks/use-progress"
 import { useSound } from "../hooks/use-sound"
-import type { SystemDesignCard, QuizItem, MatchItem, OrderingItem } from "../types/system-design-types"
+import type {
+  SystemDesignCard,
+  QuizItem,
+  MatchItem,
+  OrderingItem,
+} from "../types/system-design-types"
+import { LessonCompletionDialog } from "../components/LessonCompletionDialog"
 
 // ─── Difficulty badge colour ──────────────────────────────────────────────────
 
@@ -99,7 +104,11 @@ function ChoiceQuizCard({
   answered,
   selectedIndex,
 }: {
-  item: QuizItem & { options: string[]; correctAnswerIndex: number; explanation: string }
+  item: QuizItem & {
+    options: string[]
+    correctAnswerIndex: number
+    explanation: string
+  }
   onAnswer: (index: number) => void
   answered: boolean
   selectedIndex: number | null
@@ -114,7 +123,8 @@ function ChoiceQuizCard({
           let variant: string = "border-border bg-background hover:bg-muted"
           if (answered) {
             if (isCorrect) variant = "border-green-500 bg-green-500/10"
-            else if (isSelected && !isCorrect) variant = "border-rose-500 bg-rose-500/10"
+            else if (isSelected && !isCorrect)
+              variant = "border-rose-500 bg-rose-500/10"
           } else if (isSelected) {
             variant = "border-primary bg-primary/10"
           }
@@ -134,10 +144,18 @@ function ChoiceQuizCard({
                 className={cn(
                   "grid size-6 shrink-0 place-items-center rounded-full border-2 text-xs font-bold",
                   answered && isCorrect && "border-green-500 text-green-600",
-                  answered && isSelected && !isCorrect && "border-rose-500 text-rose-600",
+                  answered &&
+                  isSelected &&
+                  !isCorrect &&
+                  "border-rose-500 text-rose-600",
                   !answered && isSelected && "border-primary text-primary",
-                  !answered && !isSelected && "border-border text-muted-foreground",
-                  answered && !isCorrect && !isSelected && "border-border text-muted-foreground",
+                  !answered &&
+                  !isSelected &&
+                  "border-border text-muted-foreground",
+                  answered &&
+                  !isCorrect &&
+                  !isSelected &&
+                  "border-border text-muted-foreground",
                 )}
               >
                 {String.fromCharCode(65 + i)}
@@ -251,7 +269,11 @@ function MatchCard({ item }: { item: MatchItem }) {
               </div>
             ))}
           </div>
-          <Button variant="outline" className="w-full" onClick={() => setRevealed(true)}>
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={() => setRevealed(true)}
+          >
             Reveal matches
           </Button>
         </div>
@@ -265,7 +287,9 @@ function MatchCard({ item }: { item: MatchItem }) {
 function OrderingCard({ item }: { item: OrderingItem }) {
   const [revealed, setRevealed] = useState(false)
   // Shuffle items for the challenge view
-  const [shuffled] = useState(() => [...item.items].sort(() => Math.random() - 0.5))
+  const [shuffled] = useState(() =>
+    [...item.items].sort(() => Math.random() - 0.5),
+  )
 
   return (
     <div className="space-y-4">
@@ -302,7 +326,11 @@ function OrderingCard({ item }: { item: OrderingItem }) {
               </div>
             ))}
           </div>
-          <Button variant="outline" className="w-full" onClick={() => setRevealed(true)}>
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={() => setRevealed(true)}
+          >
             Reveal correct order
           </Button>
         </div>
@@ -369,6 +397,8 @@ export function SystemDesignLessonPage() {
   const result = getLectureAndLesson(problemId ?? "")
 
   const [cardIndex, setCardIndex] = useState(0)
+  const [isCompletionDialogOpen, setIsCompletionDialogOpen] = useState(false)
+  const [isStreakUpdated, setStreakUpdated] = useState(false);
 
   // Quiz interaction state (reset on each new quiz card)
   const [answered, setAnswered] = useState(false)
@@ -400,7 +430,11 @@ export function SystemDesignLessonPage() {
       const { item } = currentCard
       if (isInteractiveItem(item)) {
         let isCorrect = false
-        if (item.type === "mcq" || item.type === "fill_blank" || item.type === "scenario") {
+        if (
+          item.type === "mcq" ||
+          item.type === "fill_blank" ||
+          item.type === "scenario"
+        ) {
           isCorrect = value === item.correctAnswerIndex
         } else if (item.type === "true_false") {
           isCorrect = value === item.correctAnswer
@@ -418,13 +452,17 @@ export function SystemDesignLessonPage() {
   function continueLesson() {
     window.scrollTo(0, 0)
     if (cardIndex === cards.length - 1) {
-      navigate("/")
-      return
-    }
-    if (cardIndex === cards.length - 2) {
       playComplete()
       addProgress(lesson.id)
-      updateStreak()
+      updateStreak(undefined, {
+        onSuccess: (data) => {
+          if (data?.updated) {
+            setStreakUpdated(true);
+          }
+          setIsCompletionDialogOpen(true);
+        },
+      })
+      return
     } else {
       playNav()
     }
@@ -432,6 +470,11 @@ export function SystemDesignLessonPage() {
     setAnswered(false)
     setAnswerValue(null)
     setCardIndex((v) => Math.min(v + 1, cards.length - 1))
+  }
+
+  function handleDialogClose() {
+    setIsCompletionDialogOpen(false)
+    navigate("/")
   }
 
   // ── Render each card type ────────────────────────────────────────────────
@@ -450,7 +493,9 @@ export function SystemDesignLessonPage() {
                 <div className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                   {lecture.title}
                 </div>
-                <h1 className="mt-2 text-2xl font-semibold">{card.lesson.title}</h1>
+                <h1 className="mt-2 text-2xl font-semibold">
+                  {card.lesson.title}
+                </h1>
               </div>
 
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -476,7 +521,10 @@ export function SystemDesignLessonPage() {
                 </div>
                 <ul className="space-y-2">
                   {card.lesson.concepts.map((c) => (
-                    <li key={c.name} className="flex items-start gap-2 text-sm leading-6">
+                    <li
+                      key={c.name}
+                      className="flex items-start gap-2 text-sm leading-6"
+                    >
                       <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-fuchsia-500" />
                       {c.name}
                     </li>
@@ -506,11 +554,15 @@ export function SystemDesignLessonPage() {
               )}
 
               <h2 className="text-xl font-semibold">{card.card.title}</h2>
-              <p className="text-sm leading-8 text-muted-foreground">{card.card.body}</p>
+              <p className="text-sm leading-8 text-muted-foreground">
+                {card.card.body}
+              </p>
 
               <div className="flex items-start gap-3 rounded-lg border border-fuchsia-500/30 bg-fuchsia-500/5 p-4">
                 <Lightbulb className="mt-0.5 size-4 shrink-0 text-fuchsia-500" />
-                <p className="text-sm font-medium leading-6">{card.card.takeaway}</p>
+                <p className="text-sm font-medium leading-6">
+                  {card.card.takeaway}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -529,7 +581,9 @@ export function SystemDesignLessonPage() {
               />
 
               <h2 className="text-xl font-semibold">{card.model.title}</h2>
-              <p className="text-sm leading-6 text-muted-foreground">{card.model.description}</p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                {card.model.description}
+              </p>
 
               {/* Flow steps */}
               <div className="relative space-y-0">
@@ -540,7 +594,10 @@ export function SystemDesignLessonPage() {
                         {i + 1}
                       </div>
                       {i < card.model.flow.length - 1 && (
-                        <div className="mt-1 w-px flex-1 bg-border" style={{ minHeight: 24 }} />
+                        <div
+                          className="mt-1 w-px flex-1 bg-border"
+                          style={{ minHeight: 24 }}
+                        />
                       )}
                     </div>
                     <p className="pb-4 pt-0.5 text-sm leading-6">{step}</p>
@@ -551,7 +608,9 @@ export function SystemDesignLessonPage() {
               <div className="flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
                 <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-500" />
                 <p className="text-sm leading-6 text-muted-foreground">
-                  <span className="font-semibold text-foreground">Notice: </span>
+                  <span className="font-semibold text-foreground">
+                    Notice:{" "}
+                  </span>
                   {card.model.learnerShouldNotice}
                 </p>
               </div>
@@ -622,7 +681,10 @@ export function SystemDesignLessonPage() {
                 </div>
                 <ul className="space-y-2">
                   {card.checkpoint.learnerCanNow.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm leading-6">
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm leading-6"
+                    >
                       <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-green-500" />
                       {item}
                     </li>
@@ -634,30 +696,24 @@ export function SystemDesignLessonPage() {
                 <div className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-fuchsia-600 dark:text-fuchsia-300">
                   Explain in your own words
                 </div>
-                <p className="text-sm leading-6">{card.checkpoint.explainInYourOwnWords}</p>
+                <p className="text-sm leading-6">
+                  {card.checkpoint.explainInYourOwnWords}
+                </p>
               </div>
             </CardContent>
           </Card>
-        )
-
-      // ── Done card ────────────────────────────────────────────────────────
-      case "done":
-        return (
-          <div className="text-center">
-            <div className="mx-auto grid size-24 place-items-center border border-foreground bg-lime-300 text-black shadow-[6px_6px_0_#000]">
-              <Trophy className="size-12" />
-            </div>
-            <h1 className="mt-8 text-4xl font-semibold">Lesson complete</h1>
-            <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted-foreground">
-              {lesson.title} is now marked complete on your path.
-            </p>
-          </div>
         )
     }
   }
 
   return (
     <div className="bg-background text-foreground">
+      <LessonCompletionDialog
+        isOpen={isCompletionDialogOpen}
+        onClose={handleDialogClose}
+        isStreakUpdated={isStreakUpdated}
+        problem={{ problem_id: lesson.id, problem_name: lesson.title}}
+      />
       {/* ── Header ── */}
       <header className="sticky top-0 z-10 flex h-16 items-center gap-3 border-b border-border bg-background/95 px-4 backdrop-blur">
         <Button aria-label="Exit lesson" asChild size="icon" variant="ghost">

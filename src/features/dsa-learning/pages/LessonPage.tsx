@@ -1,7 +1,6 @@
 import {
   BookOpen,
   ExternalLink,
-  Trophy,
   Video,
   X,
 } from "lucide-react"
@@ -21,6 +20,7 @@ import { useSound } from "../hooks/use-sound"
 import { difficultyVariant } from "../utils"
 import { ImageCarousel } from "../components/ImageCarousel"
 import { CodeBlock } from "../components/CodeBlock"
+import { LessonCompletionDialog } from "../components/LessonCompletionDialog"
 
 // Each approach is split into 3 sub-steps
 const APPROACH_STEPS = ["approach", "code", "complexity"] as const
@@ -28,7 +28,6 @@ const APPROACH_STEPS = ["approach", "code", "complexity"] as const
 type CardItem =
   | { type: "problem" }
   | { type: (typeof APPROACH_STEPS)[number]; approach: Approach }
-  | { type: "done" }
 
 // Build the full card sequence:
 // [0] = Problem
@@ -41,7 +40,6 @@ function buildCards(approaches: Approach[]): CardItem[] {
       cards.push({ type: step, approach })
     }
   }
-  cards.push({ type: "done" })
   return cards
 }
 
@@ -66,6 +64,8 @@ export function LessonPage() {
   const { addProgress, updateStreak } = useLessonCompletion()
   const problem = getProblemById(problemId)
   const [card, setCard] = useState(0)
+  const [isCompletionDialogOpen, setIsCompletionDialogOpen] = useState(false)
+  const [isStreakUpdated, setStreakUpdated] = useState(false);
   const playNavigationSound = useSound("/sounds/navigation.mp3")
   const playSuccessSound = useSound("/sounds/success.mp3")
 
@@ -79,18 +79,27 @@ export function LessonPage() {
 
   function continueLesson() {
     window.scrollTo(0, 0)
-    if (card === cards.length - 1) {
-      navigate("/")
-      return
-    }
-    if(card === cards.length - 2 && problem) {
+    if (card === cards.length - 1 && problem) {
       addProgress(problem.problem_id)
-      updateStreak()
-      playSuccessSound()
+      playSuccessSound();
+      updateStreak(undefined, {
+        onSuccess: (data) => {
+          if (data?.updated) {
+            setStreakUpdated(true);
+          }
+          setIsCompletionDialogOpen(true);
+        },
+      })
+      return
     } else {
       playNavigationSound()
     }
     setCard((v) => Math.min(v + 1, cards.length - 1))
+  }
+
+  function handleDialogClose() {
+    setIsCompletionDialogOpen(false)
+    navigate("/")
   }
 
   // Step indicator for approach sub-steps
@@ -104,9 +113,8 @@ export function LessonPage() {
         {APPROACH_STEPS.map((step) => (
           <div
             key={step}
-            className={`h-1 flex-1 rounded-full transition-all ${
-              step === activeStep ? "bg-fuchsia-500" : "bg-border"
-            }`}
+            className={`h-1 flex-1 rounded-full transition-all ${step === activeStep ? "bg-fuchsia-500" : "bg-border"
+              }`}
           />
         ))}
       </div>
@@ -115,6 +123,12 @@ export function LessonPage() {
 
   return (
     <div className="bg-background text-foreground">
+      <LessonCompletionDialog
+        isOpen={isCompletionDialogOpen}
+        onClose={handleDialogClose}
+        isStreakUpdated={isStreakUpdated}
+        problem={problem}
+      />
       <header className="sticky top-0 z-10 flex h-16 items-center gap-3 border-b border-border bg-background/95 px-4 backdrop-blur">
         <Button aria-label="Exit lesson" asChild size="icon" variant="ghost">
           <Link to="/">
@@ -196,12 +210,11 @@ export function LessonPage() {
                         </div>
                         <pre className="whitespace-pre-wrap break-words bg-muted p-4 font-mono text-xs leading-6 text-foreground">
                           {`Input: ${example.input}
-Output: ${example.output}${
-                            example.explanation
+Output: ${example.output}${example.explanation
                               ? `
 ${example.explanation}`
                               : ""
-                          }`}
+                            }`}
                         </pre>
                       </CardContent>
                     </Card>
@@ -309,19 +322,6 @@ ${example.explanation}`
                 </div>
               </CardContent>
             </Card>
-          )}
-
-          {/* ── Done card ── */}
-          {currentCard.type === "done" && (
-            <div className="text-center">
-              <div className="mx-auto grid size-24 place-items-center border border-foreground bg-lime-300 text-black shadow-[6px_6px_0_#000]">
-                <Trophy className="size-12" />
-              </div>
-              <h1 className="mt-8 text-4xl font-semibold">Lesson complete</h1>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted-foreground">
-                {problem.problem_name} is now marked complete on your path.
-              </p>
-            </div>
           )}
         </section>
       </main>

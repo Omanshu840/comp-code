@@ -192,4 +192,3 @@ export type SystemDesignCard =
   | { type: "quick_check"; item: QuizItem; index: number; total: number }
   | { type: "practice"; item: QuizItem; index: number; total: number }
   | { type: "checkpoint"; checkpoint: Checkpoint }
-  | { type: "done" }

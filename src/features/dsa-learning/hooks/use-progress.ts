@@ -62,10 +62,10 @@ function calendarDayDiff(isoTimestamp: string): number {
 async function upsertStreak(
   userId: string,
   current: DsaStreak | null,
-): Promise<DsaStreak | null> {
+): Promise<{ streakData: DsaStreak; updated: boolean } | null> {
   // Already completed today — no write needed.
   if (current && !isFromEarlierDay(current.last_completed_at)) {
-    return current
+    return { streakData: current, updated: false }
   }
 
   let newStreak = 1
@@ -93,7 +93,7 @@ async function upsertStreak(
     return null
   }
 
-  return data
+  return { streakData: data, updated: true }
 }
 
 // ─── Progress ────────────────────────────────────────────────────────────────
@@ -150,9 +150,11 @@ export function useDsaStreak() {
       return upsertStreak(userId, current)
     },
     onSuccess: (data) => {
-      if (data) {
+      if (data?.updated) {
         // Write the fresh value directly into the cache so no refetch is needed.
-        queryClient.setQueryData([DSA_STREAK_QUERY_KEY, userId], data)
+        queryClient.setQueryData([DSA_STREAK_QUERY_KEY, userId], data.streakData)
+        // refetch friends to update their streaks in the UI if needed
+        queryClient.invalidateQueries({ queryKey: ['friends', userId] });
       }
     },
   })
@@ -195,8 +197,10 @@ export function useLessonCompletion() {
       return upsertStreak(userId, current)
     },
     onSuccess: (data) => {
-      if (data) {
-        queryClient.setQueryData([DSA_STREAK_QUERY_KEY, userId], data)
+      if (data?.updated) {
+        queryClient.setQueryData([DSA_STREAK_QUERY_KEY, userId], data.streakData)
+        // refetch friends to update their streaks in the UI if needed
+        queryClient.invalidateQueries({ queryKey: ['friends', userId] });
       }
     },
   })
