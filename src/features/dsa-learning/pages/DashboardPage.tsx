@@ -1,4 +1,4 @@
-import { BookOpen, Check, ChevronDown, Flame, Play } from "lucide-react"
+import { BookOpen, Check, ChevronDown, Play } from "lucide-react"
 import { useMemo, useRef, useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
@@ -20,6 +20,7 @@ import type { DsaProblem } from "../content"
 import { useDsaProgress, useDsaStreak } from "../hooks/use-progress"
 import { difficultyVariant, getActiveProblemId, getProblemStatus } from "../utils"
 import { useSound } from "../hooks/use-sound"
+import { StreakDialog } from "../components/StreakDialog"
 
 // ─── Track type ───────────────────────────────────────────────────────────────
 
@@ -140,13 +141,13 @@ export function DashboardPage() {
 
   const handleProblemClick = (problem: DsaProblem | SystemDesignTrackItem) => {
     playStartSound()
-    if(trackType === "DSA") {
+    if (trackType === "DSA") {
       navigate(`/${problem.problem_id}/lesson`)
-    } else if(trackType === "System Design") {
+    } else if (trackType === "System Design") {
       navigate(`/system-design/${problem.problem_id}/lesson`)
     }
   }
-  
+
   const handleTrackChange = (newTrack: Track) => {
     setTrackType(newTrack)
     writeStoredTrack(newTrack)
@@ -189,10 +190,7 @@ export function DashboardPage() {
             </DialogContent>
           </Dialog>
 
-          <div className="flex items-center gap-2">
-            <Flame className="size-5 text-orange-500" />
-            <span className="font-bold text-lg">{streak?.streak ?? 0}</span>
-          </div>
+          <StreakDialog personalStreak={streak?.streak ?? 0} />
         </div>
 
         {activeProblem && (

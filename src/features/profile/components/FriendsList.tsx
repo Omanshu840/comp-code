@@ -50,15 +50,15 @@ export const FriendsList = () => {
       {!isLoading && friends && friends.length > 0 && (
         <div className="space-y-2">
           {friends.map((friend) => {
-            const initials = (friend.full_name || friend.email || '?')[0].toUpperCase();
+            const initials = (friend.friend_full_name || friend.friend_email || '?')[0].toUpperCase();
 
             return (
               <div
-                key={friend.id}
+                key={friend.friend_id}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-xl border border-border bg-card"
               >
                 <Avatar className="w-9 h-9 shrink-0">
-                  <AvatarImage src={friend.avatar_url ?? undefined} />
+                  <AvatarImage src={friend.friend_avatar_url ?? undefined} />
                   <AvatarFallback className="text-sm font-medium bg-muted text-muted-foreground">
                     {initials}
                   </AvatarFallback>
@@ -66,11 +66,11 @@ export const FriendsList = () => {
 
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground truncate leading-tight">
-                    {friend.full_name || friend.email}
+                    {friend.friend_full_name || friend.friend_email}
                   </p>
-                  {friend.full_name && (
+                  {friend.friend_full_name && (
                     <p className="text-xs text-muted-foreground truncate">
-                      {friend.email}
+                      {friend.friend_email}
                     </p>
                   )}
                 </div>

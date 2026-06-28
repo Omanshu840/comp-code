@@ -11,11 +11,19 @@ export type PendingFriendRequest = {
   requester_avatar_url: string | null;
 };
 
-export type FriendProfile = {
-  id: string;
-  email: string;
-  full_name: string;
-  avatar_url: string | null;
+export type FriendWithStreak = {
+  friend_id: string;
+  friend_email: string;
+  friend_full_name: string | null;
+  friend_avatar_url: string | null;
+  my_streak: number;
+  friend_streak: number;
+  streak_difference: number;        // + = friend ahead, - = I'm ahead
+  streak_status: 'both_on_fire' | 'you_are_ahead' | 'friend_is_ahead' | 'both_cold';
+  friend_solved_today: boolean;
+  i_solved_today: boolean;
+  both_solved_today: boolean;
+  combined_streak: number;
 };
 
 
@@ -62,30 +70,16 @@ export const acceptFriendRequest = async (friendshipId: string) => {
   return data;
 };
 
-export const getFriends = async (currentUserId: string):Promise<FriendProfile[] | null> => {
+export const getFriends = async (currentUserId: string): Promise<FriendWithStreak[]> => {
   const { data, error } = await supabase
-    .from('accepted_friends')
-    .select('*')
-    .or(`requester_id.eq.${currentUserId},addressee_id.eq.${currentUserId}`);
+    .rpc('get_friends_with_streaks', { current_user_id: currentUserId });
 
   if (error) {
-    console.error('Error getting friendships:', error);
+    console.error('Error getting friends with streaks:', error);
     throw error;
   }
 
-  // Normalize so the "friend" is always the other person
-  return data.map((f) => {
-    const iAmRequester = f.requester_id === currentUserId;
-    return {
-      id: iAmRequester ? f.addressee_id : f.requester_id,
-      email: iAmRequester ? f.addressee_email : f.requester_email,
-      full_name: iAmRequester ? f.addressee_full_name : f.requester_full_name,
-      avatar_url: iAmRequester ? f.addressee_avatar_url : f.requester_avatar_url,
-    };
-  });
-
-  // Returned shape:
-  // { id, email, full_name, avatar_url }[]
+  return data;
 };
 
 export const getPendingFriendRequests = async (currentUserId: string): Promise<PendingFriendRequest[] | null> => {
