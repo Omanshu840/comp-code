@@ -16,32 +16,84 @@ const DSA_STREAK_QUERY_KEY = "dsa-streak"
 // when navigating between Dashboard and LessonPage within this window.
 const STALE_TIME_MS = 5 * 60 * 1000 // 5 minutes
 
-// ─── Shared helper ──────────────────────────────────────────────────────────
+// ─── Shared helpers ──────────────────────────────────────────────────────────
+
+const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000 // UTC+5:30
 
 /**
- * Returns true if `isoTimestamp` is from a different calendar day than today
- * (in local time). Used to decide whether to count today as a streak day.
+ * Converts a Date object to its equivalent in IST by adding the offset,
+ * then returns a new Date object representing the start of that day in UTC.
+ * This effectively gives us a "day" value that we can compare.
  */
-function isFromEarlierDay(isoTimestamp: string): boolean {
-  const last = new Date(isoTimestamp)
-  const now = new Date()
-  return (
-    last.getFullYear() !== now.getFullYear() ||
-    last.getMonth() !== now.getMonth() ||
-    last.getDate() !== now.getDate()
+function getStartOfDayInIst(date: Date): Date {
+  const istDate = new Date(date.getTime() + IST_OFFSET_MS)
+  return new Date(
+    Date.UTC(istDate.getUTCFullYear(), istDate.getUTCMonth(), istDate.getUTCDate()),
   )
 }
 
 /**
- * Returns the number of whole calendar days between two dates (local time).
+ * Returns true if `isoTimestamp` is from a different calendar day than today
+ * (in IST). Used to decide whether to count today as a streak day.
+ */
+function isFromEarlierDay(isoTimestamp: string): boolean {
+  const lastStartOfDay = getStartOfDayInIst(new Date(isoTimestamp))
+  const nowStartOfDay = getStartOfDayInIst(new Date())
+  return lastStartOfDay.getTime() < nowStartOfDay.getTime()
+}
+
+/**
+ * Returns the number of whole calendar days between two dates (in IST).
  * e.g. yesterday → today = 1, two days ago → today = 2.
  */
 function calendarDayDiff(isoTimestamp: string): number {
-  const last = new Date(isoTimestamp)
-  const now = new Date()
-  const lastMidnight = new Date(last.getFullYear(), last.getMonth(), last.getDate())
-  const nowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  return Math.round((nowMidnight.getTime() - lastMidnight.getTime()) / (1000 * 60 * 60 * 24))
+  const lastStartOfDay = getStartOfDayInIst(new Date(isoTimestamp))
+  const nowStartOfDay = getStartOfDayInIst(new Date())
+  const diffMs = nowStartOfDay.getTime() - lastStartOfDay.getTime()
+  return Math.round(diffMs / (1000 * 60 * 60 * 24))
+}
+
+/**
+ * Core streak upsert logic. Accepts the current cached/fetched streak row
+ * (or null for brand-new users) and writes the correct new value to Supabase.
+ * Returns the updated row, the unchanged row (already completed today), or null
+ * on error.
+ */
+async function upsertStreak(
+  userId: string,
+  current: DsaStreak | null,
+): Promise<DsaStreak | null> {
+  // Already completed today — no write needed.
+  if (current && !isFromEarlierDay(current.last_completed_at)) {
+    return current
+  }
+
+  let newStreak = 1
+  if (current) {
+    const diffDays = calendarDayDiff(current.last_completed_at)
+    newStreak = diffDays === 1 ? current.streak + 1 : 1
+  }
+  // else: brand-new user → streak stays 1
+
+  const { data, error } = await supabase
+    .from("dsa_streaks")
+    .upsert(
+      {
+        user_id: userId,
+        streak: newStreak,
+        last_completed_at: new Date().toISOString(),
+      },
+      { onConflict: "user_id" },
+    )
+    .select()
+    .single()
+
+  if (error) {
+    console.error("Error upserting DSA streak:", error)
+    return null
+  }
+
+  return data
 }
 
 // ─── Progress ────────────────────────────────────────────────────────────────
@@ -90,98 +142,12 @@ export function useDsaStreak() {
     mutationFn: async () => {
       if (!userId) throw new Error("User not logged in")
 
-      // Read from the TanStack cache instead of issuing a fresh network request.
-      const cached = queryClient.getQueryData<DsaStreak | null>([
-        DSA_STREAK_QUERY_KEY,
-        userId,
-      ])
+      // Prefer cache, fall back to a fresh fetch.
+      const current =
+        queryClient.getQueryData<DsaStreak | null>([DSA_STREAK_QUERY_KEY, userId]) ??
+        (await getDsaStreak(userId))
 
-      if (cached) {
-        // Already completed today — no write needed.
-        if (!isFromEarlierDay(cached.last_completed_at)) {
-          return cached
-        }
-
-        const diffDays = calendarDayDiff(cached.last_completed_at)
-
-        if (diffDays === 1) {
-          // Consecutive day — increment streak.
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({
-              streak: cached.streak + 1,
-              last_completed_at: new Date().toISOString(),
-            })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error updating DSA streak:", error)
-            return null
-          }
-          return data
-        } else {
-          // Missed one or more days — reset to 1.
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({ streak: 1, last_completed_at: new Date().toISOString() })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error resetting DSA streak:", error)
-            return null
-          }
-          return data
-        }
-      } else {
-        // No cached streak — fetch once to decide what to do.
-        const fresh = await getDsaStreak(userId)
-
-        if (fresh) {
-          // Streak row exists in DB but wasn't cached; run the same logic.
-          if (!isFromEarlierDay(fresh.last_completed_at)) {
-            return fresh
-          }
-
-          const diffDays = calendarDayDiff(fresh.last_completed_at)
-          const newStreak = diffDays === 1 ? fresh.streak + 1 : 1
-
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({ streak: newStreak, last_completed_at: new Date().toISOString() })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error updating DSA streak:", error)
-            return null
-          }
-          return data
-        } else {
-          // Brand-new user — create streak row.
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .insert([
-              {
-                user_id: userId,
-                streak: 1,
-                last_completed_at: new Date().toISOString(),
-              },
-            ])
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error creating DSA streak:", error)
-            return null
-          }
-          return data
-        }
-      }
+      return upsertStreak(userId, current)
     },
     onSuccess: (data) => {
       if (data) {
@@ -220,92 +186,13 @@ export function useLessonCompletion() {
     mutationFn: async () => {
       if (!userId) throw new Error("User not logged in")
 
-      const cached = queryClient.getQueryData<DsaStreak | null>([
-        DSA_STREAK_QUERY_KEY,
-        userId,
-      ])
+      // Prefer cache, fall back to a fresh fetch (e.g. user navigated directly
+      // to the lesson URL and the Dashboard query never ran).
+      const current =
+        queryClient.getQueryData<DsaStreak | null>([DSA_STREAK_QUERY_KEY, userId]) ??
+        (await getDsaStreak(userId))
 
-      if (cached) {
-        if (!isFromEarlierDay(cached.last_completed_at)) {
-          return cached
-        }
-
-        const diffDays = calendarDayDiff(cached.last_completed_at)
-
-        if (diffDays === 1) {
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({
-              streak: cached.streak + 1,
-              last_completed_at: new Date().toISOString(),
-            })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error updating DSA streak:", error)
-            return null
-          }
-          return data
-        } else {
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({ streak: 1, last_completed_at: new Date().toISOString() })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error resetting DSA streak:", error)
-            return null
-          }
-          return data
-        }
-      } else {
-        // Cache miss (e.g. user navigated directly to lesson URL) — fetch once.
-        const fresh = await getDsaStreak(userId)
-
-        if (fresh) {
-          if (!isFromEarlierDay(fresh.last_completed_at)) {
-            return fresh
-          }
-
-          const diffDays = calendarDayDiff(fresh.last_completed_at)
-          const newStreak = diffDays === 1 ? fresh.streak + 1 : 1
-
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .update({ streak: newStreak, last_completed_at: new Date().toISOString() })
-            .eq("user_id", userId)
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error updating DSA streak:", error)
-            return null
-          }
-          return data
-        } else {
-          const { data, error } = await supabase
-            .from("dsa_streaks")
-            .insert([
-              {
-                user_id: userId,
-                streak: 1,
-                last_completed_at: new Date().toISOString(),
-              },
-            ])
-            .select()
-            .single()
-
-          if (error) {
-            console.error("Error creating DSA streak:", error)
-            return null
-          }
-          return data
-        }
-      }
+      return upsertStreak(userId, current)
     },
     onSuccess: (data) => {
       if (data) {
